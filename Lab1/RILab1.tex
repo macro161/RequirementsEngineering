@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 \documentclass{VUMIFPSkursinis}
 \usepackage{algorithmicx}
 \usepackage{algorithm}
@@ -14,6 +15,7 @@
 \usepackage{array}
 \usepackage{wrapfig}
 \usepackage{tabu}
+\usepackage{hyperref}
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -36,77 +38,139 @@
 
 \maketitle
 
+\sectionnonumnocontent{Santrauka}
+
+Šiame dokumente pateikiama „Epidemiologinės šalies sitaucijos sekimo sistemos“
+reikalavimų specifikacija. Komandą sudarė:
+\begin{itemize}
+	\item Šarūnas Kazinieras Buteikis (el. paštas \href{mailto:sarunas.kazimieras.buteikis@mif.stud.vu.lt}{sarunas.kazimieras.buteikis@mif.stud.vu.lt}) -- {\color{red}<...>}
+	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- dokumento maketavimas, įžanga, {\color{red}<...>}
+	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- dokumento maketavimas, {\color{red}<...>}
+	\item Rokas Ulicas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- {\color{red}<...>}
+\end{itemize}
+
+\newpage
+
 \tableofcontents
+
+\section{Įžanga}
+Šiame dokumente aprašoma “Epidemiologinės šalies sitaucijos sekimo sistema”, toliau - “sistema”.
+Ši sistema skirta sekti epidemiologinei padėčiai šalyje: įvertinti viruso plitimo šalyje tendencijas,
+efektyviai identifikuoti naujus viruso židinius, leisti specialistams atsekti susirgusiųjų
+kontaktus registruojant užsikrėtusiųjų maršrutus ir potencialiuose rizikos židiniuose
+besilankančius žmones, greitai informuoti kontaktavusiuosius su užsikrėtusiu žmogumi
+apie privalomą saviizoliaciją, rinkti duomenis apie asmenis karantine.
+
+\subsection{Application domain}
+Ši sistema skirta naudoti sveikatos apsaugos sistemoje: sistema turėtų palengvinti
+epidemiologų darbą ir leisti sekti viruso plitimą populiacijoje, imtis efektyvesnės
+profilaktikos ir tirti naudojamų priemonių efektyvumą.
+
+\subsection{Problem domain}
+Sistema siekiama išspręsti šias problemas:
+\begin{itemize}
+	\item Atskirų sveikatos įstaigų renkami susirgimų duomenys nėra apdorojami centralizuotai
+	      arba tai daroma ne sistemingai, todėl epidemiologams sunku identifikuoti tikrąsias viruso
+	      plitimo šalyje tendencijas, greitai identifikuoti potencialius židinius.
+	\item Dėl žmogiškųjų resursų trūkumo dažnai tampa neįmanoma įspėti visų kontaktavusiųjų
+	      su užsikrėtusiuoju asmenų - automatizavus šį procesą būtų galima įgyvendinti efektyvesnę
+	      profilaktiką, užkardyti nevaldomą epidemijos plitimą.
+	\item Šiuo metu nėra centralizuotos sistemos, leidžiančios registruoti potencialiuose
+	      rizikos židiniuose (įvairuose renginiuose, masinio susibūrimo vietose) besilankančius
+	      asmenis, dabar egzistuojančios pavienės iniciatyvos neleidžia automatiškai atsekti reikšmingo kiekio susirgusiojo kontaktų - tenka pasikliauti pastarojo pateikta informacija.
+	\item Nacionalinio sveikatos centro darbuotojai neturi galimybės automatiškai įspėti
+	      atvykusiųjų iš pavojingų šalių asmenų apie privalomą saviizoliaciją: atlikus reikiamas
+	      integracijas su {\color{red}muitinės (?)} sistemomis ši sistema leistų automatizuoti ir šį procesą.
+	\item Šiuo metu nėra galimybės automatizuoti saviizoliacijos reikalavimų laikymosi sekimo,
+	      tad naujoji sistema leistų bent iš dalies automatizuoti šį procesą: reikalauti asmenis
+	      saviizoliacijoje pateikti savo dabartinę vietą naudojantis išmaniajame telefone esančia
+	      GPS sistema ar atsiųsti saviizoliaciją patvirtinančią nuotrauką.
+\end{itemize}
+
+\subsection{Naudotojai}
+Šios sistemos naudotojų bazę sudaro trijų kategorijų naudotojai:
+\begin{itemize}
+	\item Epidemiologai - tai savo srities ekspertai, turintys aukštąjį išsilavinimą.
+	      Naudotis sistema jiems pakaks mokykloje dėstomo informatikos kurso.
+	\item LR esantys asmenys, dalyvaujantys riziką turinčiuose renginiuose, esantys saviizoliacijoje,
+	      atvykę iš pavojingų šalių ar turėję sąlytį su sergančiaisiais - jiems taip pat pakaks
+	      mokykloje dėstomo informatikos kurso.
+	\item Duomenų analitikai - tam, jog galėtų efektyviai panaudoti sistemoje
+	      esančius duomenis jiems reikalingas bakalauro ar aukštesnis iššsilavinimas
+	      duomenų mokslo ar informatikos srityse.
+\end{itemize}
+
+\newpage
 
 \section{Reikalavimų artefaktai}
 
 \begin{table}[h!]
-\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
-\hline
-                                                                                                              & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
-\begin{tabular}[c]{@{}l@{}}Veikslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular}             &                     &\begin{enumerate}
-																																												\item{Tvarkyti visą informaciją susijusią su žmonėmis 
-																																							sergančiais koronos virusu ir informuoti pacientus 
-																																							apie jų seikatos būklę bei galimas virusinio susirgimo rizikas.}
-																																												\item{Galimybė tvarkyti pacientų užsikrėtimų įrašus.}
-																																												\item{Galimybė pacientui paskirti viruso tyrimą.}
-																																												\item{Galimybė pacientui paskirti viruso antikūnių tyrimą.}
-																																												\item{Galimybė pacientui pranešti apie viruso tyrimo rezultatus.}																																												\item{Galimybė registruoti paciento buvimo vietas.}
-																																												\item{Galimybė pacientui praneši apie viruso židinius.}
-																																												\item{Galimybė pacientui paskirti vakciną.}
-																																												\item{Galimybė pacientui paskirti gydymą.}
-																																												\item{Galimybė registruoti paciento gydymo eigą.}
+	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
+		\hline
+		                           & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Veikslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular}  &                     & \begin{enumerate}
+			\item{Tvarkyti visą informaciją susijusią su žmonėmis
+			      sergančiais koronos virusu ir informuoti pacientus
+			      apie jų seikatos būklę bei galimas virusinio susirgimo rizikas.}
+			\item{Galimybė tvarkyti pacientų užsikrėtimų įrašus.}
+			\item{Galimybė pacientui paskirti viruso tyrimą.}
+			\item{Galimybė pacientui paskirti viruso antikūnių tyrimą.}
+			\item{Galimybė pacientui pranešti apie viruso tyrimo rezultatus.}																																												\item{Galimybė registruoti paciento buvimo vietas.}
+			\item{Galimybė pacientui praneši apie viruso židinius.}
+			\item{Galimybė pacientui paskirti vakciną.}
+			\item{Galimybė pacientui paskirti gydymą.}
+			\item{Galimybė registruoti paciento gydymo eigą.}
 
 
-																																											\end{enumerate}
-&                           \\ \hline
-\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular} &                     &                                      &                           \\ \hline
-\begin{tabular}[c]{@{}l@{}}IS reikalavimai \\ (IS inžinieriaus \\ požiūris)\end{tabular}                      &                     &                                      &                           \\ \hline
-\begin{tabular}[c]{@{}l@{}}PS reikalavimai \\ (sisteminio analitiko \\ požiūris)\end{tabular}                 &                     &                                      &                           \\ \hline
-\begin{tabular}[c]{@{}l@{}}Projektiniai PS \\ reikalavimai \\ (PS inžinieriaus \\ požiūris)\end{tabular}      &                     &                                      &                           \\ \hline
-\begin{tabular}[c]{@{}l@{}}Realizaciniai PS \\ reikalavimai \\ (programuotojo požiūris)\end{tabular}          &                     &                                      &                           \\ \hline
-\end{tabular}
+		\end{enumerate}
+		                           &                                                                                        \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular}  &                     &                                      &                           \\ \hline
+		\begin{tabular}[c]{@{}l@{}}IS reikalavimai \\ (IS inžinieriaus \\ požiūris)\end{tabular}  &                     &                                      &                           \\ \hline
+		\begin{tabular}[c]{@{}l@{}}PS reikalavimai \\ (sisteminio analitiko \\ požiūris)\end{tabular}  &                     &                                      &                           \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Projektiniai PS \\ reikalavimai \\ (PS inžinieriaus \\ požiūris)\end{tabular}  &                     &                                      &                           \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Realizaciniai PS \\ reikalavimai \\ (programuotojo požiūris)\end{tabular} &                     &                                      &                           \\ \hline
+	\end{tabular}
 \end{table}
 
 
 
 \begin{table}[h!]
-\begin{tabular}{|l|l|l|l|}
-\hline
-                                                                                                              & Kas? (funkciniai vienetai) & \multicolumn{1}{c|}{Kur? (vieta)} & Kada? (laikas) \\ \hline
-\begin{tabular}[c]{@{}l@{}}Veikslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular}             &                            &                                   &                \\ \hline
-\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular} &                            &                                   &                \\ \hline
-\begin{tabular}[c]{@{}l@{}}IS reikalavimai \\ (IS inžinieriaus \\ požiūris)\end{tabular}                      &                            &                                   &                \\ \hline
-\begin{tabular}[c]{@{}l@{}}PS reikalavimai \\ (sisteminio analitiko \\ požiūris)\end{tabular}                 &                            &                                   &                \\ \hline
-\begin{tabular}[c]{@{}l@{}}Projektiniai PS \\ reikalavimai \\ (PS inžinieriaus \\ požiūris)\end{tabular}      &                            &                                   &                \\ \hline
-\begin{tabular}[c]{@{}l@{}}Realizaciniai PS \\ reikalavimai \\ (programuotojo požiūris)\end{tabular}          &                            &                                   &                \\ \hline
-\end{tabular}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		                           & Kas? (funkciniai vienetai) & \multicolumn{1}{c|}{Kur? (vieta)} & Kada? (laikas) \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Veikslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}IS reikalavimai \\ (IS inžinieriaus \\ požiūris)\end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}PS reikalavimai \\ (sisteminio analitiko \\ požiūris)\end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Projektiniai PS \\ reikalavimai \\ (PS inžinieriaus \\ požiūris)\end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Realizaciniai PS \\ reikalavimai \\ (programuotojo požiūris)\end{tabular} &                            &                                   &                \\ \hline
+	\end{tabular}
 \end{table}
 
 
 \section{Verslo reikalavimai}
-	
-	\subsection{Kodėl?}
 
-		\subsubsection{Išorinė verslo analizė}
+\subsection{Kodėl?}
 
-		\subsubsection{Vidinė verslo analizė}
+\subsubsection{Išorinė verslo analizė}
 
-		\subsubsection{SWOT analizė}
+\subsubsection{Vidinė verslo analizė}
 
-		\subsubsection{Siūloma verslo strategija}
+\subsubsection{SWOT analizė}
 
-		\subsubsection{Tikslų medis}
+\subsubsection{Siūloma verslo strategija}
 
-	\subsection{Kaip?}
+\subsubsection{Tikslų medis}
 
-	\subsection{Kas?}
+\subsection{Kaip?}
 
-	\subsection{Kieno?}
+\subsection{Kas?}
 
-	\subsection{Kur?}
+\subsection{Kieno?}
 
-	\subsection{Kada?}
+\subsection{Kur?}
+
+\subsection{Kada?}
 
 \end{document}
 
