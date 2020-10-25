@@ -116,7 +116,7 @@ Sistema siekiama išspręsti šias problemas:
 	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
 		\hline
 		                          & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Veikslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular} &                     &
+		\begin{tabular}[c]{@{}l@{}}Verslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular} &                     &
 			1.Galimybė valdyti duomenis apie žmones susirgusius virusu.
 			2.Galimybė valdyti duomenis apie naujus ligos atvejus.
 			3.Galimybė registruoti užsikrėtusių žmonių maršrutus.
@@ -128,10 +128,15 @@ Sistema siekiama išspręsti šias problemas:
 			9.Galimybė valdyti duomenis apie viešojo maitinimosi įstaigas.
 			10.Galimybė valdyti duomenis apie asmens rizikos faktorius.
 			11.Galimybė valdyti informaciją apie asmens saviizoliacijos patvirtinimą.
-			12.Galimybė valdyti asmenų sveiaktos informaciją
+			12.Galimybė valdyti asmenų sveiaktos informaciją&
+			\textbf{Verslo objektai (esybės):} Privatus asmuo, Renginių organizatorius; Maitinimo / pasilinksminimo įstaigos atstovas; Karštosios linijos operatorius; NVSC departamento epidemiologas; Sveikatos apsaugos ministerija; Nacionalinis visuomenės sveikatos centras; Muitinė; Valstybė; E.\newline \textbf{Verslo objektai (procedūros:)} Užsiregistruoti; Patvirtinti saviizoliaciją; Būti įspėtam apie riziką (galima kontaktą); Užregistruoti renginį; Užregistruoti įstaigą; Užregistruoti atvejį; Užregistruoti maršrutą; Pateikti pavojingų šalių sąrašą; Gauti epidemiologinę statistiką; Pateikti iš pavojingų šalių atvykusių žmonių sąrašą; Kontroliuoti saviizoliaciją\\ \hline
+	\end{tabular}
+\end{table}
 
-
-		                          &                                                                                        \\ \hline
+\begin{table}[h!]
+	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+		                           & Kas? (funkciniai vienetai) &Kur? (vieta) & Kada? (laikas) \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Verslo reikalavimai \\ (verslo inžinieriaus \\ požiūris) \end{tabular} &                            &                                   &                \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -139,19 +144,19 @@ Sistema siekiama išspręsti šias problemas:
 	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
 		                          & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
 		\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular} &  
-			Epidemiloginės situacijos sekimo sistemą reikia kurti, kad būtų galima sekti ir valydti duomenis apie 
+			Epidemiologinės situacijos sekimo sistemą reikia kurti, kad būtų galima sekti ir valydti duomenis apie 
 			virusu susirgusius asmenis. Sistema padėtų centralizuoti epidemijos sekimą ir įgalintų greitą komunikaciją 
 			tarp suinteresuotų asmenų, pateiktų informaciją sergantiems asmenims ir taip padėtų kovoje su virusu 
 			bei įgalintų efetyvesnį viruso plitimo valdymą.             &     
 
 			Informacija tarp suinteresuotų šalių bus apsikeičiama kompiuterizuotu, automatizuotu būdu.
-			Duomenys apsikeičiami arba numatytais laiko momentais arba suinteresuotai pusei paprašius įvykdyti tranzakcija.
+			Duomenys apsikeičiami arba numatytais laiko momentais arba suinteresuotai pusei paprašius įvykdyti transakcija.
 			Komunikacija tarp suinteresuotu šalių vyksta serverių duomenų apsikeitimo vykmenyje.
 			Privatiems asmenims informacija yra perduodama trumposiomis žinutėmis, elektroniniu paštu arba asmeniniu skambučiu.
 			
 			                                 & 
 
-			Sistemoje kaupsime epidemiologinius duomenis susijusius apie asmenis: kur žmogus lankėsi, jo sveikatos istorija, asmeniai duomenys, žmogaus esamą buvimo vietą , viruso testo rezultatus.
+			Sistemoje kaupsime epidemiologinius duomenis susijusius apie asmenis: kur žmogus lankėsi, jo sveikatos istorija, asmeniniai duomenys, žmogaus esamą buvimo vietą , viruso testo rezultatus.
 			Sistemoje kaupsime epidemiologinius duomenis apie renginius ir viešasias maitinimo įskaitas, kada kokia žmonės ten lankės, kas dalyvavo renginyje ar maitinimo istaigoje prieš susirgdamas.
 			Sistemoje kaupsime epidemiologinius duomenis apie pavojingu šalių sąrašus ir žmones atvykstančius iš šių šalių, kur jie lankėsi, kiek laiko izoliavosi.
 			Visi duomenys bus valdomi pagal BDAR įstatymą.
@@ -190,18 +195,55 @@ Sistema siekiama išspręsti šias problemas:
 \begin{table}[h!]
 	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
 		                           & Kodėl? (vizija ir suvaržymai) & Kaip? (sistemos panaudojimo atvėjai ir kokybė) & Ką(duomenys ir jų sauga) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Programos reikalavimai \\ (Kiekvienai sistemai)\end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Programos reikalavimai \\ (Kiekvienai sistemai)\end{tabular} & 
+			Sistema bus kuriama debesijos komiuterijos pagalba pagerinti ateities išlaikymo kaštus. 
+			Sistema laikysis organizacijos politinių reikalavimų ir ribojimų.
+			Sistema laikysis Lietuvos ir Europos teisinių apribojimų.
+			Sistemai svarbiau patikimumas, kad visi paciantai būtų užregistruoti negu našumas, vartotojas gali palaukti. & 
+			
+			                                  &   
+			Sistemoje yra saugomi privačiu asmenų asmeniai duomenys bei su jų sveikatos būkle susije duomenys.
+			Sistema turi užtikrinti, kad neautorizuoti ir blogi aktoriai negalėtų pasiekti privačių asmenų duomenų.
+			Duomenys turi būti apsaugoti ne tik nuo išorinių blogų aktorių, bet ir nuo sistemos kūrėjų ir palaikytojų klaidų, 
+			duomenis apsaugant nuo atsitiktinio jų ištrynimo ar modifikavimo.
+			Visas disponavimas duomenimis turi atitikti Lietuvos ir Europos įstatymus.           \\ \hline
 	\end{tabular}
 \end{table}
 
 \begin{table}[h!]
 	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
 		                           & Kas? (vartotojo sąsajos, prieinamumo ir ergonomikos reikalavimai) &Kur? (sistemos platformos reikalavimai) & Kada? (laiko suvaržymai aplikacijos panaudojimo atvejuose) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Programos reikalavimai \\ (Kiekvienai sistemai) \end{tabular} &                            &                                   &                \\ \hline
+		\begin{tabular}[c]{@{}l@{}}Programos reikalavimai \\ (Kiekvienai sistemai) \end{tabular} &  
+			
+			Sistema turi būti pritaikyta naudotis vartotojams su regos sutrikimais.
+			Turi būti galimybė keisti vartotojo sąsajos spalvų gama labiau pritaikytą daltonikams.
+			Sistema taip turi suteikti galimybė padidinti vartotojo sąsajos tekstą ir elementų dydį bei spalvą 
+			padedant žmonėms su silpnu regėjimu.
+			Sistema turi turėtį apmokymo programą naujiems vartotojams su įvairiais kompiuterinio raštingumo lygiais, 
+			tačiau daroma prielaida, kad vartotojas turi bazinius kompiuterinio raštingumo įguydžius.
+			Patyrusiems vartotojas sistema turi suteikti greitojo vedimo ir sisteminių klaviatūros trumpinių galimybę taip pagreitinant patyrusio vartotojo darbą.
+			Sistema turi išsijungti po 30 minutčių neaktyvumo.
+			Sėkmingai atlikta užduotis sistemoje turi būti identifikuojama garsiniu signalu.
+			Visa sistema turi būti sukurta laikanti žmogaus ir kompiuterio sąveikos euristikų.
+
+                   &  
+
+			Sistema veiks mikroservisų architektūros principu naudojant AWS debesijos sistema.
+			Papildomi sisteminiai resursai bus padidinami ir sumažinami pagal sistemos apkrovas.
+			Sistemos vartotojai sistemą pasiekti galės naudodamiesi vidutinio galingumo stacionariu kompiuteriu Windows 10 aplinkoje.  
+
+	             & 
+
+			Sistema efektyviai turi veikti 24h per parą.
+			Didžiausia apkrova sistemai bus darbo valandomis kai yra paskelbiama nauji viruso atvėjai.
+			Sistemoje svarbu užtikrinti duomenų integralumą, kad visi siunčiami ir gaunami duomenys galiausiai būtų išsaugomi.
+			Sistema turi palaikyti didelį įrašų kiekį ir jų siuntinėjimą tiek siunčiant informacija kitiems sistemos aktoriams tiek ir gaunant žinutes iš tų pačiu aktorių.
+			Duomenų integralumas turi būti išsprendžiamas per vieną minutę.
+			Viena tranzakcija negali trukti ilgiau negu 0,1 sekundės.
+
+			               \\ \hline
 	\end{tabular}
 \end{table}
-
-
 
 \section{Verslo reikalavimai}
 
@@ -431,15 +473,15 @@ Su viruso plitimu susijusių duomenų agregavimas, leidžiantis sekti jo plitim�
 
 Verslo objektai (esybės):
 	\begin{itemize}
-		\item Privatus asmuo - verslo objektas, atitinkantis privatų asmenį tikrame pasaulyje.
-		\item Renginių organizatorius -  verslo objektas, atitinkantis renginių organizatorių tikrame pasaulyje.
-		\item Maitinimo/pasilinksminimo įstaigos atstovas - verslo objektas, atitinkantis maitinimo pasilinksminimo įstaigos atstovą tikrame pasaulyje.
+		\item Privatus asmuo - Lietuvos Respublikoje gyvenantis fizinis asmuo. 
+		\item Renginių organizatorius - juridinis asmuo, kuris organizuoja renginius Lietuvos Respublikoje.
+		\item Maitinimo/pasilinksminimo įstaigos atstovas - juridinis asmuo, atstovaujantis maitinimo/pasilinksminimo įstaigą.
 		\item Karštosios linijos operatorius - verslo objektas, atitinkantis karštosios linijos operatorių tikrame pasaulyje.
-		\item NVSC departamento epidemiologas - verslo objektas, atitinkantis NSVC departamento epidemiologą tikrame pasaulyje.
+		\item NVSC departamento epidemiologas - Juridinis asmuo, kuris užima NSVC departamento epidemiologo pareigas.
 		\item Sveikatos apsaugos ministerija - verslo objektas, atitinkantis atitinkantis sveikatos apsaugos ministeriją tikrame pasaulyje.
 		\item Nacionalinis visuomenės sveikatos centras - verslo objektas, atitinkantis nacionalinį visuomenės sveikatos centrą tikrame pasaulyje.
 		\item Muitinė - verslo objektas, atitinkantis nacionalinį visuomenės sveikatos centrą tikrame pasaulyje.
-		\item Valstybė - verslo objektas, atitinkantis valstybę tikrame pasaulyje.
+		\item Valstybė - verslo objektas, atitinkantis Lietuvos Respublikos valstybę tikrame pasaulyje.
 		\item E. policija - verslo objektas, atitinkantis elektroninės policijos sistemą tikrame pasaulyje.
 	\end{itemize}
 	
@@ -461,8 +503,8 @@ Verslo objektai (esybės):
 
 \noindent Kaip tikslų medžio potikslius įgyvendina verslo objektai:
 \begin{itemize}
-	\item \textbf{Sukurti centralizuotą duomenų apie susirgimus registrą.} Verslo objektai (procedūros):  užregistruoti atvejį, užregistruoti maršrutą, pateikti pavojingų šalių sąrašą.
-	\item \textbf{Sukurti centralizuotą duomenų apie maitinimo / pasilinksminimo įstaigų ir renginių lankytojus registrą.}: Verslo objektai (procedūros): užregistruoti atvejį, užregistruoti renginį, užregistruoti įstaigą.
+	\item \textbf{Sukurti centralizuotą duomenų apie susirgimus registrą.} Verslo objektai (procedūros):  užregistruoti atvejį, užregistruoti maršrutą, pateikti pavojingų šalių sąrašą. Visi duomenys surenkami iš didelio kiekio išorinių sistemų/esybių. 
+	\item \textbf{Sukurti centralizuotą duomenų apie maitinimo / pasilinksminimo įstaigų ir renginių lankytojus registrą.}: Verslo objektai (procedūros): užregistruoti atvejį, užregistruoti renginį, užregistruoti įstaigą. 
 	\item \textbf{Įspėti privačius asmenis apie riziką.} Verslo objektas (procedūra) - būti įspėtam apie riziką (galimą kontaktą).
 	\item \textbf{Įspėti organizatorius apie atvejus renginiuose / įstaigose.} Verslo objektas (procedūra) - būti įspėtam apie riziką (galimą kontaktą).	
 	\item \textbf{Pranešti apie privalomą saviizoliaciją.} Verslo objektas (procedūra) - būti įspėtam apie privalomą saviizoliaciją.
@@ -507,13 +549,7 @@ dalykinės srities specialistus, įgyvendinančius verslo tikslus ir jų įgalio
 		Privalo patvirtinti, jog gauną korektišką epidemiologinę statistiką\\ \hline	
 		Muitinė &
 		Pateikti iš pavojingų šalių atvykusių žmonių sąrašą&
-		Privalo patvirtinti, jog pateikiamas žmonių sąrašas yra korektiškas\\ \hline	
-		Valstybė &
-		&
-		\\ \hline	
-		E. policija &
-		&
-		\\ \hline																	
+		Privalo patvirtinti, jog pateikiamas žmonių sąrašas yra korektiškas\\ \hline																	
 \end{longtable}
 \end{center}
 
