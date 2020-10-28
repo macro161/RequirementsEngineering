@@ -363,27 +363,25 @@ Atsižvelgus į SWOT analizę, nuspręsta tolimesnę sistemos specifikaciją ori
 \subsubsection{Tikslų medis}
 
 \begin{enumerate}
-	\item Tapti pagrindiniu duomenų apie viruso plitimą visuomenėje šaltiniu
+	\item Tapti išsamiausiu duomenų apie viruso plitimą visuomenėje šaltiniu epidemiologams
 	      \begin{enumerate}
-		      \item Sukurti centralizuotą duomenų apie susirgimus registrą
-		      \item Sukurti centralizuotą duomenų apie maitinimo / pasilinksminimo įstaigų ir renginių lankytojus registrą
+		      \item Sukurti centralizuotą duomenų apie susirgimus registrą.
+		      \item Sukurti centralizuotą duomenų apie maitinimo / pasilinksminimo įstaigų ir renginių lankytojus registrą.
 	      \end{enumerate}
-	\item Atlikti viruso plitimo prevenciją
+	\item Atlikti efektyvesnę viruso plitimo prevenciją
 	      \begin{enumerate}
-		      \item Įspėti privačius asmenis apie riziką
-		      \item Įspėti organizatorius apie atvejus renginiuose / įstaigose
+		      \item Įspėti privačius asmenis apie riziką.
+		      \item Įspėti organizatorius apie atvejus renginiuose / įstaigose.
 	      \end{enumerate}
-	\item Užtikrinti saviizoliacijos laikymąsi.
+	\item Užtikrinti platesnį saviizoliacijos laikymąsi.
 	      \begin{enumerate}
-		      \item Pranešti apie privalomą saviizoliaciją.
+		      \item Įspėti visus asmenims apie privalomą saviizoliaciją.
 		            \begin{enumerate}
-			            \item Gauti pavojingų šalių sąrašą.
-			            \item Gauti atvykstančių žmonių sąrašą.
+			            \item Identifikuoti asmenis, kuriems reikalinga saviizoliacija.
 		            \end{enumerate}
 		      \item Tikrinti saviizoliacijos laikymąsi.
 		            \begin{enumerate}
-			            \item Registruoti GPS duomenis.
-			            \item Tikrinti laikymąsi pagal gautas nuotraukas.
+			            \item Tikrinti asmens buvimo vietą.
 		            \end{enumerate}
 		      \item Pranešti apie pažeidimus policijai.
 	      \end{enumerate}
@@ -614,19 +612,36 @@ Pasirenkame nagrinėti tik vieną iš sistemos posistemių: maitinimo / pasilink
 
 \subsection{Kodėl?}
 
-Skyrelyje "Kodėl?" pateikiama posistemės projekto apimtis (angl. project scope) ir nustatomas prioritetas kiekvienai užduočiai, t.y. pasakome, kokia eilės tvarka reikia kurti sistemą. 
+Šiame poskyriuje išskiriamas projekto tikslus aprašantis tikslų medžio pomedis - "Užtikrinti platesnį saviizoliacijos laikymąsi" - apibrėžiantis projekto apimtį (angl. \emph{project scope}) ir 
+juo remiantis aprašomi verslo procesai (suskirstyti pagal tikslus). Jiems priskiriami prioritetai, apibrėžiamos įvestys, išvestys ir inicijuojantys verslo įvykiai.
 
 \begin{itemize}
-	\item Vietų, kuriose lankosi žmonės registravimas:
-	\begin{enumerate}
-		\item Renginių organizatorius gali užregistruotį naują renginį. (1 prioritetas)
-		\item Maitinimo/pasilinksminimo įstaigos atstovas gali užregistruoti naują įstaigą. (2 prioritetas)
-	\end{enumerate}	
-	\item Privatus asmuo, kuris lankosi renginyje arba maitinimo/pasilinksminimo įstaigoje gali pranešti savo lankymasį renginyje arba maitinimo/pasilinksminimo įstaigoje. (3 prioritetas)
-	\item Renginių organizatorius arba maitinimo/pasilinksminimo įstaigos atstovas, gali užregistruoti privatų asmenį, jog jis lankėsi renginyje arba maitinimo/pasilinksmino įstaigoje. (4 prioritetas)
-	\item Privatus asmuo gali gauti įspėjimą arba galimą kontaktą su sergančiu virusu asmeniu. (5 prioritetas)
-	\item Renginių organizatorius, maitinimo/pasilinksminimo įstaigos atstovas gali gauti įspėjimą apie užsikrėtusio virusu asmens lankymąsi renginyje/įstaigoje. (6 prioritetas)
+	\item Įspėti visus asmenis apie privalomą saviizoliaciją:
+	\begin{itemize}
+		\item Saviizoliacijos fiksavimas. Gavus informaciją apie iš pavojingos šalies atvykusį ar asmenį, fiksuojama privaloma saviizoliacija. Gavus informaciją apie užsikrėtusiojo kontaktus, pastarųjų saviizoliacija taip pat fiksuojama. (1 prioritetas). Inicijuojantis įvykis - muitinė pateikia informaciją apie atvykusius asmenis arba gaunama informacija apie susirgimo atvejį. Įvestis - pavojingų šalių sąrašas, atvykusių žmonių sąrašas, informacija apie užsikrėtusijį ir su juo kontaktavusius asmenis. Išvestis - užfiksuota(os) privaloma saviizoliacija.
+		\item Saviizoliacijos pabaigos fiksavimas. 
+		\item Pranešimas apie privalomą saviizoliaciją. Užfiksavus privalomą saviizoliaciją, asmuo yra įspėjamas SMS žinute. (2 prioritetas). Inicijuojantis įvykis - užfiksuota saviizoliacija. Įvestis - asmens duomenys ir saviizoliacijos vieta. Išvestis - SMS pranešimas privačiam asmeniui, kuriam reikalinga saviizoliacija. 
+		\item Pavojingų šalių sąrašo atnaujinimas. Sveikatos apsaugos ministerija atnaujina sąrašą šalių, pagal kurį sprendžiama apie privalomą izoliaciją. (6 prioritetas). Inicijuojantis įvykis - naujas SAM paskelbia naują pavojingų šalių sąrašą. Įvestis - pavojingų šalių sąrašas. Išvestis - atnaujintas pavojingų šalių sąrašas.
+	\end{itemize}
+	\item Tikrinti saviizoliacijos laikymąsi:
+	\begin{itemize}
+		\item Priminimas apie saviizoliacijos laikymosi patvirtinimą. Privačiam asmeniui, kuriam reikalinga saviizoliacija, kas 12 valandų gauna pranešimą apie saviizoliacijos laikymosi patvirtinimą. (3 prioritetas). Inicijuojantis įvykis - kalendorinis (kas 12 valandų). Įvestis - saviizoliacijų sąrašas
+		\item Saviizoliacijos laikymosi patvirtinimas. Privatus asmuo, kuriam reikalinga saviizoliacija, gauna pranešimą apie reikalingą saviizoliacijos patvirtinimą. Patvirtinti saviizoliaciją jis gali atsiųsdamas savo lokaciją arba nuotrauką. (4 prioritetas).
+		\item Saviizoliacijos pažeidimo fiksavimas. Privačiam asmeniui, kuris tvirtina savo saviizoliaciją dalindamasis buvimo vieta, atsiuntus koordinates, nutolusias nuo deklaruotos saviizoliacijos vietos daugiau nei 100 metrų, fiksuojamas saviizoliacijos pažeidimas. (5 prioritetas).
+	Jei atsiunčiama nuotrauką ir randamas pažeidimas, jis fiksuojamas.  (\ref{img:business_process_identify_violation} pav.)
+	\end{itemize}
+	\item Pranešti apie pažeidimus policijai:
+	\begin{itemize}
+		\item Reikalingų duomenų perdavimas policijai (pranešimas apie saviizoliacijos pažeidimą). Užfiksavus pažeidimą, visi reikalingi pranešimui duomenys perduodami policijai. (8 prioritetas). 
+	\end{itemize}
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{img/business_process_identify_violation.png}
+	\caption{Saviizoliacijos pažeidimo fiksavimo verslo procesas}
+	\label{img:business_process_identify_violation}
+\end{figure}
 
 \subsection{Kaip?}
 Skyrelyje "Kaip?" pateikiama kokių informacinių, skaičiavimo, komunikavimo ar kitokių paslaugų prireiks posistemės įgyvendinimui.
