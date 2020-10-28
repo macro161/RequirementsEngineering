@@ -986,6 +986,35 @@ Turi būti teisingai nustatomi 99,9\% saviizoliacijos pažeidimų.
 Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
 
 \subsection{Ką?}
+Saviizoliacijos užtikrinimo naujoje informacinėje sistemoje turėtų būti numatytos šios informacijos saugyklos:
+\begin{enumerate}
+	\item Izoliuotų asmenų duomenų bazę. 
+	Tai yra izoliuotų asmenų duomenų bazė kurioje saugomi duomenyts apie izoliuotus asmenis. Rašyti naujus įrašus į duomenų bazę gali 
+	tik epidemiologai arba jie automatiškai importuoji iš e - sveikatos sistemos. Įrašai pateikiami darbuotojo darbo vietos kompiuterio ekrane. 
+	Į bazę galima rašyti tik įrašus, kuriuose visi laukai yra užpildyti. Už įraše pateiktos informacijos korektiškumą atsako tą įrašą sukūręs darbuotojas.
+
+	\item Paveiktų šalių duomenų bazę.
+	Tai šalių duomenų bazė, kurioje nurodytas šalies paveikimo lygis. Šią informaciją gali keisti tik ministras arba ministro įgalioti 
+	asmenys. Duomenys yra pasiekiami visiems sistemos naudotojams ir išorės žmonėms. 
+	Įrašai pateikiami darbuotojo darbo vietos kompiuterio ekrane.
+	Į bazę galima rašyti tik įrašus, kuriuose visi laukai yra užpildyti.
+	Už įraše pateiktos informacijos korektiškumą atsako tą įrašą sukūręs darbuotojas.
+
+	\item Saviizoliacijos patvirtinimo duomenų bazę.
+	Tai saviizoliacijos patvirtinimų duomenų bazė. Įrašai pateikiami iš izoliuojančio asmens mobiliajame telefone esančios programėlės.
+	Į bazę galima rašyti tik įrašus, kuriuose visi laukai yra užpildyti.
+	Už įraše pateiktos informacijos korektiškumą atsako tą įrašą sukūręs asmuo.
+
+	\item Išsiųstų pranešimų duomenų bazė.
+	Įrašai automatiškai įrašomi į pranešimų duomenų bazę, kai bet koks pranešimas žmogui apie būtina izoliaciją, apie kontakto turėjimą yra išsiunčiamas. 
+
+	\item Pažeidimų duomenų bazė. 
+	Įrašas įvedamas į duomenų bazę, kai pažeidimas yra užfiksuotas. 
+	Į bazę galima rašyti tik įrašus, kuriuose visi laukai yra užpildyti.
+	Už įraše pateiktos informacijos korektiškumą atsako tą įrašą sukūręs darbuotojas.
+
+\end{enumerate} 
+
 \subsection{Kas?}
 \subsection{Kur?}
 \subsection{Kada?}
@@ -1011,6 +1040,7 @@ Sistema bus apribojama šiais ekonominiais aspektais:
 
 \textbf{Teisiniai apribojimai:} sistema laikysis Lietuvos Respublikos ir Europos Sąjungos teisinių apribojimų.
 \subsection{Kaip?}
+
 \subsection{Ką?}
 \subsection{Kas?}
 \subsection{Kur?}
