@@ -264,7 +264,7 @@ Sistema siekiama išspręsti šias problemas:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.6]{img/use_case_diagram.png}
+	\includegraphics[scale=0.6]{img/use_case_diagram_business.png}
 	\caption{Konteksto diagrama}
 	\label{img:use_case_diagram}
 \end{figure}
@@ -416,13 +416,6 @@ Atsižvelgus į SWOT analizę, nuspręsta tolimesnę sistemos specifikaciją ori
 	\item{Galimybė valdyti pavojingų šalių sąrašą.}
 	      \begin{enumerate}
 		      \item{Galimybė gauti pavojingų šalių sąrašą iš ,,Sveikatos apsaugos ministerija"}
-		            \begin{enumerate}
-			            \item{Galimybė pavojingų šalių sąraša perduoti ,,Renginių organizatoriai}
-			            \item{Galimybė pavojingų šalių sąrašą perduoti ,,E. policija"}
-			            \item{Galimybė pavojingų šalių sąrašą perduoti ,,Muitinė"}
-			            \item{Galimybė pavojingų šalių sąrašą perduoti ,,Maitinimo įstaigos"}
-			            \item{Galimybė pavojingų šalių sąrašą perduoti privatiems asmenims}
-		            \end{enumerate}
 	      \end{enumerate}
 	\item{Galimybė valdyti informaciją apie saviizoliacijos pažeidimus.}
 	      \begin{enumerate}
@@ -434,12 +427,6 @@ Atsižvelgus į SWOT analizę, nuspręsta tolimesnę sistemos specifikaciją ori
 	\item{Galimybė valdyti duomenis apie iš pavojingų šalių atvykstančius asmenis.}
 	      \begin{enumerate}
 		      \item{Galimybė gauti apie iš pavojingų šalių atvykstančius asmenis iš ,,Muitinė".}
-		            \begin{enumerate}
-			            \item{Galimybė perduoti informacija apie iš pavojingų šalių atvykstančius asmenisi ,,Renginių organizatoriai"}
-			            \item{Galimybė perduoti informacija apie iš pavojingų šalių atvykstančius asmenisi ,,E. policija"}
-			            \item{Galimybė perduoti informacija apie iš pavojingų šalių atvykstančius asmenisi ,,Muitinė"}
-			            \item{Galimybė perduoti informacija apie iš pavojingų šalių atvykstančius asmenisi ,,Maitinimo įstaigos"}
-		            \end{enumerate}
 	      \end{enumerate}
 	\item{Galimybė valdyti duomenis apie masinius renginius.}
 	      \begin{enumerate}
@@ -620,7 +607,7 @@ juo remiantis aprašomi verslo procesai (suskirstyti pagal tikslus). Jiems prisk
 	\begin{itemize}
 		\item Saviizoliacijos fiksavimas. Gavus informaciją apie iš pavojingos šalies atvykusį ar asmenį, fiksuojama privaloma saviizoliacija. Gavus informaciją apie užsikrėtusiojo kontaktus, pastarųjų saviizoliacija taip pat fiksuojama. (1 prioritetas). Inicijuojantis įvykis - muitinė pateikia informaciją apie atvykusius asmenis arba gaunama informacija apie susirgimo atvejį. Įvestis - pavojingų šalių sąrašas, atvykusių žmonių sąrašas, informacija apie užsikrėtusijį ir su juo kontaktavusius asmenis. Išvestis - užfiksuota(os) privaloma saviizoliacija.
 		\item Saviizoliacijos pabaigos fiksavimas. Gavus informaciją apie neigiamą testą arba praėjus 2 savaitėms nuo saviizoliacijos pradžios (jei testas neigiamas), saviizoliacija pažymima kaip pasibaigusi. (2 prioritetas). Inicijuojantis įvykis - kalendorinis (2 savaitės nuo saviizoliacijos pradžios) arba neigiamas pakartotinio testo rezultatas. Įvestis - privataus asmens saviizoliacijos duomenys. Išvestis - saviizoliacija, kuri pažymėta, kaip baigta.
-		\item Pranešimas apie privalomą saviizoliaciją. Užfiksavus privalomą saviizoliaciją, asmuo yra įspėjamas SMS žinute. (3 prioritetas). Inicijuojantis įvykis - užfiksuota saviizoliacija. Įvestis - asmens duomenys ir saviizoliacijos vieta. Išvestis - SMS pranešimas privačiam asmeniui, kuriam reikalinga saviizoliacija. 
+		\item Pranešimas apie privalomą saviizoliaciją. Užfiksavus privalomą saviizoliaciją, asmuo yra įspėjamas SMS žinute. (3 prioritetas). Inicijuojantis įvykis - reikalingos privalomos saviizoliacijos užfiksavimas. Įvestis - asmens duomenys ir saviizoliacijos vieta. Išvestis - SMS pranešimas privačiam asmeniui, kuriam reikalinga saviizoliacija. 
 		\item Pavojingų šalių sąrašo atnaujinimas. Sveikatos apsaugos ministerija atnaujina sąrašą šalių, pagal kurį sprendžiama apie privalomą izoliaciją. (7 prioritetas). Inicijuojantis įvykis - naujas SAM paskelbia naują pavojingų šalių sąrašą. Įvestis - pavojingų šalių sąrašas. Išvestis - atnaujintas pavojingų šalių sąrašas.
 	\end{itemize}
 	\item Tikrinti saviizoliacijos laikymąsi:
@@ -644,13 +631,35 @@ juo remiantis aprašomi verslo procesai (suskirstyti pagal tikslus). Jiems prisk
 \end{figure}
 
 \subsection{Kaip?}
-Skyrelyje "Kaip?" pateikiama kokių informacinių, skaičiavimo, komunikavimo ar kitokių paslaugų prireiks posistemės įgyvendinimui.
+Šiame poskyriuje aprašomas projekto gylis - kokios transakcijos reikalingos (\ref{img:business_transactions} pav.), kokios verslo užduotys ir kiek yra kompiuterizuojamos. 
+
+\subsubsection{Verslo transakcijos}
 \begin{itemize}
-	\item Visos užduotys aprašytos "Kodėl?" skyrelyje turi būti įgyvendintos ir pasiekiamos kompiuterizuotai.
-	\item Užduotis "Įspėjimai apie užsikrėtusio virusu asmens lankymąsi" turi būti automatizuota, o įspėjimai išsiunčiami tekstine žinute automatiškai.
-	\item Užduočių rezultatai turi būti kiek galima tikslesni, klaidos tokio tipo projekte neatleistinos.
-	\item Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
+	\item Būti įspėtam apie privalomą saviizoliaciją. Visos šią transakciją palaikančių procesų (saviizoliacijos ir jos pabaigos fiksavimo, pranešimo apie privalomą saviizoliaciją) užduotys yra vykdomos automatiškai.
+	\item Patvirtinti saviizoliacijos laikymąsi. Visos šią transakciją palaikančio proceso ''pranešimas apie privalomą saviizoliaciją" užduotys yra vykdomos automatiškai. Proceso ,,saviizoliacijos laikymosi patvirtinimas'' užduotis pateikti nuotrauką bei pateikti buvimo vietą yra kompiuterizuotos.
+	\item Pranešti apie saviizoliacijos pažeidimą policijai. Visos šią transakciją palaikančių proceso ,,reikalingų duomenų perdavimas policijai" užduotys yra vykdomos automatiškai. Proceso visos ,,saviizoliacijos pažeidimo fiksavimas" užduotys yra vykdomos automatiškai, išskyrus patikrinti nuotrauką, kuri yra kompiuterizuota.
+	\item Atnaujinti pavojingų šalių sąrašą. Šią transakciją palaikančio proceso ,,pavojingų šalių sąrašo atnaujinimas" užduotis yra kompiuterizuojama.
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{img/use_case_diagram_user.png}
+	\caption{Verslo transakcijos}
+	\label{img:business_transactions}
+\end{figure}
+
+\subsubsection{Suvaržymai (nefunkciniai reikalavimai)}
+Rezultatai, patikimumas bei saugumas yra labai svarbūs dėl informacijos kuria disponuojama jautrumo bei dalykinės srities rimtumo.
+
+\textbf{Rezultatai}:
+Turi būti teisingai identifikuojama 100\% privačių asmenų, kuriems reikalinga saviizoliacija ir tai galima nustayti pagal turimus duomenis. 
+Turi būti teisingai nustatomi 99,9\% saviizoliacijos pažeidimų.
+
+\textbf{Patikimumas}:
+100\% asmenų turi būti informuojama apie privalomą saviizoliaciją. Apie 100\% pažeidimų turi būti informuojama e. policija.
+
+\textbf{Saugumas}:
+Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
 
 \subsection{Ką?}
 \subsection{Kas?}
