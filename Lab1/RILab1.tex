@@ -664,6 +664,8 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 \subsection{Ką?}
 Šiame poskyriuje formuluojami verslo objektus modeliuojančių informacinių objektų reikalavimai.
 
+\subsubsection{Informaciniai objektai}
+
 \noindent\textbf{Privatus asmuo}:
 \begin{itemize}
 	\item Identifikatorius - asmens kodas.
@@ -677,7 +679,7 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 
 \noindent\textbf{Saviizoliacija}:
 \begin{itemize}
-	\item Identifikatorius - karantinuojamo žmogaus asmens kodas + saviizoliacijos pradžia. T. y. AKYYMMDD, kur AK - asmens kodas, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena.
+	\item Identifikatorius - unikalus sugeneruojamas kodas + saviizoliacijos pradžia. T. y. KKKKKKKYYMMDD, kur KKKKKKK - kodas, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena.
 	\item Baziniai rodikliai:
 	\begin{itemize}
 		\item Pradžia - data. Privalomas.
@@ -685,6 +687,124 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 		\item Priežastis - kelionė, kontaktas arba liga. Privalomas
 		\item Saviizoliacijos vieta - adresas. Privalomas.
 	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Saviizoliacijos patvirtinimas}:
+\begin{itemize}
+	\item Identifikatorius - saviizoliacijos identifikatorius + data ir laikas. T. y. IDYYMMDDhhmmss, kur ID - saviizoliacijos identifikatorius, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena, hh - valanda, mm - minutės, ss - sekundės.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Tipas - nuotrauka arba koordinatės. Privalomas.
+		\item Vieta - koordinatės. Privalomas, jei tipas - koordinatės.
+		\item Nuotrauka - adresas. Privalomas, jei tipas - nuotrauka.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Saviizioliacija. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Saviizoliacijos pažeidimas}:
+\begin{itemize}
+	\item Identifikatorius - saviizoliacijos identifikatorius + data ir laikas, kuomet fiksuotas pažeidimas. T. y. IDYYMMDDhhmmss, kur ID - saviizoliacijos identifikatorius, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena, hh - valanda, mm - minutės, ss - sekundės.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Tipas - nuotrauka, koordinatės arba jokio patvirtinimo. Privalomas.
+		\item Vieta - koordinatės. Privalomas, jei tipas - koordinatės.
+		\item Nuotrauka - adresas. Privalomas, jei tipas - nuotrauka.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Saviizioliacija. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Šalis}:
+\begin{itemize}
+	\item Identifikatorius - šalies kodas (pagal ISO).
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Pavadinimas - simbolių eilutė, leidžiami lietuviški ir lotyniški simboliai, tarpo, brūkšnio simboliai.
+		\item Pradžia - data. Privalomas.
+		\item Pavojinga - taip arba ne. Privalomas.
+	\end{itemize}
+\end{itemize}
+
+\noindent\textbf{Atvykimas}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Šalis. Privalomas.
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Ligos atvejis (susirgimas)}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+		\item Kontaktai. Privalomas (0 - *).
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Kontaktas}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Vieta - koordinatės. Neprivalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Testo rezultatas}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Rezultatas - teigiamas arba neigiamas. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Pranešimas apie privalomą saviizoliaciją}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Tekstas - simbolių eilutė, leidžiami lietuviški ir lotyniški simboliai, tarpo ir skyrybos ženklai. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
 \end{itemize}
 
 \subsection{Kas?}
