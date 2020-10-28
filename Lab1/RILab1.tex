@@ -258,7 +258,7 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \section{Verslo reikalavimai}\label{sec:versloReq}
 Šiame skyriuje nagrinėjami verslo reikalavimai Epidemiologinės šalies situacijos sekimo sistemai.
 \subsection{Kodėl?}\label{sec:versloReqWhy}
-
+Sistemos sąsajas su išoriniu pasauliu patogiausia vaizduoti konteskto diagrama:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{img/context_diagram.png}
@@ -277,50 +277,30 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \newpage
 \subsubsection{Įvestys}\label{sec:versloReqWhyInput}
 
-\begin{center}
-\begin{longtable}{|L{0.5cm}|L{4cm}|L{3cm}|}
+\begin{itemize}
+	\item registracijos didesnės rizikos renginiuose (matai - kiekis ir korektiškumas);				                                                             
+	\item registracijos viešojo maitinimo įstaigose;                               
+	\item informacija apie keliones iš rizikos šalių;                                 
+	\item pavojingų šalių sąrašas;                                               
+	\item asmenų ligos istorijos;                                                     
+	\item testų rezultatai;                                                          
+	\item saviizoliaciją patvirtinantys vietos nustatymo duomenys                    
+	\item saviizoliaciją patvirtinanti nuotrauką                                    
+	\item atvykusių iš pavojingų šalių žmonių sąrašas                                
+	\item masinių renginių registracijos                                            
+	\item užsikrėtusiųjų maršrutai                                                
+	\item pranešimai apie įtariamus atvejus 
+\end{itemize}
 
-\caption{Įvestys}
-\label{table:input} \\ \hline
-			
-			\textbf{Nr.}        & \textbf{Įvestis}  & \multicolumn{1}{c|}{\textbf{Įvertinimo parametrai}} \\ \hline
-			\multirow{2}{*}{I1} & \multirow{2}{*}{\parbox{4cm}{Registracijos didesnės rizikos renginiuose}} & Kiekis \\ \cline{3-3}
-			                    &                                                             & Korektiškumas \\ \hline
-			I2                  & Registracijos viešojo maitinimo įstaigose                  &                \\ \hline
-			I3                  & Informacija apie keliones iš rizikos šalių                  &               \\ \hline
-			I4                  & Pavojingų šalių sąrašas                                     &               \\ \hline
-			I5                  & Asmenų ligos istorijos                                      &               \\ \hline
-			I6                  & Testų rezultatai                                            &               \\ \hline
-			I7                  & Saviizoliaciją patvirtinantys vietos nustatymo duomenys     &               \\ \hline
-			I8                  & Saviizoliaciją patvirtinanti nuotrauką                      &               \\ \hline
-			I9                  & Atvykusių iš pavojingų šalių žmonių sąrašas                 &               \\ \hline
-			I10                 & Masinių renginių registracijos                              &               \\ \hline
-			I11                 & Užsikrėtusiųjų maršrutai                                    &               \\ \hline
-			I12                 & Pranešimai apie įtariamus atvejus                           &               \\ \hline
-		%
-	
-\end{longtable}
-\end{center}
 \subsubsection{Išvestys}\label{sec:versloReqWhyOutput}
 
-\begin{center}
-\begin{longtable}{|L{0.5cm}|L{4cm}|L{3cm}|}
-
-\caption{Išvestys}
-\label{table:output} \\ \hline
-			
-			\textbf{Nr} & \textbf{Išvestis}                          & Įvertinimo parametrai \\ \hline
-			\textbf{O1} & Statistika                                 &                       \\ \hline
-			\textbf{O2} & Pranešimas apie priverstinę saviizoliaciją &                       \\ \hline
-			\textbf{O3} & Pranešimas apie saviizoliacijos pažeidimą  &                       \\ \hline
-			\textbf{O4} & Pranešimas apie riziką                     &                       \\ \hline
-			\textbf{O5} & Pranešimas renginių org. apie atvejus      &                       \\ \hline
-			\textbf{O6} &                                            &                       \\ \hline
-			\textbf{O7} &                                            &                       \\ \hline
-			\textbf{O8} &                                            &                       \\ \hline
-			\textbf{O9} &                                            &                       \\ \hline
-\end{longtable}
-\end{center}
+\begin{itemize}
+	\item statistika;
+	\item pranešimas apie priverstinę saviizoliaciją;
+	\item pranešimas apie saviizoliacijos pažeidimą;
+	\item pranešimas apie riziką;
+	\item pranešimas renginių org. apie atvejus;
+\end{itemize}
 
 \subsubsection{Reguliacija}\label{sec:versloReqRegulation}
 Sistemoje renkamų bei saugomų duomenų tvarkymą reglamentuoja Lietuvos Respublikos asmens duomenų teisinės apsaugos įstatymas,
