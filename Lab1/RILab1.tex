@@ -1097,15 +1097,26 @@ Sistema bus apribojama šiais ekonominiais aspektais:
 		\\
 		Perkelti sistemos duomenis į nauja DBVS kainuotų 200 žmogaus darbo valandų.
 	\subsubsection{Programų sistemos instaliuojamumo reikalavimai}
+		Programai instaliuoti turi pakakti 40 žmogaus darbo valandų. 
+		\\
+		Maksimalus procentas kodo kurį reiktų pakeisti instaliuojant sistemą yra 0,01\%.
+		Maksimalus procentas failų kuriuos reiktų pakeisti instaliuojant sistemą yra 0,01\%.
 	\subsubsection{Programų sistemos atitikimo keliamumo standartams reikalavimai apibūdina}
+		Keliamumo reikalavimai atitinką apibrėžtą vidinį standartą pagal ISO.
 	\subsubsection{Programų sistemos pakeičiamumo reikalavimai}
-	\subsubsection{Programų sistemos prižiūrimumo reikalavimai}
+		Sistema nauja, todėl nėra senos sistemos kurią būtų galima pakeisti.
 	\subsubsection{Programų sistemos analizuojamumo reikalavimai}
+		Trigdžio priežastis sistemoje turi būti išsiaiškinta per 20 žmogaus darbo valandų.
 	\subsubsection{Programų sistemos keičiamumo reikalavimai}
+		Trigžio priežastis sistemoje turi būti pašalinta per 20 žmogaus darbo valandų.
 	\subsubsection{Programų sistemos stabilumo reikalavimai}
+		Mažiausias vidutinis laikas kurį sistema bus įtakota dėl atsitiktinio neteisingo pakeitimo yra 4 valandos.
 	\subsubsection{Programų sistemos testuojamumo reikalavimai}
+		Testai sistemoje nevykdomi.
 	\subsubsection{Programų sistemos tvarkomumo reikalavimai}
+		Sistema turi būti atkuriama per 1 žmogaus darbo valandą.
 	\subsubsection{Programų sistemos pakartotino panaudojamumo reikalavimai}
+		Sistema negali būti perpanaudota.
 
 \subsection{Ką?}\label{sec:PSReqWhat}
 Programų sistema digitalizuotus informacijos objektus saugos duomenų bazėse, kuriuose duomenys bus užšifruoti. Duomenų saugojimas atitiks numatytą duomenų apsaugos reglamentavimą pagal BDAR. Duomenys bus apsaugojami nuo tyčinių ir netyčinių grėsmių (pvz., duomenų pasiekimas neautorizuotiems asmenims).
@@ -1116,10 +1127,32 @@ Programų sistema digitalizuotus informacijos objektus saugos duomenų bazėse, 
 	\item Atsiradus atvejui, kad duomenys bus tyčia prarandami/gadinami arba neautorizuotai pasiekti, bus vykdomos organizacijos politikos procedūros - tikrinami konfidencialumo sutarties pažeidimai, apie atsiradusį atvejai pranešama policijai ir kt.
 	\item Neautorizuotiems naudotojams nebus vaizduojama konfidencialūs duomenys, pvz., asmens kodas, siekiant užtikrinti duomenų apsaugos reglamentavimą pagal BDAR.
 	\item Vaizduojant digitalizuotus informacijos objektus, nebus vaizduojami unikalūs vidiniais identifikatoriai.
+	\item Visas disponavimas duomenimis turi atitikti Lietuvos Respublikos ir Europos Sąjungos jautrių duomenų disponavimo įstatymus.
 \end{itemize}
 
 \subsection{Kas?}\label{sec:PSReqWho}
+Sistema atitinka žmogaus ir kompiuterio sąveikos euristikas.
 \subsection{Kur?}\label{sec:PSReqWhere}
+\textbf{Minimalūs kompiuterio platformos reikalavimai:}
+\begin{enumerate}
+	\item OS: Windows 7 arba naujesnė
+	\item Procesorius: Intel(R) Core(TM) i5-2520M arba panašaus našumo procesorius
+	\item Atmintis: 4 GB RAM
+	\item Grafika: GeForce GTX 500 serija arba panašus
+	\item Kietojo disko talpa: 3 GB laisvos vietos
+	\item Microsoft Internet Explorer 10+ - Windows
+\end{enumerate}
+
+\textbf{Rekomenduojami kompiuterio platformos reikalavimai:}
+\begin{enumerate}
+	\item OS: Windows 7 arba naujesnė
+	\item Procesorius: Intel(R) Core(TM) i5 2.6GHz arba panašaus našumo procesorius
+	\item Atmintis: 4 GB RAM
+	\item Grafika: GeForce GTX 700 serija arba panašus
+	\item Kietojo disko talpa: 3 GB laisvos vietos
+	\item Microsoft Internet Explorer 11+ - Windows
+\end{enumerate}
+
 \subsection{Kada?}\label{sec:PSReqWhen}
 
 \newpage
