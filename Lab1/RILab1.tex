@@ -15,7 +15,7 @@
 \usepackage{array}
 \usepackage{wrapfig}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{multirow}
 \usepackage{longtable}
 
@@ -27,11 +27,11 @@
 \university{Vilniaus universitetas}
 \faculty{Matematikos ir informatikos fakultetas}
 \department{}
-\papertype{Reikalavimų inžinerijos pirmas laboratorinis darbas - reikalvimų specifikacija}
+\papertype{Reikalavimų inžinerijos pirmas laboratorinis darbas - reikalavimų specifikacija}
 \title{Epidemiologinės šalies situacijos sekimo sistema}
 \titleineng{Epidemiologinė sistema}
 \status{1 kurso PS magistrantūros studentai}
-\author{Šarūnas Kazinieras Buteikis}
+\author{Šarūnas Kazimieras Buteikis}
 \secondauthor{Matas Savickis}
 \thirdauthor{Rokas Ulickas}
 \fourthauthor{Vytautas Krivickas}
@@ -161,24 +161,7 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \\ \hline
 		                                                & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
 		Vartotojo reikalavimai (dalykinės srities specialisto požiūris)
-		&
-		Epidemiologinės situacijos sekimo sistemą reikia kurti, kad būtų galima sekti ir valdyti duomenis apie
-		virusu susirgusius asmenis. Sistema padėtų centralizuoti epidemijos sekimą ir įgalintų greitą komunikaciją
-		tarp suinteresuotų asmenų, pateiktų informaciją sergantiems asmenims ir taip padėtų kovoje su virusu
-		bei įgalintų efektyvesnį viruso plitimo valdymą. &
-
-		Informacija tarp suinteresuotų šalių bus apsikeičiama kompiuterizuotu, automatizuotu būdu.
-		Duomenys apsikeičiami arba numatytais laiko momentais arba suinteresuotai pusei paprašius įvykdyti transakcija.
-		Komunikacija tarp suinteresuotu šalių vyksta serverių duomenų apsikeitimo lygmenyje.
-		Privatiems asmenims informacija yra perduodama trumposiomis žinutėmis, elektroniniu paštu arba asmeniniu skambučiu.
-
-		                                                &
-
-		Sistemoje kaupsime epidemiologinius duomenis, susijusius apie asmenis: kur žmogus lankėsi, jo sveikatos istorija, asmeniniai duomenys, žmogaus esamą buvimo vietą , viruso testo rezultatus.
-		Sistemoje kaupsime epidemiologinius duomenis apie renginius ir viešąsias maitinimo įstaigas, kada ir kokie žmonės ten lankėsi, kas dalyvavo renginyje ar maitinimo įstaigoje prieš susirgdamas.
-		Sistemoje kaupsime epidemiologinius duomenis apie pavojingu šalių sąrašus ir žmones, atvykstančius iš šių šalių, kur jie lankėsi, kiek laiko izoliavosi.
-		Visi duomenys bus valdomi pagal BDAR įstatymą.
-		Visus duomenis matys tik valstybinių organizacijų atstovai turintys teises matyti šiuos duomenis.                                   \\ \hline
+		& \ref{sec:vartotojoReqWhy} skyrelis & \ref{sec:vartotojoReqHow} skyrelis & \ref{sec:vartotojoReqWhat} skyrelis                               \\ \hline
 
 \end{longtable}
 
@@ -188,14 +171,7 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \label{table:UserReq-WhoWhereWhen} \\ \hline
 		                                                                                                                                                    & Kas? (funkciniai vienetai) & \multicolumn{1}{c|}{Kur? (vieta)} & Kada? (laikas) \\ \hline
 		Vartotojo reikalavimai (dalykinės srities specialisto požiūris
-		&
-		Sistema gali naudotis tik vartotojai turintys tinkamą privilegijų lygį.
-		Vartotojui neturi būti pateikta daugiau duomenų ir funkcionalumų negu nurodo jo privilegijos lygis sistemoje.
-		Projektuojant sistemos prieinamumą reikia laikytis prielaidos, kad sistemos vartotojai turės bazinį informacinių technologijų raštingumo lygį.
-		Po sistemos sukūrimo vartotojai bus apmokomi naudotis sistema, tačiau tikimasi, kad vartotojai jau bus naudojęsi kitomis, panašiomis sistemomis.     &
-
-		Programine sistema pasiekti galima tik nurodytoje darbo vietoje arba prisijungus į virtualų privatų tinklą (VPN) užtikrinant darbo iš namų galimybę. &
-		Sistema turi užtikrinti, kad jos prieinamumas nebūtų mažesnis negu nurodyti laiko apribojimų.                                                                                                                                        \\ \hline
+		& \ref{sec:vartotojoReqWho} skyrelis & \ref{sec:vartotojoReqWhere} skyrelis & \ref{sec:vartotojoReqWhen} skyrelis                                                                                                                                        \\ \hline
 	
 \end{longtable}
 
@@ -694,7 +670,7 @@ Turi būti teisingai nustatomi 99,9\% saviizoliacijos pažeidimų.
 \textbf{Saugumas}:
 Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
 
-\subsection{Ką?}\label{sec:vartotojoWhat}
+\subsection{Ką?}\label{sec:vartotojoReqWhat}
 Šiame poskyriuje formuluojami verslo objektus modeliuojančių informacinių objektų reikalavimai.
 
 \subsubsection{Informaciniai objektai}
