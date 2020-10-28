@@ -748,6 +748,54 @@ Verslo sistemos analizės metu išryškintos šios verslo problemos:
 Visų tų problemų priežastis yra prasta viruso pandemijos valdymo informacinė sistema.
 
 \subsection{Kaip?}
+
+Sistemos funkciniai komponentai:
+\begin{enumerate}
+	\item Izoliuotų asmenų registras.
+	\begin{enumerate}
+		\item Galimybė fiksuoti užsikrėtujusio saviizoliaciją.
+		\item Galimybė fiksuoti užsikrėtujusio kontaktus. Užsikrėtujusių kontaktų izoliacija fiksuojama automatiškai.
+		\item Galimybė fiksuoti pasveikusio saviizoliacijos pabaigą.
+		\item Galimybė fiksuoti saviizoliacijos pabaigą, kai ši trunką ilgiau nei dvi savaites.
+	\end{enumerate}
+
+	\item Pavojingų šalių registras.
+	\begin{enumerate}
+		\item Galimybė atnaujinti pavojingų šalių sąrašą.
+	\end{enumerate}
+
+	\item Saviizoliacijos pranešimų sistema.
+	\begin{enumerate}
+		\item Galimybė pranešti užsikrėtusiąjam apie saviizoliacijos pradžią SMS žinute.
+ 		\item Galimybė pranešti apie saviizoliacijos pažeidimą policijai.
+	\end{enumerate}
+
+	\item Savitarnos portalas žmonėms, kur suteikiama informacija apie izoliaciją bei kita svarbi informacija.
+	\begin{enumerate}
+		\item Galimybė siųsti patvirtinimo prašymą saviizoliuojančiam asmeniui.
+		\item Galimybė gauti saviizoliacijos patvirtinimą iš saviizoliuojančio asmens.
+		\item Galimybė fiksuoti saviizoliacijos pažeidimą.
+	\end{enumerate} 
+
+	\item Mobilioji programėle skirta patvirtinti saviizoliaciją ir sekti saviizoliuojančio žmogaus GPS vietą.
+	\begin{enumerate}
+		\item Galimybė siųsti patvirtinimo prašymą saviizoliuojančiam asmeniui.
+		\item Galimybė gauti saviizoliacijos patvirtinimą iš saviizoliuojančio asmens.
+		\item Galimybė fiksuoti saviizoliacijos pažeidimą.
+	\end{enumerate} 
+
+\end{enumerate}
+
+\textbf{Rezultatai}:
+Turi būti teisingai identifikuojama 100\% privačių asmenų, kuriems reikalinga saviizoliacija ir tai galima nustayti pagal turimus duomenis. 
+Turi būti teisingai nustatomi 99,9\% saviizoliacijos pažeidimų.
+
+\textbf{Patikimumas}:
+100\% asmenų turi būti informuojama apie privalomą saviizoliaciją. Apie 100\% pažeidimų turi būti informuojama e. policija.
+
+\textbf{Saugumas}:
+Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
+
 \subsection{Ką?}
 \subsection{Kas?}
 \subsection{Kur?}
