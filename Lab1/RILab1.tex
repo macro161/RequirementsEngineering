@@ -1033,14 +1033,28 @@ Saviizoliacijos užtikrinimo naujoje informacinėje sistemoje turėtų būti num
 Sistema turi būti lengvai atpažįstama, lengvai išmokstama ir nesunkiai naudojama.
 Sistema bus galima naudotis per kelis interfeisus:
 \begin{enumerate}
-	\item Savitarnos puslapį
+	\item Savitarnos puslapį.
 	\item Mobiliąją programėlę.
 \end{enumerate} 
 
 Bendravimas su interfeisais vyks per interneto naršyklę HTTPS protokolu. Prieigos teisės plačiau aprašytos skyrelyje "Vartotojo reikalavimai - kas?"
 
 \subsection{Kur?}\label{sec:ISReqWhere}
+
+Sistema bus kuriama pasinaudojant Amazon Web Services teikiamomis paslaugomis. 
+Kad vartotojas pasinaudotų sistema, darbo vietoje turi būti įdiegta bet kokia naujos kartos naršyklė (Edge, Firefox, Chrome) bei operacinė sistema (LINUX, Mac OS, Windows 7, Windows XP, Windows 10, Windows X)
+Naudotis sistema nereikalingi jokie išskirtiniai įrangos našumo reikalavimai.
+Kad vartotojas pasinaudotų mobiliąja programėle, jo telefone turi būti įrašyta Android arba iOS operacinė sistema ir programėlė turi būti parsisiųsta iš autoretetingo šaltinio: Play Store arba App Store.
 \subsection{Kada?}\label{sec:ISReqWhen}
+
+Laiko reikalavimai:
+\begin{itemize}
+	\item Prisijungimas prie sistemos turi trukti iki minutės
+	\item Pateikimas apie saviizoliacijos laikymąsi turi trukti iki minutės
+	\item Saviizoliacijos patvirtinimas - vidutiniškai turėtų trukti 30 sekundžių.
+	\item Būti įspėtam apie privalomą saviizoliaciją - iki vienos minutės po informacijos apie pavojų gavimo.
+	\item Pateikti pavojingų šalių sąrašą - maksimali trukmė - 1 minutė.
+\end{itemize}
 
 \section{PS reikalavimai}
  
