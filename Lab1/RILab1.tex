@@ -19,9 +19,9 @@
 \usepackage{multirow}
 \usepackage{longtable}
 
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -62,19 +62,19 @@ reikalavimų specifikacija. Komandą sudarė:
 \tableofcontents
 
 \section{Įžanga}
-Šiame dokumente aprašoma “Epidemiologinės šalies situacijos sekimo sistema”, toliau - “sistema”.
+Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistema”, toliau - „sistema”.
 Ši sistema skirta sekti epidemiologinei padėčiai šalyje: įvertinti viruso plitimo šalyje tendencijas,
 efektyviai identifikuoti naujus viruso židinius, leisti specialistams atsekti susirgusiųjų
 kontaktus registruojant užsikrėtusiųjų maršrutus ir potencialiuose rizikos židiniuose
 besilankančius žmones, greitai informuoti kontaktavusiuosius su užsikrėtusiu žmogumi
 apie privalomą saviizoliaciją, rinkti duomenis apie asmenis karantine.
 
-\subsection{Application domain}
+\subsection{Pritaikymo sritis}
 Ši sistema skirta naudoti sveikatos apsaugos sistemoje: sistema turėtų palengvinti
 epidemiologų darbą ir leisti sekti viruso plitimą populiacijoje, imtis efektyvesnės
 profilaktikos ir tirti naudojamų priemonių efektyvumą.
 
-\subsection{Problem domain}
+\subsection{Probleminė sritis}
 Sistema siekiama išspręsti šias problemas:
 \begin{itemize}
 	\item Atskirų sveikatos įstaigų renkami susirgimų duomenys nėra apdorojami centralizuotai
@@ -88,7 +88,7 @@ Sistema siekiama išspręsti šias problemas:
 	      asmenis, dabar egzistuojančios pavienės iniciatyvos neleidžia automatiškai atsekti reikšmingo kiekio susirgusiojo kontaktų - tenka pasikliauti pastarojo pateikta informacija.
 	\item Nacionalinio sveikatos centro darbuotojai neturi galimybės automatiškai įspėti
 	      atvykusiųjų iš pavojingų šalių asmenų apie privalomą saviizoliaciją: atlikus reikiamas
-	      integracijas su {\color{red}muitinės (?)} sistemomis ši sistema leistų automatizuoti ir šį procesą.
+	      integracijas su muitinės sistemomis, ši sistema leistų automatizuoti ir šį procesą.
 	\item Šiuo metu nėra galimybės automatizuoti saviizoliacijos reikalavimų laikymosi sekimo,
 	      tad naujoji sistema leistų bent iš dalies automatizuoti šį procesą: reikalauti asmenis
 	      saviizoliacijoje pateikti savo dabartinę vietą naudojantis išmaniajame telefone esančia
@@ -111,12 +111,16 @@ Sistema siekiama išspręsti šias problemas:
 \newpage
 
 \section{Reikalavimų artefaktai}
-
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}
-		\hline
+Šiame skyriuje pateikiami gauti reikalavimų artefaktai, kuriant reikalavimų specifikaciją pagal Zachmano karkasą.
+\begin{center}
+\small
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+\caption{Verslo lygio reikalavimai: „Kodėl?", „Kaip?", „Ką?"}
+\label{table:BusinessReq-WhyHowWhat}
+		\\ \hline
 		                                                 & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Verslo reikalavimai \\ (verslo inžinieriaus \\ požiūris)\end{tabular}                        &                     &
+		Verslo reikalavimai  (verslo inžinieriaus požiūris)&
+		&
 		1.Galimybė valdyti duomenis apie žmones susirgusius virusu.
 		2.Galimybė valdyti duomenis apie naujus ligos atvejus.
 		3.Galimybė registruoti užsikrėtusių žmonių maršrutus.
@@ -129,21 +133,25 @@ Sistema siekiama išspręsti šias problemas:
 		10.Galimybė valdyti duomenis apie asmens rizikos faktorius.
 		11.Galimybė valdyti informaciją apie asmens saviizoliacijos patvirtinimą.
 		12.Galimybė valdyti asmenų sveikatos informaciją &
-		\textbf{Verslo objektai (esybės):} Privatus asmuo, Renginių organizatorius; Maitinimo / pasilinksminimo įstaigos atstovas; Karštosios linijos operatorius; NVSC departamento epidemiologas; Sveikatos apsaugos ministerija; Nacionalinis visuomenės sveikatos centras; Muitinė; Valstybė; E.\newline \textbf{Verslo objektai (procedūros:)} Užsiregistruoti; Patvirtinti saviizoliaciją; Būti įspėtam apie riziką (galima kontaktą); Užregistruoti renginį; Užregistruoti įstaigą; Užregistruoti atvejį; Užregistruoti maršrutą; Pateikti pavojingų šalių sąrašą; Gauti epidemiologinę statistiką; Pateikti iš pavojingų šalių atvykusių žmonių sąrašą; Kontroliuoti saviizoliaciją \\ \hline
-	\end{tabular}
-\end{table}
+		\textbf{Verslo objektai (esybės):} Privatus asmuo, Renginių organizatorius; Maitinimo / pasilinksminimo įstaigos atstovas; Karštosios linijos operatorius; NVSC departamento epidemiologas; Sveikatos apsaugos ministerija; Nacionalinis visuomenės sveikatos centras; Muitinė; Valstybė; E.\newline \textbf{Verslo objektai (procedūros):} Užsiregistruoti; Patvirtinti saviizoliaciją; Būti įspėtam apie riziką (galima kontaktą); Užregistruoti renginį; Užregistruoti įstaigą; Užregistruoti atvejį; Užregistruoti maršrutą; Pateikti pavojingų šalių sąrašą; Gauti epidemiologinę statistiką; Pateikti iš pavojingų šalių atvykusių žmonių sąrašą; Kontroliuoti saviizoliaciją \\ \hline
+\end{longtable}
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+
+\caption{Verslo lygio reikalavimai: „Kas?", „Kur?", „Kada?"}
+\label{table:BusinessReq-WhoWhereWhen}
+\\ \hline
 		                          & Kas? (funkciniai vienetai) & Kur? (vieta) & Kada? (laikas) \\ \hline
 		\begin{tabular}[c]{@{}l@{}}Verslo reikalavimai \\ (verslo inžinieriaus \\ požiūris) \end{tabular} &                            &              &                \\ \hline
-	\end{tabular}
-\end{table}
+\end{longtable}
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+\caption{Vartotojo lygio reikalavimai: „Kodėl?", „Kaip?", „Ką?"}
+\label{table:UserReg-WhyHowWhat}
+\\ \hline
 		                                                & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular}                       &
+		Vartotojo reikalavimai (dalykinės srities specialisto požiūris)
+		&
 		Epidemiologinės situacijos sekimo sistemą reikia kurti, kad būtų galima sekti ir valdyti duomenis apie
 		virusu susirgusius asmenis. Sistema padėtų centralizuoti epidemijos sekimą ir įgalintų greitą komunikaciją
 		tarp suinteresuotų asmenų, pateiktų informaciją sergantiems asmenims ir taip padėtų kovoje su virusu
@@ -161,47 +169,58 @@ Sistema siekiama išspręsti šias problemas:
 		Sistemoje kaupsime epidemiologinius duomenis apie pavojingu šalių sąrašus ir žmones, atvykstančius iš šių šalių, kur jie lankėsi, kiek laiko izoliavosi.
 		Visi duomenys bus valdomi pagal BDAR įstatymą.
 		Visus duomenis matys tik valstybinių organizacijų atstovai turintys teises matyti šiuos duomenis.                                   \\ \hline
-	\end{tabular}
-\end{table}
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\end{longtable}
+
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+
+\caption{Vartotojo lygio reikalavimai: „Kas?", „Kur?", „Kada?"}
+\label{table:UserReq-WhoWhereWhen} \\ \hline
 		                                                                                                                                                    & Kas? (funkciniai vienetai) & \multicolumn{1}{c|}{Kur? (vieta)} & Kada? (laikas) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Vartotojo reikalavimai \\ (dalykinės srities \\ specialisto požiūris)\end{tabular}                                                                                                                           &
+		Vartotojo reikalavimai (dalykinės srities specialisto požiūris
+		&
 		Sistema gali naudotis tik vartotojai turintys tinkamą privilegijų lygį.
 		Vartotojui neturi būti pateikta daugiau duomenų ir funkcionalumų negu nurodo jo privilegijos lygis sistemoje.
 		Projektuojant sistemos prieinamumą reikia laikytis prielaidos, kad sistemos vartotojai turės bazinį informacinių technologijų raštingumo lygį.
 		Po sistemos sukūrimo vartotojai bus apmokomi naudotis sistema, tačiau tikimasi, kad vartotojai jau bus naudojęsi kitomis, panašiomis sistemomis.     &
 
-		Programine sistema pasiekti galima tik nurodytoje darbo vietoje arba prisijungus į virtualų privatų tinklą(VPA) užtikrinant darbo iš namų galimybę. &
+		Programine sistema pasiekti galima tik nurodytoje darbo vietoje arba prisijungus į virtualų privatų tinklą (VPN) užtikrinant darbo iš namų galimybę. &
 		Sistema turi užtikrinti, kad jos prieinamumas nebūtų mažesnis negu nurodyti laiko apribojimų.                                                                                                                                        \\ \hline
-	\end{tabular}
-\end{table}
+	
+\end{longtable}
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+
+\caption{Informacinių sistemų lygio reikalavimai: „Kodėl?", „Kaip?", „Ką?"}
+\label{table:ISReq-WhyHowWhat} \\ \hline
 		                          & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}IS reikalavimai \\ (IS inžinieriaus \\ požiūris)\end{tabular} &                     &                                      &                           \\ \hline
-	\end{tabular}
-\end{table}
+		IS reikalavimai (IS inžinieriaus požiūris)
+		&                     &                                      &                           \\ \hline
+	
+\end{longtable}
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+
+\caption{Informacinių sistemų lygio reikalavimai: „Kas?", „Kur?", „Kada?"}
+\label{table:ISReq-WhoWhereWhen} \\ \hline
 		                          & Kas? (funkciniai vienetai) & \multicolumn{1}{c|}{Kur? (vieta)} & Kada? (laikas) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}IS reikalavimai \\ (IS inžinieriaus \\ požiūris)\end{tabular} &                            &                                   &                \\ \hline
-	\end{tabular}
-\end{table}
+		IS reikalavimai (IS inžinieriaus  požiūris)&                            &                                   &                \\ \hline
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\end{longtable}
+
+\newpage
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+
+\caption{Programų Sistemų lygio reikalavimai: „Kodėl?", „Kaip?", „Ką?"}
+\label{table:PSReq-WhyHowWhat} \\ \hline
 		                                                                                                             & Kodėl? (vizija ir suvaržymai) & Kaip? (sistemos panaudojimo atvejai ir kokybė) & Ką(duomenys ir jų sauga) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Programos reikalavimai \\ (Kiekvienai sistemai)\end{tabular}                                                                                   &
+		Programos reikalavimai (Kiekvienai sistemai)                                                                                   &
 		Sistema bus kuriama debesijos komiuterijos pagalba pagerinti ateities išlaikymo kaštus.
 		Sistema laikysis organizacijos politinių reikalavimų ir ribojimų.
 		Sistema laikysis Lietuvos ir Europos teisinių apribojimų.
 		Sistemai svarbiau patikimumas, kad visi pacientai būtų užregistruoti negu našumas, vartotojas gali palaukti. &
 
-		Programų sistema įgyvendima visus funkcinius ir nefunkcinius reikalavimus atsižvelgdama ekonominius ir politinius reikalavimus iškeltus suinteresuotų šalių 
+		Programų sistema įgyvendina visus funkcinius ir nefunkcinius reikalavimus atsižvelgdama ekonominius ir politinius reikalavimus iškeltus suinteresuotų šalių 
 		stengiantis nesumažinti sistemos kokybės.
 		Turi būti pasiektas nurodytas patikimumas bei diegimo ir palaikymo procedūros ateities sistemos vystytojas.
 
@@ -211,13 +230,16 @@ Sistema siekiama išspręsti šias problemas:
 		Duomenys turi būti apsaugoti ne tik nuo išorinių blogų aktorių, bet ir nuo sistemos kūrėjų ir palaikytojų klaidų,
 		duomenis apsaugant nuo atsitiktinio jų ištrynimo ar modifikavimo.
 		Visas disponavimas duomenimis turi atitikti Lietuvos ir Europos įstatymus.                                                                                                                                               \\ \hline
-	\end{tabular}
-\end{table}
 
-\begin{table}[h!]
-	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline
+\end{longtable}
+
+
+\begin{longtable}{|L{4cm}|L{4cm}|L{4cm}|L{4cm}|}
+
+\caption{Programų Sistemų lygio reikalavimai: „Kas?", „Kur?", „Kada?"}
+\label{table:PSReq-WhoWhereWhen} \\ \hline
 		                           & Kas? (vartotojo sąsajos, prieinamumo ir ergonomikos reikalavimai) & Kur? (sistemos platformos reikalavimai) & Kada? (laiko suvaržymai aplikacijos panaudojimo atvejuose) \\ \hline
-		\begin{tabular}[c]{@{}l@{}}Programos reikalavimai \\ (Kiekvienai sistemai) \end{tabular} &
+		Programos reikalavimai (Kiekvienai sistemai) &
 
 		Sistema turi būti pritaikyta naudotis vartotojams su regos sutrikimais.
 		Turi būti galimybė keisti vartotojo sąsajos spalvų gama labiau pritaikytą daltonikams.
@@ -246,11 +268,12 @@ Sistema siekiama išspręsti šias problemas:
 		Viena transakcija negali trukti ilgiau negu 0,1 sekundės.
 
 		\\ \hline
-	\end{tabular}
-\end{table}
+
+\end{longtable}
+\end{center}
 
 \section{Verslo reikalavimai}
-
+Šiame skyriuje nagrinėjami verslo reikalavimai Epidemiologinės šalies situacijos sekimo sistemai.
 \subsection{Kodėl?}
 
 \begin{figure}[H]
@@ -265,19 +288,20 @@ Sistema siekiama išspręsti šias problemas:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{img/use_case_diagram_business.png}
-	\caption{Konteksto diagrama}
+	\caption{Verslo užduočių diagrama}
 	\label{img:use_case_diagram}
 \end{figure}
-
+\newpage
 \subsubsection{Įvestys}
 
-\begin{table}[]
-	\centering
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|l|l|l|l|l|}
-			\hline
+\begin{center}
+\begin{longtable}{|L{0.5cm}|L{4cm}|L{3cm}|L{3cm}|L{3cm}|}
+
+\caption{Įvestys}
+\label{table:input} \\ \hline
+			
 			\textbf{Nr.}        & \textbf{Įvestis}                                            & \multicolumn{1}{c|}{\textbf{Įvertinimo parametrai}} & \multicolumn{1}{c|}{\textbf{Kiekybiniai matai}} & \multicolumn{1}{c|}{\textbf{Kokybiniai matai}} \\ \hline
-			\multirow{2}{*}{I1} & \multirow{2}{*}{Registracijos didesnės rizikos renginiuose} & Kiekis                                              &                                                 &                                                \\ \cline{3-5}
+			\multirow{2}{*}{I1} & \multirow{2}{*}{\parbox{4cm}{Registracijos didesnės rizikos renginiuose}} & Kiekis                                              &                                                 &                                                \\ \cline{3-5}
 			                    &                                                             & Korektiškumas                                       &                                                 &                                                \\ \hline
 			I2                  & Registracijos viešojo maitinimo įstaigose                  &                                                     &                                                 &                                                \\ \hline
 			I3                  & Informacija apie keliones iš rizikos šalių                  &                                                     &                                                 &                                                \\ \hline
@@ -290,18 +314,20 @@ Sistema siekiama išspręsti šias problemas:
 			I10                 & Masinių renginių registracijos                              &                                                     &                                                 &                                                \\ \hline
 			I11                 & Užsikrėtusiųjų maršrutai                                    &                                                     &                                                 &                                                \\ \hline
 			I12                 & Pranešimai apie įtariamus atvejus                           &                                                     &                                                 &                                                \\ \hline
-		\end{tabular}%
-	}
-\end{table}
-
+		%
+	
+\end{longtable}
+\end{center}
 \subsubsection{Išvestys}
-\begin{table}[]
-	\centering
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|l|l|l|l|l|}
-			\hline
+
+\begin{center}
+\begin{longtable}{|L{0.5cm}|L{4cm}|L{3cm}|L{3cm}|L{3cm}|}
+
+\caption{Išvestys}
+\label{table:output} \\ \hline
+			
 			\textbf{Nr} & \textbf{Išvestis}                          & Įvertinimo parametrai & Kiekybiniai matai & Kokybiniai matai \\ \hline
-			\textbf{O1} & Statistika (?)                             &                       &                   &                  \\ \hline
+			\textbf{O1} & Statistika                             &                       &                   &                  \\ \hline
 			\textbf{O2} & Pranešimas apie priverstinę saviizoliaciją &                       &                   &                  \\ \hline
 			\textbf{O3} & Pranešimas apie saviizoliacijos pažeidimą  &                       &                   &                  \\ \hline
 			\textbf{O4} & Pranešimas apie riziką                     &                       &                   &                  \\ \hline
@@ -310,9 +336,8 @@ Sistema siekiama išspręsti šias problemas:
 			\textbf{O7} &                                            &                       &                   &                  \\ \hline
 			\textbf{O8} &                                            &                       &                   &                  \\ \hline
 			\textbf{O9} &                                            &                       &                   &                  \\ \hline
-		\end{tabular}%
-	}
-\end{table}
+\end{longtable}
+\end{center}
 
 \subsubsection{Reguliacija}
 Sistemoje renkamų bei saugomų duomenų tvarkymą reglamentuoja Lietuvos Respublikos asmens duomenų teisinės apsaugos įstatymas,
@@ -327,18 +352,18 @@ nepažeidžiamas duomenų saugumas. Specialistai taip pat įvertins sistemos efe
 užduotis bei greitį -- kaip greitai sistema veikia. Neigiamą sistemos įvaizdį visuomenėje galėtų lemti jautrių duomenų,
 renkamų sistemoje, kiekis bei automatinė saviizoliacijos pažeidimų fiksavimo funkcija.
 
-\begin{table}[]
-	\centering
-	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|l|l|l|l|l|}
-			\hline
+\begin{center}
+\begin{longtable}{|L{0.7cm}|L{4cm}|L{3cm}|L{3cm}|L{3cm}|}
+
+\caption{Grupės, vertinančios sistemos įvaizdį}
+\label{table:assessment} \\ \hline
 			\textbf{Nr}                   & \textbf{Grupė}                 & Įvertinimo parametrai & Kiekybiniai matai               & Kokybiniai matai                                                                                      \\ \hline
 			\textbf{IM1}                  & Visuomenė                      & Patikimumas           &                                 & Pranešimai žiniasklaidoje ar soc. tinkluose apie prastą (klaidingą, lėtą, nepatogų) sistemos veikimą. \\ \hline
 			\multirow{2}{*}{\textbf{IM2}} & \multirow{2}{*}{Profesionalai} & Patikimumas           & Sistemos pasiekiamumas (uptime) & Trikdžiai ar klaidos naudojantis sistema.                                                             \\ \cline{3-5}
 			                              &                                & Patogumas             & Užduočių atlikimo greitis       & Naudotojo patirtis                                                                                    \\ \hline
-		\end{tabular}%
-	}
-\end{table}
+
+\end{longtable}
+\end{center}
 
 \subsubsection{Vidinė verslo analizė}
 
@@ -359,7 +384,7 @@ Su viruso plitimu susijusių duomenų agregavimas, leidžiantis sekti jo plitim�
 \end{figure}
 
 \subsubsection{Siūloma verslo strategija}
-Atsižvelgus į SWOT analizę, nuspręsta tolimesnę sistemos specifikaciją orientuoti pagal stiprybes: automatinis saviizoliacijos pažeidimų fiksavimą, duomenų agregavimą iš skirtingų institucijų, automatinį privačių asmenų įspėjimą apie saviizoliaciją ar riziką, sistemos kūrimą finansuoja valstybė.
+Atsižvelgus į SWOT analizę, nuspręsta tolimesnę sistemos specifikaciją orientuoti pagal stiprybes: automatinį saviizoliacijos pažeidimų fiksavimą, duomenų agregavimą iš skirtingų institucijų, automatinį privačių asmenų įspėjimą apie saviizoliaciją ar riziką, sistemos kūrimą finansuoja valstybė.
 \subsubsection{Tikslų medis}
 
 \begin{enumerate}
@@ -508,7 +533,7 @@ dalykinės srities specialistus, įgyvendinančius verslo tikslus ir jų įgalio
 	\setstretch{1.0}
 	\small
 	\begin{longtable}{|L{3cm}|C{5cm}|C{7cm}|}
-		\caption{Verslo objektai, teisės sistemoje ir privilegijos}
+		\caption{Suinteresuoti asmenys, prieigos teisės ir įgaliojimai}
 		\label{table:EmployeeSalary}
 		\\ \hline
 		Suinteresuoti asmenys                                                                                                   &
@@ -558,6 +583,7 @@ dalykinės srities specialistus, įgyvendinančius verslo tikslus ir jų įgalio
 	      \end{itemize}
 	\item \textbf{Terminalai}, įrengti maitinimo / pasilinksminimo įstaigose bei renginiuose ir leidžiantys užpildyti registracijos anketą.
 	\item \textbf{SMS pranešimai}, skirti informuoti privačius asmenis bei renginių organizatorius ir maitinimo / pasilinksminimo įstaigų organizatorius apie riziką, o privačius asmenis dar ir apie privalomą saviizoliaciją.
+	\item \textbf{Programinė sąsaja}, skirta gauti duomenis iš išorinių sistemų - muitinės.
 \end{itemize}
 
 Vidiniai sistemos naudotojai (nacionalinio visuomenės sveikatos centro ir sveikatos apsaugos ministerijos epidemiologai) peržiūrėti epidemiologinę statistiką sistemoje galės
@@ -664,6 +690,10 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 \subsection{Ką?}
 Šiame poskyriuje formuluojami verslo objektus modeliuojančių informacinių objektų reikalavimai.
 
+\subsubsection{Informaciniai objektai}
+
+Visiems aprašomiems informaciniams objektams (išskyrus šalis) taikomi aukščiausi saugumo reikalavimai, kadangi ši informacija yra jautri ir privati bei negali patekti tretiems asmenims.
+
 \noindent\textbf{Privatus asmuo}:
 \begin{itemize}
 	\item Identifikatorius - asmens kodas.
@@ -677,7 +707,7 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 
 \noindent\textbf{Saviizoliacija}:
 \begin{itemize}
-	\item Identifikatorius - karantinuojamo žmogaus asmens kodas + saviizoliacijos pradžia. T. y. AKYYMMDD, kur AK - asmens kodas, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena.
+	\item Identifikatorius - unikalus sugeneruojamas kodas + saviizoliacijos pradžia. T. y. KKKKKKKYYMMDD, kur KKKKKKK - kodas, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena.
 	\item Baziniai rodikliai:
 	\begin{itemize}
 		\item Pradžia - data. Privalomas.
@@ -685,10 +715,169 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 		\item Priežastis - kelionė, kontaktas arba liga. Privalomas
 		\item Saviizoliacijos vieta - adresas. Privalomas.
 	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Saviizoliacijos patvirtinimas}:
+\begin{itemize}
+	\item Identifikatorius - saviizoliacijos identifikatorius + data ir laikas. T. y. IDYYMMDDhhmmss, kur ID - saviizoliacijos identifikatorius, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena, hh - valanda, mm - minutės, ss - sekundės.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Tipas - nuotrauka arba koordinatės. Privalomas.
+		\item Vieta - koordinatės. Privalomas, jei tipas - koordinatės.
+		\item Nuotrauka - adresas. Privalomas, jei tipas - nuotrauka.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Saviizioliacija. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Saviizoliacijos pažeidimas}:
+\begin{itemize}
+	\item Identifikatorius - saviizoliacijos identifikatorius + data ir laikas, kuomet fiksuotas pažeidimas. T. y. IDYYMMDDhhmmss, kur ID - saviizoliacijos identifikatorius, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena, hh - valanda, mm - minutės, ss - sekundės.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Tipas - nuotrauka, koordinatės arba jokio patvirtinimo. Privalomas.
+		\item Vieta - koordinatės. Privalomas, jei tipas - koordinatės.
+		\item Nuotrauka - adresas. Privalomas, jei tipas - nuotrauka.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Saviizioliacija. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Šalis}:
+\begin{itemize}
+	\item Identifikatorius - šalies kodas (pagal ISO).
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Pavadinimas - simbolių eilutė, leidžiami lietuviški ir lotyniški simboliai, tarpo, brūkšnio simboliai.
+		\item Pradžia - data. Privalomas.
+		\item Pavojinga - taip arba ne. Privalomas.
+	\end{itemize}
+\end{itemize}
+
+\noindent\textbf{Atvykimas}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Šalis. Privalomas.
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Ligos atvejis (susirgimas)}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+		\item Kontaktai. Privalomas (0 - *).
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Kontaktas}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Vieta - koordinatės. Neprivalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Testo rezultatas}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Rezultatas - teigiamas arba neigiamas. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\noindent\textbf{Pranešimas apie privalomą saviizoliaciją}:
+\begin{itemize}
+	\item Identifikatorius - unikalus vidinis identifikatorius.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Laikas - data ir laikas. Privalomas.
+		\item Tekstas - simbolių eilutė, leidžiami lietuviški ir lotyniški simboliai, tarpo ir skyrybos ženklai. Privalomas.
+	\end{itemize}
+	\item Sąryšiai:
+	\begin{itemize}
+		\item Privatus asmuo. Privalomas.
+	\end{itemize}	
+\end{itemize}
+
+\subsubsection{Kalendoriniai ir verslo įvykiai}
+
+\begin{itemize}
+	\item Gauta informacija (pateikta muitinės) apie atvykusį iš pavojingos šalies privatų asmenį.
+	\item Gauta informacija apie susirgimą (teigiamą testą).
+	\item Gauta informacija apie pasveikimą (pakartotinį neigiamą testą).
+	\item Gauta informacija apie neigiamą testą.
+	\item 2 savaitės po saviizoliacijos pradžios (saviizoliacijos pabaigai identifikuoti).
+	\item Privalomos saviizoliacijos fiksavimas.
+	\item SAM naujo pavojingų šalių sąrašo paskelbimas.
+	\item Kas 12 valandų nuo saviizoliacijos pradžios (priminimui apie saviizoliacijos patvirtinimą).
+	\item Privataus asmens buvimo vietos arba nuotraukos pateikimas.
+	\item Kiekvieną valandą (saviizoliacijos duomenų nepateikimui identifikuoti).
+	\item Pažeidimo užfiksavimas.
 \end{itemize}
 
 \subsection{Kas?}
+
+Šiame poskyriuje detalizuojami, konkretizuojami ir tikslinami vykdytojų reikalavimai, suformuluoti formuluojant verslo reikalavimus. Naudotojai:
+\begin{center}
+	\setstretch{1.0}
+	\small
+	\begin{longtable}{|L{2cm}|C{3cm}|C{3cm}|C{3cm}|C{3cm}|}
+		\caption{IS naudotojai}
+		\label{table:users}
+		\\ \hline
+		Naudotojas & Prieigos teisės & Įgaliojimai & Kompetencijos & Panaudojamumas \\ \hline
+		Privatus asmuo & Gauti įspėjimą apie privalomą saviizoliacijos laikymąsi - peržiūrėti sau adresuotą \emph{pranešimą apie privalomą saviizoliaciją} SMS žinutėje; & Saviizoliacijos metu privalo pateikti ir patvirtinti savo geografines koordinates, siųsti saviizoliaciją patvirtinančią nuotrauką - kurti savo \emph{saviizoliacijos patvirtinimus} per visuomenei skirtą svetainę. & Baziniai kompiuterinio raštingumo įgūdžiai, užtenka pagrindinėje mokykloje dėstomo informatikos kurso. & Naudojasi tik tada, kai būna saviizioliacijoje, du kartus per parą po kelias minutes. Turi būti sudarytos galimybės naudotis neįgaliesiems. \\ \hline
+		Sveikatos apsaugos ministerija & Pateikti pavojingų šalių sąrašą - peržiūrėti, redaguoti, pridėti bei trinti \emph{šalis} per epidemiologams skirtą internetinę svetainę. & Privalo patvirtinti, jog pateiktas šalių sąrašas yra korektiškas; & Baziniai kompiuterinio raštingumo įgūdžiai, užtenka pagrindinėje mokykloje dėstomo informatikos kurso. & Naudojasi daugiausia kartą per dieną, iki 30 minučių. \\ \hline
+		Muitinė & Pateikti iš pavojingų šalių atvykusių žmonių sąrašą - kurti \emph{atvykimo} informacinius objektus. Tamp naudojama programinė sąsaja. & Privalo patvirtinti, jog pateikiamas žmonių sąrašas yra korektiškas & Nėra (procesas pilnai automatizuotas) & Nėra (procesas pilnai automatizuotas)                                     \\ \hline
+	\end{longtable}
+\end{center}
+
+
 \subsection{Kur?}
+Šiame poskyriuje detalizuojama, kokie prieigos prie sistemos mazgai už kokį panaudos atvejį yra atsakingi bei kur yra saugomi informaciniai objektai.
+
+\begin{itemize}
+	\item Saviizoliacijos patvirtinimas - visuomenei skirtoje internetinėje svetainėje. Duomenys apie patvirtinimą saugomi sistemoje 14 kalendorinių dienų.
+	\item Būti įspėtam apie privalomą saviizoliaciją - SMS žinute. Įspėjimai sistemoje nesaugomi.
+	\item Pateikti pavojingų šalių sąrašą - epidemiologams skirtoje internetinėje svetainėje. Šalių sąrašas saugomas sistemoje.
+\end{itemize}
+
 \subsection{Kada?}
 
 \section{IS reikalavimai}
@@ -800,6 +989,33 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 \subsection{Kas?}
 \subsection{Kur?}
 \subsection{Kada?}
+
+\section{PS reikalavimai}
+ 
+\subsection{Kodėl?}
+Šiame skyriuje formuluojami programų sistemos specifikacijos vizija bei realizacijos apribojimai
+
+\textbf{Vizija:} Vizija sutampa su produkto vizija - centralizuota viruso valdymo sistema infekcinių ligų centrams, kuri automatiškai tvarko informaciją apie virusu susirgusius žmones, informuoja užsikrėtusius ir kontaktinius asmenis apie turėtą kontaktą bei praneša policijai saviizoliacijos pažeidimo atvejį.
+
+
+\textbf{Ekonominiai apribojimai:}
+Sistema bus apribojama šiais ekonominiais aspektais:
+	\begin{enumerate}
+		\item Programų sistemos kūrimo kaštai - reikiamų specialistų (programuotojų, vartotojų potyrio specialistų, verslo analitikų, testuotojų) samdymas programų sistemos kūrimo laikotarpiui, reikiamų įrankių licenzijų įsigijimo kainos, įrangos, reikalingos programų sistemos kūrimui, kainos ir t.t. 
+		\item Programų sistemos diegimo kaštai - kadangi programų sistema bus internetinė svetainė, numatyta programų sistemą į debesį, o sistemą pasieks konkrečius įrengtus terminalus.
+		\item Palaikymo kainos - reikiamų specialistų (programuotojo, testuotojo ir kitų specialistų) samdymas programų sistemos palaikymo laikotarpiui, reikiamų įrankių licenzijų įsigijimo kainos, įrangos, reikalingos programų sistemos palaikymui, kainos ir t.t.
+		\item Kadangi sistema skirta sekti epidemiologijos situacija šalyje - sistemą bus galima pernaudoti skirtingoms epidemiologijoms, tačiau negalima pernaudoti skirtingoms šalims, nes gaunami duomenys priklauso nuo išorinių sistemų, o informaciniais objektai šalyse gali irgi skirtis 
+	\end{enumerate}
+
+\textbf{Politiniai apribojimai:} Laikantis organizacijos politikos - organizacijos darbuotojai, dirbantys su sistema: ar tai dirbantys prie sistemos kūrimo, testavimo, palaikymo ir t.t., privalo laikytis konfidencialumo sutartyje nurodytų įsipareigojimų.
+
+\textbf{Teisiniai apribojimai:} sistema laikysis Lietuvos Respublikos ir Europos Sąjungos teisinių apribojimų.
+\subsection{Kaip?}
+\subsection{Ką?}
+\subsection{Kas?}
+\subsection{Kur?}
+\subsection{Kada?}
+
 
 \end{document}
 
