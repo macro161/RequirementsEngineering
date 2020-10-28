@@ -662,6 +662,31 @@ Turi būti teisingai nustatomi 99,9\% saviizoliacijos pažeidimų.
 Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
 
 \subsection{Ką?}
+Šiame poskyriuje formuluojami verslo objektus modeliuojančių informacinių objektų reikalavimai.
+
+\noindent\textbf{Privatus asmuo}:
+\begin{itemize}
+	\item Identifikatorius - asmens kodas.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Vardas - simbolių eilutė, leidžiami lietuviški bei lotyiniški simboliai bei tarpo simbolis. Privalomas.
+		\item Pavardė - simbolių eilutė, leidžiami lietuviški bei lotyiniški simboliai bei tarpo simbolis. Privalomas.
+		\item Telefono numeris - simbolių eilutė, atitinkanti formatą +3706*******, 86******* arba bet kokį telefono numeri su validžiu šalies kodu. Privalomas.
+	\end{itemize}
+\end{itemize}
+
+\noindent\textbf{Saviizoliacija}:
+\begin{itemize}
+	\item Identifikatorius - karantinuojamo žmogaus asmens kodas + saviizoliacijos pradžia. T. y. AKYYMMDD, kur AK - asmens kodas, YY - du paskutiniai metų skaitmenys, MM - mėnuo, DD - diena.
+	\item Baziniai rodikliai:
+	\begin{itemize}
+		\item Pradžia - data. Privalomas.
+		\item Pabaiga - data. Neprivalomas.
+		\item Priežastis - kelionė, kontaktas arba liga. Privalomas
+		\item Saviizoliacijos vieta - adresas. Privalomas.
+	\end{itemize}
+\end{itemize}
+
 \subsection{Kas?}
 \subsection{Kur?}
 \subsection{Kada?}
