@@ -814,7 +814,7 @@ Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių i
 \section{IS reikalavimai}
 
 \subsection{Kodėl?}
-Suformulavus ir išanalizavus vartotojų reikalavimus, buvo suformuluota šitokia naujos bibliotekos informacinės sistemos vizija:
+Suformulavus ir išanalizavus vartotojų reikalavimus, buvo suformuluota šitokia naujos viruso valdymo informacinės sistemos vizija:
 Produktas „Saviizoliacijos užtikrinimo informacinė sistema“ skirtas infekcinių ligų centrams, kuriems reikia tvarkyti visą informaciją susijusią su 
 žmonėmis užsikrėtusiais virusine ligą, jiems reikalingą arba nereikalingą izoliaciją bei sekti kaip žmonės laikosi saviizoliacijos.
 Tai kompiuterizuota sistema, kuri automatizuotai tvarko informaciją apie susirgusius virusu žmones, praneša virusu užsikrėtusiui žmogui bei kontaktiniams asmenims 
@@ -822,36 +822,48 @@ trumpąją žinutę apie turėtą kontaktą bei praneša policijai apie saviizol
 automatizuotai, pasitelkiama kompiuterinė skaičiuojamoji galia, žmonių informacimas trunka vos kelias sekundes, o policija pranešimus apie saviizoliacija gauna centralizuotai.
 Tai keičia visa viruso valdymo sistemą: informacija yra vienoje sistemoje, ji pasiekiama centralizuotai ir po to gali būti išskirstyta į kitas sistemas.
 Sistema leis užtikrinti, kad duomenys būtų prieinamami tik tiems žmonėms, kurie turi teises prie žmogaus asmens duomenų, kas nebuvo užtikrinama iki dabar.
-
+\medskip
 Funkcinių galimybių medis:
 
-\begin{itemize}
-\item Saviizoliacija
-	\begin{itemize}
-		\item Galimybė fiksuoti užsikrėtujusio saviizoliaciją.
-		\item Galimybė fiksuoti užsikrėtujusio kontaktus. Užsikrėtujusių kontaktų izoliacija fiksuojama automatiškai.
-		\item Galimybė fiksuoti pasveikusio saviizoliacijos pabaigą.
-		\item Galimybė fiksuoti saviizoliacijos pabaigą, kai ši trunką ilgiau nei dvi savaites.
+\begin{enumerate}
+\item Galimybė tvarkyti visą su saviizoliacija susijusią informaciją.
+	\begin{enumerate}
+		\item Galimybė tvarkyti saviizoliacijos asmenų registrą.
+		\begin{enumerate}
+			\item Galimybė fiksuoti užsikrėtujusio saviizoliaciją.
+			\item Galimybė fiksuoti užsikrėtujusio kontaktus. Užsikrėtujusių kontaktų izoliacija fiksuojama automatiškai.
+			\item Galimybė fiksuoti pasveikusio saviizoliacijos pabaigą.
+			\item Galimybė fiksuoti saviizoliacijos pabaigą, kai ši trunką ilgiau nei dvi savaites.
+		\end{enumerate}
 		\item Galimybė pranešti užsikrėtusiąjam apie saviizoliacijos pradžią SMS žinute.
 		\item Galimybė atnaujinti pavojingų šalių sąrašą.
-	\end{itemize}
-	\item Saviizoliacijos užtikrinimas
-	\begin{itemize}
+	\end{enumerate}
+	\item Galimybė tvarkyti visą su saviizoliacijos užtikrinimu susijusią informaciją.
+	\begin{enumerate}
 		\item Galimybė siųsti patvirtinimo prašymą saviizoliuojančiam asmeniui.
 		\item Galimybė gauti saviizoliacijos patvirtinimą iš saviizoliuojančio asmens.
 		\item Galimybė fiksuoti saviizoliacijos pažeidimą.
-	\end{itemize}
-	\item Saviizoliacijos pažeidimas
-	\begin{itemize}
+	\end{enumerate}
+	\item Galimybė tvarkyti visą su saviizoliacijos pažeidimais susijusią informaciją.
+	\begin{enumerate}
 		\item Galimybė pranešti apie saviizoliacijos pažeidimą policijai.
-	\end{itemize}
-\end{itemize}
+	\end{enumerate}
+\end{enumerate}
 
+Medį papildo tokios viruso valdymo informacinės sistemos taisyklės:
+\begin{enumerate}
+	\item Žmogus į saviizoliacijos registrą gali būti įtrauktas tik vieną kartą, jo identifikatorius turi būti asmens kodas. Jeigu asmens kodas keičiasi, asmuo gali būti įtrauktas ir antrą kartą.
+	\item Žmogaus saviizoliacija yra automatiškai baigiama po 2 savaičių nuo jo įrašymo saviizoliacijos asmenų registre.
+	\item Sistemoje turi būti užtikrinama, jog žinutę dėl saviizoliacijos gaus tik reikiami žmonės ir nebus sukeliama panikos kitiems žmonėms.
+	\item Informacija policijai yra perduodama automatiškai per elektroninį laišką. Turi būti saugoma žymą, kada policija patvirtino, jog gavo laišką.
+\end{enumerate}
 
-	TODO:
-cia dar bus
-	2) medį papildo tokios bibliotekos informacijos tvarkymo taisyklės:
-3) Verslo sistemos analizės metu išryškintos šios verslo problemos:
+Verslo sistemos analizės metu išryškintos šios verslo problemos:
+\begin{enumerate}
+	\item Žmonės nežino kada jiems reikalinga izoliacija, kai sužinoma, dažniausiai būna praėjęs ilgas laiko tarpas.
+	\item Policija nespėja reaguoti į saviizoliacijos pažeidimus bei tikrinti kiekvieno besiizoliuojančio asmens.
+	\item Visi duomenys susije su viruso valdymų yra "išmėtyti" po skirtingas sistemas ir nėra niekur centralizuojami.
+\end{enumerate}
 
 Visų tų problemų priežastis yra prasta viruso pandemijos valdymo informacinė sistema.
 
