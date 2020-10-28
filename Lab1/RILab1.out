@@ -1,6 +1,6 @@
 \BOOKMARK [1][-]{section.1}{Įžanga}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Application\040domain}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Problem\040domain}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.1}{Pritaikymo\040sritis}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Probleminė sritis}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Naudotojai}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Reikalavimų artefaktai}{}% 5
 \BOOKMARK [1][-]{section.3}{Verslo\040reikalavimai}{}% 6
@@ -28,13 +28,14 @@
 \BOOKMARK [3][-]{subsubsection.4.2.2}{Suvaržymai \(nefunkciniai reikalavimai\)}{subsection.4.2}% 28
 \BOOKMARK [2][-]{subsection.4.3}{Ką?}{section.4}% 29
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Informaciniai\040objektai}{subsection.4.3}% 30
-\BOOKMARK [2][-]{subsection.4.4}{Kas?}{section.4}% 31
-\BOOKMARK [2][-]{subsection.4.5}{Kur?}{section.4}% 32
-\BOOKMARK [2][-]{subsection.4.6}{Kada?}{section.4}% 33
-\BOOKMARK [1][-]{section.5}{IS\040reikalavimai}{}% 34
-\BOOKMARK [2][-]{subsection.5.1}{Kodėl?}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.2}{Kaip?}{section.5}% 36
-\BOOKMARK [2][-]{subsection.5.3}{Ką?}{section.5}% 37
-\BOOKMARK [2][-]{subsection.5.4}{Kas?}{section.5}% 38
-\BOOKMARK [2][-]{subsection.5.5}{Kur?}{section.5}% 39
-\BOOKMARK [2][-]{subsection.5.6}{Kada?}{section.5}% 40
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Kalendoriniai ir verslo įvykiai}{subsection.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.4}{Kas?}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.5}{Kur?}{section.4}% 33
+\BOOKMARK [2][-]{subsection.4.6}{Kada?}{section.4}% 34
+\BOOKMARK [1][-]{section.5}{IS\040reikalavimai}{}% 35
+\BOOKMARK [2][-]{subsection.5.1}{Kodėl?}{section.5}% 36
+\BOOKMARK [2][-]{subsection.5.2}{Kaip?}{section.5}% 37
+\BOOKMARK [2][-]{subsection.5.3}{Ką?}{section.5}% 38
+\BOOKMARK [2][-]{subsection.5.4}{Kas?}{section.5}% 39
+\BOOKMARK [2][-]{subsection.5.5}{Kur?}{section.5}% 40
+\BOOKMARK [2][-]{subsection.5.6}{Kada?}{section.5}% 41
