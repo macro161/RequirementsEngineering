@@ -1009,14 +1009,28 @@ Saviizoliacijos užtikrinimo naujoje informacinėje sistemoje turėtų būti num
 Sistema turi būti lengvai atpažįstama, lengvai išmokstama ir nesunkiai naudojama.
 Sistema bus galima naudotis per kelis interfeisus:
 \begin{enumerate}
-	\item Savitarnos puslapį
+	\item Savitarnos puslapį.
 	\item Mobiliąją programėlę.
 \end{enumerate} 
 
 Bendravimas su interfeisais vyks per interneto naršyklę HTTPS protokolu. Prieigos teisės plačiau aprašytos skyrelyje "Vartotojo reikalavimai - kas?"
 
 \subsection{Kur?}\label{sec:ISReqWhere}
+
+Sistema bus kuriama pasinaudojant Amazon Web Services teikiamomis paslaugomis. 
+Kad vartotojas pasinaudotų sistema, darbo vietoje turi būti įdiegta bet kokia naujos kartos naršyklė (Edge, Firefox, Chrome) bei operacinė sistema (LINUX, Mac OS, Windows 7, Windows XP, Windows 10, Windows X)
+Naudotis sistema nereikalingi jokie išskirtiniai įrangos našumo reikalavimai.
+Kad vartotojas pasinaudotų mobiliąja programėle, jo telefone turi būti įrašyta Android arba iOS operacinė sistema ir programėlė turi būti parsisiųsta iš autoretetingo šaltinio: Play Store arba App Store.
 \subsection{Kada?}\label{sec:ISReqWhen}
+
+Laiko reikalavimai:
+\begin{itemize}
+	\item Prisijungimas prie sistemos turi trukti iki minutės
+	\item Pateikimas apie saviizoliacijos laikymąsi turi trukti iki minutės
+	\item Saviizoliacijos patvirtinimas - vidutiniškai turėtų trukti 30 sekundžių.
+	\item Būti įspėtam apie privalomą saviizoliaciją - iki vienos minutės po informacijos apie pavojų gavimo.
+	\item Pateikti pavojingų šalių sąrašą - maksimali trukmė - 1 minutė.
+\end{itemize}
 
 \section{PS reikalavimai}
  
@@ -1061,17 +1075,46 @@ Sistema bus apribojama šiais ekonominiais aspektais:
 			\\
 			Gautas rezultatas - įsitikint, kad žmogus nepažeidžia saviizoliacijos reikalavimų.
 	\subsubsection{Programų sistemos sąveikos su kitomis sistemomis}
+		Sistema sąveikaus su: e. policijos sistema, NVSC sistema, sveikatos ministerijos sistema, muitinės sistema, e. sveikatos sistema, karštosios linijos sistema, renginų organizatorių sistema.
 	\subsubsection{Programų sistemos atitikimas galiojantiems teisės aktams}
+		Sistema atitinka Lietuvos ir Europos teisės aktams. 
+		Sistema taip pat laikosi BDAR reglamento.
 	\subsubsection{Programų sistemos trasuojamumo reikalavimai}
+		Sistemos atrasuojamumas bus įgyvendinatas pasinaudojant Jira Atlassian sistema kuri užtikrina programos trsuojamumą
 	\subsubsection{Programų sistemos patikimumo reikalavimai}
+		Sistema turi išlikti pasiekiama 99 procentus laiko.
+		Įvykus sistemos tiktims sistema turi sugebėti automatiškai pasileisti išnaujo neprarasdama duomenų.
 	\subsubsection{Programų sistemos išbaigtumas}
+		Užsakovui priimtimas vienas tikdis per dieną.
+		Trumpiausias laikas tarp dviejų trikdžių yra 24 valandos.
+		Sistemoje neturi būti palikta esminių klaidų.
 	\subsubsection{Programų sistemos atsparumo triktims reikalavimai}
+		Dėl trikdžiū sistema gali neveikti 1 valandą per diena.
+		Sistemoje gali būti vienas įsilaužimas per mėsenį.
 	\subsubsection{Programų sistemos atkuriamumo reikalavimai}
+		Sistema turi galėti atsikurti per valandą po sutrikimo.
+		Per valandą turi būti atkūriami prarasti duomenys ir funkcionalumas.
+		Trikdis turi būti rastas ir pašalintas per savaitę.
+		
 	\subsubsection{Programų sistemos prieinamumo reikalavimai}
+		Per dieną sistema turi išlikti funkcionali 23 valandas. 
 	\subsubsection{Programų sistemos pažeidžiamumo reikalavimai}
+		Esminis sistemos funkcionalumas turi būti atkurtas per valandą.
 	\subsubsection{Programų sistemos aptarnavimo reikalavimai}
+		Sistema turi būti galima atstatyi per valandą.
+		Surastas trigdis programiniam kode turi būti pašalintas per savaitę.
 	\subsubsection{Programų sistemos diegimo reikalavimai}
+		Sistema yra paleidžiama debesų kompiuterijos srveriuose, todėl sistemos diegimo kaštai yra minimlūs.
+		Sistemai perkelti iš vieno debesijos serverio į kitą turi pakakti 24 valandų darbo.
+		Sistema perkeliama perkelus sukompiliuotus binarinius failus.
 	\subsubsection{Programų sistemos adaptuojamumo reikalavimai}
+		Perkelti sistema ant naujos platformos kainuotų 10000 žmogaus darbo valandų.
+		\\
+		Perkelti sistemą į kitą kompiuterinę platformą 20 žmogaus darbo valandų
+		\\ 
+		Perkelti sistemą į naujasnę operacinės sistemos versiją kainuotų 100 žmogaus darbo valandų
+		\\
+		Perkelti sistemos duomenis į nauja DBVS kainuotų 200 žmogaus darbo valandų.
 	\subsubsection{Programų sistemos instaliuojamumo reikalavimai}
 	\subsubsection{Programų sistemos atitikimo keliamumo standartams reikalavimai apibūdina}
 	\subsubsection{Programų sistemos pakeičiamumo reikalavimai}
@@ -1084,27 +1127,15 @@ Sistema bus apribojama šiais ekonominiais aspektais:
 	\subsubsection{Programų sistemos pakartotino panaudojamumo reikalavimai}
 
 \subsection{Ką?}\label{sec:PSReqWhat}
-Programų sistema digitalizuotus informacijos objektus saugos duomenų bazėse, kuriuose duomenys bus užšifruoti. Duomenų saugojimas atitiks numatytą duomenų apsaugos reglamentavimą pagal BDAR. Duomenys bus apsaugojami nuo tyčinių ir netyčinių grėsmių (pvz., duomenų pasiekimas neautorizuotiems asmenims)
+Programų sistema digitalizuotus informacijos objektus saugos duomenų bazėse, kuriuose duomenys bus užšifruoti. Duomenų saugojimas atitiks numatytą duomenų apsaugos reglamentavimą pagal BDAR. Duomenys bus apsaugojami nuo tyčinių ir netyčinių grėsmių (pvz., duomenų pasiekimas neautorizuotiems asmenims).
 
-Programų sistema privalo nurodytose informacijos saugyklose saugoti
-nurodytus digitalizuotus informacijos objektus. Tie objektai turi būti apsaugoti
-nuo nurodytų tyčinių ir netyčinių grėsmių jais neteisėtai pasinaudoti.
-Digitalizuotiems informacijos objektams sistemos informacijos saugyklose
-sukaupti sistemoje turi būti numatytas nurodytas papildomas
-funkcionalumas.
-
-
-What-requirements define how the information objects shallbe digitalisedandobjectsshallbedigitalisedand•  how the digital objects shall be protectedfrom accidental loss  corruptionand/or deliberateaccidentalloss, corruptionand/ordeliberateunauthorized attempts to access or to alter themthem.
-
-Duomenų apsaugos reikalavimai: 
-
-Answering the question "What?" is formulateddttiit•data system processing requirements,•  data protection requirements,•  the measures to be taken during the system installation to collect the data for its operation.
-
-Sftit  “WHAT?”Software requirements. “WHAT?”It is possible to talk about •the content of the objects being represented andthecontentoftheobjectsbeingrepresentedand•   the general requirements for the representation of information objects, in particular,the accuracy of theinformationobjects,inparticular,theaccuracyoftherepresentation of information objects.
-
-The system data security requirements describe:ApsaugaSecurity•   the threats against which the data must be protected;•   rules for classifying users and processes and assigning data processing rights to those classes;•   the rules for the classification of data and the levels of protection for those classes.
-
-The amount of resources needed to gather the data and other information resources(tothedataandotherinformationresources(tofill different repositories) depends on:hth  thtd  d    lt•whether the system under developmentreplaces a previously used software system;hth  thtd  d    lt•whether the system under developmentmodifies previously used manual information processing proceduresprocessingprocedures.
+\textbf{Programų sistemos duomenų apsaugos reikalavimai:}
+\begin{itemize}
+	\item Atsiradus atvejui, kad duomenys yra prarandami arba sugadinami, bus naudojama duomenų atstatymo procedūros, pvz. duomenų saugyklos versijų kontrolės versijos atkūrimas.
+	\item Atsiradus atvejui, kad duomenys bus tyčia prarandami/gadinami arba neautorizuotai pasiekti, bus vykdomos organizacijos politikos procedūros - tikrinami konfidencialumo sutarties pažeidimai, apie atsiradusį atvejai pranešama policijai ir kt.
+	\item Neautorizuotiems naudotojams nebus vaizduojama konfidencialūs duomenys, pvz., asmens kodas, siekiant užtikrinti duomenų apsaugos reglamentavimą pagal BDAR.
+	\item Vaizduojant digitalizuotus informacijos objektus, nebus vaizduojami unikalūs vidiniais identifikatoriai.
+\end{itemize}
 
 \subsection{Kas?}\label{sec:PSReqWho}
 \subsection{Kur?}\label{sec:PSReqWhere}
@@ -1127,7 +1158,7 @@ aktualumas artimiausiu metu tik augs.
 \noindent\textbf{Epidemiologija} -- tai mokslas apie su sveikata susijusių įvykių (dažniausiai – sveikatos sutrikimų, ligų ar mirčių, bendrai vadinamų baigtimis) ir juos lemiančių veiksnių (vadinamų rizikos veiksniais) atsiradimą ir plitimą tam tikroje populiacijoje bei apie profilaktikos priemonių taikymo galimybes ir veiksmingumą. \\
 \noindent\textbf{E. policija} -- policijos e-paslaugų portalas. \\
 \noindent\textbf{Kontaktas} -- kontaktas veidas į veidą ne didesniu kaip dviejų metrų atstumu ilgiau nei 15 minučių. \\
-\noindent\textbf{Pavojinga šalis} -- SAM įvardinta šalis, kurioje šiuo metu yra prasta epidemiologinė situacija ir iš kurios atvykstant reikia saviizoliuotis.
+\noindent\textbf{Pavojinga šalis} -- SAM įvardinta šalis, kurioje šiuo metu yra prasta epidemiologinė situacija ir iš kurios atvykstant reikia saviizoliuotis. \\
 \noindent\textbf{Saviizoliacija} --karantinasm, apsiribojimas nuo visų socialinių kontaktų ir buvimas tik namuose. \\
 \noindent\textbf{Sveikatos apsaugos ministerija (SAM)} -– Lietuvos Vyriausybės pagrindinė institucija, atsakinga už Lietuvos nacionalinės sveikatos politikos įgyvendinimą ir koordinavimą. \\
 \noindent\textbf{SMS žinutė} -- trumpoji žinutė, daugelyje mobiliųjų telefonų esanti paslauga, skirta trumpųjų žinučių siuntimui tarp mobiliųjų telefonų arba kitų panašių įrenginių. \\
