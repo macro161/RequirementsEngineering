@@ -44,7 +44,35 @@
 \BOOKMARK [1][-]{section.6}{PS\040reikalavimai}{}% 44
 \BOOKMARK [2][-]{subsection.6.1}{Kodėl?}{section.6}% 45
 \BOOKMARK [2][-]{subsection.6.2}{Kaip?}{section.6}% 46
-\BOOKMARK [2][-]{subsection.6.3}{Ką?}{section.6}% 47
-\BOOKMARK [2][-]{subsection.6.4}{Kas?}{section.6}% 48
-\BOOKMARK [2][-]{subsection.6.5}{Kur?}{section.6}% 49
-\BOOKMARK [2][-]{subsection.6.6}{Kada?}{section.6}% 50
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Programų sistemos tinkamumo reikalavimia}{subsection.6.2}% 47
+\BOOKMARK [4][-]{paragraph.6.2.1.1}{Galimybė valdyti užsikėtusių žmogaus duomenis}{subsubsection.6.2.1}% 48
+\BOOKMARK [4][-]{paragraph.6.2.1.2}{Galimybė valdyti pavojingų šalių registrą}{subsubsection.6.2.1}% 49
+\BOOKMARK [4][-]{paragraph.6.2.1.3}{Galimybė valdyti sviizoliacijos pranešimų sistema}{subsubsection.6.2.1}% 50
+\BOOKMARK [4][-]{paragraph.6.2.1.4}{Galimybė valdyti portalo apie saviizoliacijos informaciją}{subsubsection.6.2.1}% 51
+\BOOKMARK [4][-]{paragraph.6.2.1.5}{Galimybė valdyti mobilioji aplikaciją saviizoliacijai sekti}{subsubsection.6.2.1}% 52
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Programų sistemos sąveikos su kitomis sistemomis}{subsection.6.2}% 53
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Programų sistemos atitikimas galiojantiems teisės aktams}{subsection.6.2}% 54
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Programų sistemos trasuojamumo reikalavimai}{subsection.6.2}% 55
+\BOOKMARK [3][-]{subsubsection.6.2.5}{Programų sistemos patikimumo reikalavimai}{subsection.6.2}% 56
+\BOOKMARK [3][-]{subsubsection.6.2.6}{Programų sistemos išbaigtumas}{subsection.6.2}% 57
+\BOOKMARK [3][-]{subsubsection.6.2.7}{Programų sistemos atsparumo triktims reikalavimai}{subsection.6.2}% 58
+\BOOKMARK [3][-]{subsubsection.6.2.8}{Programų sistemos atkuriamumo reikalavimai}{subsection.6.2}% 59
+\BOOKMARK [3][-]{subsubsection.6.2.9}{Programų sistemos prieinamumo reikalavimai}{subsection.6.2}% 60
+\BOOKMARK [3][-]{subsubsection.6.2.10}{Programų sistemos pažeidžiamumo reikalavimai}{subsection.6.2}% 61
+\BOOKMARK [3][-]{subsubsection.6.2.11}{Programų sistemos aptarnavimo reikalavimai}{subsection.6.2}% 62
+\BOOKMARK [3][-]{subsubsection.6.2.12}{Programų sistemos diegimo reikalavimai}{subsection.6.2}% 63
+\BOOKMARK [3][-]{subsubsection.6.2.13}{Programų sistemos adaptuojamumo reikalavimai}{subsection.6.2}% 64
+\BOOKMARK [3][-]{subsubsection.6.2.14}{Programų sistemos instaliuojamumo reikalavimai}{subsection.6.2}% 65
+\BOOKMARK [3][-]{subsubsection.6.2.15}{Programų sistemos atitikimo keliamumo standartams reikalavimai apibūdina}{subsection.6.2}% 66
+\BOOKMARK [3][-]{subsubsection.6.2.16}{Programų sistemos pakeičiamumo reikalavimai}{subsection.6.2}% 67
+\BOOKMARK [3][-]{subsubsection.6.2.17}{Programų sistemos prižiūrimumo reikalavimai}{subsection.6.2}% 68
+\BOOKMARK [3][-]{subsubsection.6.2.18}{Programų sistemos analizuojamumo reikalavimai}{subsection.6.2}% 69
+\BOOKMARK [3][-]{subsubsection.6.2.19}{Programų sistemos keičiamumo reikalavimai}{subsection.6.2}% 70
+\BOOKMARK [3][-]{subsubsection.6.2.20}{Programų sistemos stabilumo reikalavimai}{subsection.6.2}% 71
+\BOOKMARK [3][-]{subsubsection.6.2.21}{Programų sistemos testuojamumo reikalavimai}{subsection.6.2}% 72
+\BOOKMARK [3][-]{subsubsection.6.2.22}{Programų sistemos tvarkomumo reikalavimai}{subsection.6.2}% 73
+\BOOKMARK [3][-]{subsubsection.6.2.23}{Programų sistemos pakartotino panaudojamumo reikalavimai}{subsection.6.2}% 74
+\BOOKMARK [2][-]{subsection.6.3}{Ką?}{section.6}% 75
+\BOOKMARK [2][-]{subsection.6.4}{Kas?}{section.6}% 76
+\BOOKMARK [2][-]{subsection.6.5}{Kur?}{section.6}% 77
+\BOOKMARK [2][-]{subsection.6.6}{Kada?}{section.6}% 78
