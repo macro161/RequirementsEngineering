@@ -202,17 +202,8 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 		                                                                                                             & Kodėl? (vizija ir suvaržymai) & Kaip? (sistemos panaudojimo atvejai ir kokybė) & Ką(duomenys ir jų sauga) \\ \hline
 		Programos reikalavimai (Kiekvienai sistemai)                                                                                   &
 		\ref{sec:PSReqWhy} skyrelis &
-
-		Programų sistema įgyvendina visus funkcinius ir nefunkcinius reikalavimus atsižvelgdama ekonominius ir politinius reikalavimus iškeltus suinteresuotų šalių 
-		stengiantis nesumažinti sistemos kokybės.
-		Turi būti pasiektas nurodytas patikimumas bei diegimo ir palaikymo procedūros ateities sistemos vystytojas.
-
-		                                                                                                             &
-		Sistemoje yra saugomi privačių asmenų asmeninai duomenys bei su jų sveikatos būkle susiję duomenys.
-		Sistema turi užtikrinti, kad neautorizuoti ir blogi aktoriai negalėtų pasiekti privačių asmenų duomenų.
-		Duomenys turi būti apsaugoti ne tik nuo išorinių blogų aktorių, bet ir nuo sistemos kūrėjų ir palaikytojų klaidų,
-		duomenis apsaugant nuo atsitiktinio jų ištrynimo ar modifikavimo.
-		Visas disponavimas duomenimis turi atitikti Lietuvos ir Europos įstatymus.                                                                                                                                               \\ \hline
+		\ref{sec:PSReqHow} skyrelis&
+		 \ref{sec:PSReqWhat} skyrelis\\ \hline
 
 \end{longtable}
 
@@ -223,34 +214,9 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \label{table:PSReq-WhoWhereWhen} \\ \hline
 		                           & Kas? (vartotojo sąsajos, prieinamumo ir ergonomikos reikalavimai) & Kur? (sistemos platformos reikalavimai) & Kada? (laiko suvaržymai aplikacijos panaudojimo atvejuose) \\ \hline
 		Programos reikalavimai (Kiekvienai sistemai) &
-
-		Sistema turi būti pritaikyta naudotis vartotojams su regos sutrikimais.
-		Turi būti galimybė keisti vartotojo sąsajos spalvų gama labiau pritaikytą daltonikams.
-		Sistema taip turi suteikti galimybė padidinti vartotojo sąsajos tekstą ir elementų dydį bei spalvą
-		padedant žmonėms su silpnu regėjimu.
-		Sistema turi turėti apmokymo programą naujiems vartotojams su įvairiais kompiuterinio raštingumo lygiais,
-		tačiau daroma prielaida, kad vartotojas turi bazinius kompiuterinio raštingumo įgūdžius.
-		Patyrusiems vartotojas sistema turi suteikti greitojo vedimo ir sisteminių klaviatūros trumpinių galimybę taip pagreitinant patyrusio vartotojo darbą.
-		Sistema turi išsijungti po 30 minučių neaktyvumo.
-		Sėkmingai atlikta užduotis sistemoje turi būti identifikuojama garsiniu signalu.
-		Visa sistema turi būti sukurta laikanti žmogaus ir kompiuterio sąveikos euristikų.
-
-		                           &
-
-		Sistema veiks mikroservisų architektūros principu naudojant AWS debesijos sistema.
-		Papildomi sisteminiai resursai bus padidinami ir sumažinami pagal sistemos apkrovas.
-		Sistemos vartotojai sistemą pasiekti galės naudodamiesi vidutinio galingumo stacionariu kompiuteriu Windows 10 aplinkoje.
-
-		                           &
-
-		Sistema efektyviai turi veikti 24h per parą.
-		Didžiausia apkrova sistemai bus darbo valandomis kai yra paskelbiama nauji viruso atvejai.
-		Sistemoje svarbu užtikrinti duomenų integralumą, kad visi siunčiami ir gaunami duomenys galiausiai būtų išsaugomi.
-		Sistema turi palaikyti didelį įrašų kiekį ir jų siuntinėjimą tiek siunčiant informacija kitiems sistemos aktoriams tiek ir gaunant žinutes iš tų pačiu aktorių.
-		Duomenų integralumas turi būti išsprendžiamas per vieną minutę.
-		Viena transakcija negali trukti ilgiau negu 0,1 sekundės.
-
-		\\ \hline
+		 \ref{sec:PSReqWho} skyrelis&
+		 \ref{sec:PSReqWhere} skyrelis&
+		 \ref{sec:PSReqWhen} skyrelis\\ \hline
 
 \end{longtable}
 \end{center}
@@ -1159,6 +1125,7 @@ Sistema atitinka žmogaus ir kompiuterio sąveikos euristikas.
 \begin{enumerate}
 	\item Didžiausia leistina tinklapio sistemos apkrova yra 10000 vartotojų, prisijungusių vienu metu.
 	\item Tinklapio didžiausias leistinas reakcijos laikas, neįvertinant interneto greičio, turi būti ne didesnis kaip 1 sekundė, o užklausos vykdymo laikas ne didesnis nei 2 sekundės. Netenkinant šio kriterijaus, tinklapio algoritmas turi būti spartinimas.
+	\item Viena transakcija negali trukti ilgiau negu 0,1 sekundės.
 \end{enumerate}
 
 \newpage
