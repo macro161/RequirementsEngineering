@@ -27,16 +27,16 @@
 \university{Vilniaus universitetas}
 \faculty{Matematikos ir informatikos fakultetas}
 \department{}
-\papertype{Reikalavimų inžinerijos laboratorinis darbas}
-\title{Reikalavimų specifikacija}
-\titleineng{Requirement specification}
-\status{1 kurso magistratūros studentai}
+\papertype{Reikalavimų inžinerijos pirmas laboratorinis darbas - reikalvimų specifikacija}
+\title{Epidemiologinės šalies situacijos sekimo sistema}
+\titleineng{Epidemiologinė sistema}
+\status{1 kurso PS magistrantūros studentai}
 \author{Šarūnas Kazinieras Buteikis}
 \secondauthor{Matas Savickis}
 \thirdauthor{Rokas Ulickas}
 \fourthauthor{Vytautas Krivickas}
 \supervisor{dr. Audronė Lupeikienė}
-\date{Vilnius – \the\year}
+\date{Vilnius – \the\year. Versija 1.0}
 
 % Nustatymai
 % \setmainfont{Palemonas} % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
@@ -48,13 +48,13 @@
 
 \sectionnonumnocontent{Santrauka}
 
-Šiame dokumente pateikiama „Epidemiologinės šalies situacijos sekimo sistemos“
-reikalavimų specifikacija. Komandą sudarė:
+Šiame dokumente pateikiama „Epidemiologinės šalies situacijos sekimo sistemos“ reikalavimų specifikacija: 
+naudojantis Zachmano karkasu suformuluoti verslo, naudotojo, IS ir programinės įrangos reikalavimai. Komandą sudarė:
 \begin{itemize}
-	\item Šarūnas Kazinieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- dokumento maketavimas, taisymai  {\color{red}<...>}
-	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- dokumento maketavimas, įžanga, {\color{red}<...>}
-	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- dokumento maketavimas, {\color{red}<...>}
-	\item Rokas Ulicas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- {\color{red}<...>}
+	\item Šarūnas Kazimieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- dokumento maketavimas, gramatikos taisymas, verslo, programų sistemų reikalavimai.
+	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- dokumento maketavimas, įžanga, verslo reikalavimai, naudotojo reikalavimai išvados.
+	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- dokumento maketavimas, verslo reikalavimai, IS reikalavimai, programinės įrangos reikalavimai.
+	\item Rokas Ulickas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- verslo reikalavimai, IS reikalavimai, programinės įrangos reikalavimai.
 \end{itemize}
 
 \newpage
@@ -62,7 +62,7 @@ reikalavimų specifikacija. Komandą sudarė:
 \tableofcontents
 
 \section{Įžanga}
-Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistema”, toliau - „sistema”.
+Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistema”, toliau - „epidemiologinė sistema” arba „sistema”.
 Ši sistema skirta sekti epidemiologinei padėčiai šalyje: įvertinti viruso plitimo šalyje tendencijas,
 efektyviai identifikuoti naujus viruso židinius, leisti specialistams atsekti susirgusiųjų
 kontaktus registruojant užsikrėtusiųjų maršrutus ir potencialiuose rizikos židiniuose
@@ -107,6 +107,16 @@ Sistema siekiama išspręsti šias problemas:
 	      esančius duomenis jiems reikalingas bakalauro ar aukštesnis iššsilavinimas
 	      duomenų mokslo ar informatikos srityse.
 \end{itemize}
+
+\subsection{Darbo priežastys}
+Darbe aprašoma sistema ypač aktuali rudenį prasidėjus antrajai korona viruso bangai. Tokia sistema padėtų 
+valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
+
+\subsection{Šaltiniai}
+\begin{enumerate}
+	\item A. Čaplinskas, REIKALAVIMŲ INŽINERIJA, Vilnius 2010.
+	\item A. Lupeikienė, Requirements Engineering paskaitų medžiaga, Vilnius 2020.
+\end{enumerate}
 
 \newpage
 
