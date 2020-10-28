@@ -15,7 +15,7 @@
 \usepackage{array}
 \usepackage{wrapfig}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{multirow}
 \usepackage{longtable}
 
@@ -27,11 +27,11 @@
 \university{Vilniaus universitetas}
 \faculty{Matematikos ir informatikos fakultetas}
 \department{}
-\papertype{Reikalavimų inžinerijos pirmas laboratorinis darbas - reikalvimų specifikacija}
+\papertype{Reikalavimų inžinerijos pirmas laboratorinis darbas - reikalavimų specifikacija}
 \title{Epidemiologinės šalies situacijos sekimo sistema}
 \titleineng{Epidemiologinė sistema}
 \status{1 kurso PS magistrantūros studentai}
-\author{Šarūnas Kazinieras Buteikis}
+\author{Šarūnas Kazimieras Buteikis}
 \secondauthor{Matas Savickis}
 \thirdauthor{Rokas Ulickas}
 \fourthauthor{Vytautas Krivickas}
@@ -161,24 +161,7 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \\ \hline
 		                                                & Kodėl? (motyvacija) & \multicolumn{1}{c|}{Kaip? (veiklos)} & Ką? (apdorojami objektai) \\ \hline
 		Vartotojo reikalavimai (dalykinės srities specialisto požiūris)
-		&
-		Epidemiologinės situacijos sekimo sistemą reikia kurti, kad būtų galima sekti ir valdyti duomenis apie
-		virusu susirgusius asmenis. Sistema padėtų centralizuoti epidemijos sekimą ir įgalintų greitą komunikaciją
-		tarp suinteresuotų asmenų, pateiktų informaciją sergantiems asmenims ir taip padėtų kovoje su virusu
-		bei įgalintų efektyvesnį viruso plitimo valdymą. &
-
-		Informacija tarp suinteresuotų šalių bus apsikeičiama kompiuterizuotu, automatizuotu būdu.
-		Duomenys apsikeičiami arba numatytais laiko momentais arba suinteresuotai pusei paprašius įvykdyti transakcija.
-		Komunikacija tarp suinteresuotu šalių vyksta serverių duomenų apsikeitimo lygmenyje.
-		Privatiems asmenims informacija yra perduodama trumposiomis žinutėmis, elektroniniu paštu arba asmeniniu skambučiu.
-
-		                                                &
-
-		Sistemoje kaupsime epidemiologinius duomenis, susijusius apie asmenis: kur žmogus lankėsi, jo sveikatos istorija, asmeniniai duomenys, žmogaus esamą buvimo vietą , viruso testo rezultatus.
-		Sistemoje kaupsime epidemiologinius duomenis apie renginius ir viešąsias maitinimo įstaigas, kada ir kokie žmonės ten lankėsi, kas dalyvavo renginyje ar maitinimo įstaigoje prieš susirgdamas.
-		Sistemoje kaupsime epidemiologinius duomenis apie pavojingu šalių sąrašus ir žmones, atvykstančius iš šių šalių, kur jie lankėsi, kiek laiko izoliavosi.
-		Visi duomenys bus valdomi pagal BDAR įstatymą.
-		Visus duomenis matys tik valstybinių organizacijų atstovai turintys teises matyti šiuos duomenis.                                   \\ \hline
+		& \ref{sec:vartotojoReqWhy} skyrelis & \ref{sec:vartotojoReqHow} skyrelis & \ref{sec:vartotojoReqWhat} skyrelis                               \\ \hline
 
 \end{longtable}
 
@@ -188,14 +171,7 @@ valdyti viruso plitimą bei suteiktų epidemiologams vertingų įžvalgų.
 \label{table:UserReq-WhoWhereWhen} \\ \hline
 		                                                                                                                                                    & Kas? (funkciniai vienetai) & \multicolumn{1}{c|}{Kur? (vieta)} & Kada? (laikas) \\ \hline
 		Vartotojo reikalavimai (dalykinės srities specialisto požiūris
-		&
-		Sistema gali naudotis tik vartotojai turintys tinkamą privilegijų lygį.
-		Vartotojui neturi būti pateikta daugiau duomenų ir funkcionalumų negu nurodo jo privilegijos lygis sistemoje.
-		Projektuojant sistemos prieinamumą reikia laikytis prielaidos, kad sistemos vartotojai turės bazinį informacinių technologijų raštingumo lygį.
-		Po sistemos sukūrimo vartotojai bus apmokomi naudotis sistema, tačiau tikimasi, kad vartotojai jau bus naudojęsi kitomis, panašiomis sistemomis.     &
-
-		Programine sistema pasiekti galima tik nurodytoje darbo vietoje arba prisijungus į virtualų privatų tinklą (VPN) užtikrinant darbo iš namų galimybę. &
-		Sistema turi užtikrinti, kad jos prieinamumas nebūtų mažesnis negu nurodyti laiko apribojimų.                                                                                                                                        \\ \hline
+		& \ref{sec:vartotojoReqWho} skyrelis & \ref{sec:vartotojoReqWhere} skyrelis & \ref{sec:vartotojoReqWhen} skyrelis                                                                                                                                        \\ \hline
 	
 \end{longtable}
 
@@ -694,7 +670,7 @@ Turi būti teisingai nustatomi 99,9\% saviizoliacijos pažeidimų.
 \textbf{Saugumas}:
 Saugumo reikalavimai turi būti aukšti. Projekte dirbama su asmenine žmonių informacija kuri gali būti susijusi su žmogaus sveikatos informacija. Sistema turi būti kiek galima saugesnė.
 
-\subsection{Ką?}\label{sec:vartotojoWhat}
+\subsection{Ką?}\label{sec:vartotojoReqWhat}
 Šiame poskyriuje formuluojami verslo objektus modeliuojančių informacinių objektų reikalavimai.
 
 \subsubsection{Informaciniai objektai}
@@ -1099,17 +1075,46 @@ Sistema bus apribojama šiais ekonominiais aspektais:
 			\\
 			Gautas rezultatas - įsitikint, kad žmogus nepažeidžia saviizoliacijos reikalavimų.
 	\subsubsection{Programų sistemos sąveikos su kitomis sistemomis}
+		Sistema sąveikaus su: e. policijos sistema, NVSC sistema, sveikatos ministerijos sistema, muitinės sistema, e. sveikatos sistema, karštosios linijos sistema, renginų organizatorių sistema.
 	\subsubsection{Programų sistemos atitikimas galiojantiems teisės aktams}
+		Sistema atitinka Lietuvos ir Europos teisės aktams. 
+		Sistema taip pat laikosi BDAR reglamento.
 	\subsubsection{Programų sistemos trasuojamumo reikalavimai}
+		Sistemos atrasuojamumas bus įgyvendinatas pasinaudojant Jira Atlassian sistema kuri užtikrina programos trsuojamumą
 	\subsubsection{Programų sistemos patikimumo reikalavimai}
+		Sistema turi išlikti pasiekiama 99 procentus laiko.
+		Įvykus sistemos tiktims sistema turi sugebėti automatiškai pasileisti išnaujo neprarasdama duomenų.
 	\subsubsection{Programų sistemos išbaigtumas}
+		Užsakovui priimtimas vienas tikdis per dieną.
+		Trumpiausias laikas tarp dviejų trikdžių yra 24 valandos.
+		Sistemoje neturi būti palikta esminių klaidų.
 	\subsubsection{Programų sistemos atsparumo triktims reikalavimai}
+		Dėl trikdžiū sistema gali neveikti 1 valandą per diena.
+		Sistemoje gali būti vienas įsilaužimas per mėsenį.
 	\subsubsection{Programų sistemos atkuriamumo reikalavimai}
+		Sistema turi galėti atsikurti per valandą po sutrikimo.
+		Per valandą turi būti atkūriami prarasti duomenys ir funkcionalumas.
+		Trikdis turi būti rastas ir pašalintas per savaitę.
+		
 	\subsubsection{Programų sistemos prieinamumo reikalavimai}
+		Per dieną sistema turi išlikti funkcionali 23 valandas. 
 	\subsubsection{Programų sistemos pažeidžiamumo reikalavimai}
+		Esminis sistemos funkcionalumas turi būti atkurtas per valandą.
 	\subsubsection{Programų sistemos aptarnavimo reikalavimai}
+		Sistema turi būti galima atstatyi per valandą.
+		Surastas trigdis programiniam kode turi būti pašalintas per savaitę.
 	\subsubsection{Programų sistemos diegimo reikalavimai}
+		Sistema yra paleidžiama debesų kompiuterijos srveriuose, todėl sistemos diegimo kaštai yra minimlūs.
+		Sistemai perkelti iš vieno debesijos serverio į kitą turi pakakti 24 valandų darbo.
+		Sistema perkeliama perkelus sukompiliuotus binarinius failus.
 	\subsubsection{Programų sistemos adaptuojamumo reikalavimai}
+		Perkelti sistema ant naujos platformos kainuotų 10000 žmogaus darbo valandų.
+		\\
+		Perkelti sistemą į kitą kompiuterinę platformą 20 žmogaus darbo valandų
+		\\ 
+		Perkelti sistemą į naujasnę operacinės sistemos versiją kainuotų 100 žmogaus darbo valandų
+		\\
+		Perkelti sistemos duomenis į nauja DBVS kainuotų 200 žmogaus darbo valandų.
 	\subsubsection{Programų sistemos instaliuojamumo reikalavimai}
 	\subsubsection{Programų sistemos atitikimo keliamumo standartams reikalavimai apibūdina}
 	\subsubsection{Programų sistemos pakeičiamumo reikalavimai}
@@ -1122,27 +1127,15 @@ Sistema bus apribojama šiais ekonominiais aspektais:
 	\subsubsection{Programų sistemos pakartotino panaudojamumo reikalavimai}
 
 \subsection{Ką?}\label{sec:PSReqWhat}
-Programų sistema digitalizuotus informacijos objektus saugos duomenų bazėse, kuriuose duomenys bus užšifruoti. Duomenų saugojimas atitiks numatytą duomenų apsaugos reglamentavimą pagal BDAR. Duomenys bus apsaugojami nuo tyčinių ir netyčinių grėsmių (pvz., duomenų pasiekimas neautorizuotiems asmenims)
+Programų sistema digitalizuotus informacijos objektus saugos duomenų bazėse, kuriuose duomenys bus užšifruoti. Duomenų saugojimas atitiks numatytą duomenų apsaugos reglamentavimą pagal BDAR. Duomenys bus apsaugojami nuo tyčinių ir netyčinių grėsmių (pvz., duomenų pasiekimas neautorizuotiems asmenims).
 
-Programų sistema privalo nurodytose informacijos saugyklose saugoti
-nurodytus digitalizuotus informacijos objektus. Tie objektai turi būti apsaugoti
-nuo nurodytų tyčinių ir netyčinių grėsmių jais neteisėtai pasinaudoti.
-Digitalizuotiems informacijos objektams sistemos informacijos saugyklose
-sukaupti sistemoje turi būti numatytas nurodytas papildomas
-funkcionalumas.
-
-
-What-requirements define how the information objects shallbe digitalisedandobjectsshallbedigitalisedand•  how the digital objects shall be protectedfrom accidental loss  corruptionand/or deliberateaccidentalloss, corruptionand/ordeliberateunauthorized attempts to access or to alter themthem.
-
-Duomenų apsaugos reikalavimai: 
-
-Answering the question "What?" is formulateddttiit•data system processing requirements,•  data protection requirements,•  the measures to be taken during the system installation to collect the data for its operation.
-
-Sftit  “WHAT?”Software requirements. “WHAT?”It is possible to talk about •the content of the objects being represented andthecontentoftheobjectsbeingrepresentedand•   the general requirements for the representation of information objects, in particular,the accuracy of theinformationobjects,inparticular,theaccuracyoftherepresentation of information objects.
-
-The system data security requirements describe:ApsaugaSecurity•   the threats against which the data must be protected;•   rules for classifying users and processes and assigning data processing rights to those classes;•   the rules for the classification of data and the levels of protection for those classes.
-
-The amount of resources needed to gather the data and other information resources(tothedataandotherinformationresources(tofill different repositories) depends on:hth  thtd  d    lt•whether the system under developmentreplaces a previously used software system;hth  thtd  d    lt•whether the system under developmentmodifies previously used manual information processing proceduresprocessingprocedures.
+\textbf{Programų sistemos duomenų apsaugos reikalavimai:}
+\begin{itemize}
+	\item Atsiradus atvejui, kad duomenys yra prarandami arba sugadinami, bus naudojama duomenų atstatymo procedūros, pvz. duomenų saugyklos versijų kontrolės versijos atkūrimas.
+	\item Atsiradus atvejui, kad duomenys bus tyčia prarandami/gadinami arba neautorizuotai pasiekti, bus vykdomos organizacijos politikos procedūros - tikrinami konfidencialumo sutarties pažeidimai, apie atsiradusį atvejai pranešama policijai ir kt.
+	\item Neautorizuotiems naudotojams nebus vaizduojama konfidencialūs duomenys, pvz., asmens kodas, siekiant užtikrinti duomenų apsaugos reglamentavimą pagal BDAR.
+	\item Vaizduojant digitalizuotus informacijos objektus, nebus vaizduojami unikalūs vidiniais identifikatoriai.
+\end{itemize}
 
 \subsection{Kas?}\label{sec:PSReqWho}
 \subsection{Kur?}\label{sec:PSReqWhere}
