@@ -19,6 +19,8 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{makecell}
+\usepackage{diagbox}
+
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -173,7 +175,31 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 			\end{center}			
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+			\begin{center}
+				\setstretch{1.0}
 
+				\begin{longtable}{|C{2.1cm}|C{0.8cm}|C{0.8cm}|C{0.8cm}|C{0.8cm}|C{0.8cm}|C{0.8cm}|C{0.8cm}|C{0.8cm}|L{4cm}|}
+
+					\caption{Reikalavimų specifikacijos įvertinimas}
+					\label{table:VKS}
+
+ 					\\ \hline
+ 					\backslashbox{RK}{KSK} &
+  					 \textbf{VKS-01}& 
+  					 \textbf{VKS-02}&
+  					 \textbf{VKS-03}&
+  					 \textbf{VKS-04}&
+  					 \textbf{VKS-05}&
+  					 \textbf{VKS-06}&
+  					 \textbf{VKS-07}&
+  					 \textbf{VKS-08}&
+  					 \multicolumn{1}{|c|}{\makecell{\textbf{Sprendimas}}} \\ \hline
+ 					R1 &&&&&&&&&\\ \hline
+ 					R1 &&&&&&&&&\\ \hline
+	
+				\end{longtable}
+			\end{center}	
+			
 \subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 \subsection{Programuotojo perspektyva}
 
