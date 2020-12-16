@@ -18,6 +18,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{multirow}
 \usepackage{longtable}
+\usepackage{makecell}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -128,6 +129,33 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 \subsection{Vartotojas}
 
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+\begin{center}
+	\setstretch{1.0}
+
+	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+
+		\caption{Vartotojo kontrolinis sąrašas}
+		\label{table:VKS}
+
+		\\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}             &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}} &
+		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+		\\ \hline
+		VKS-01                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		VKS-02                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		VKS-03                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		VKS-04                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+	\end{longtable}
+\end{center}
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
 
