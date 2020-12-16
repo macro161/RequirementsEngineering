@@ -1,3 +1,4 @@
+% !TEX program = xelatex
 \documentclass{VUMIFPSkursinis}
 \usepackage{algorithmicx}
 \usepackage{algorithm}
@@ -13,7 +14,14 @@
 \usepackage{subfig}
 \usepackage{array}
 \usepackage{wrapfig}
-\usepackage{tabu}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -22,9 +30,11 @@
 \papertype{Laboratorinis darbas}
 \title{Reikalavinų inžinerijos antras laboratorinis darbas}
 \titleineng{Requirements engineering}
-\status{1 kurso magistrantūros studentas}
-\author{Matas Savickis, Rokas Ulickas}
-\secondauthor{Šarūnas Kazimieras Buteikis, Vytautas Krivickas}
+\status{1 kurso magistrantūros studentai}
+\author{Šarūnas Kazimieras Buteikis}
+\secondauthor{Matas Savickis}
+\thirdauthor{Rokas Ulickas}
+\fourthauthor{Vytautas Krivickas}
 % \secondauthor{Vardonis Pavardonis} % Pridėti antrą autorių
 \supervisor{dr. Audronė Lupeikienė}
 \date{Vilnius – \the\year}
@@ -37,50 +47,143 @@
 
 \maketitle
 
+\sectionnonumnocontent{Santrauka}
+
+Šiame dokumente pateikiamas „Epidemiologinės šalies situacijos sekimo sistemos“ reikalavimų specifikacijos validavimas ir verifikavimas, atliktas
+perspektyva paremtu skaitymu bei reikalavimų nuleidimas žemyn -- kokybės namai. Komandą sudarė (pateikiamos pasirinktos perspektyvos):
+\begin{itemize}
+	\item Šarūnas Kazimieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- .
+	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- .
+	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- .
+	\item Rokas Ulickas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- .
+\end{itemize}
+
+\newpage
 
 \tableofcontents
 
-	\section{Reikalavimų validacija and verifikacija}
-		\subsection{Klientas}
-			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
-			\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-			\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
-		\subsection{Vartotojas}
-			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
-			\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-			\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
-		\subsection{Programuotojas}
-			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
-			\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-			\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
-		\subsection{Operacijų ir palaikymo grupė}
-			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
-			\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-			\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+\section{Įžanga}
+Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistemos”, toliau - „epidemiologinė sistemos” arba „sistemos”
+reikalavimų validacija ir verifikacija bei reikalavimų nuleidimas žemyn.
+Ši sistema skirta sekti epidemiologinei padėčiai šalyje: įvertinti viruso plitimo šalyje tendencijas,
+efektyviai identifikuoti naujus viruso židinius, leisti specialistams atsekti susirgusiųjų
+kontaktus registruojant užsikrėtusiųjų maršrutus ir potencialiuose rizikos židiniuose
+besilankančius žmones, greitai informuoti kontaktavusiuosius su užsikrėtusiu žmogumi
+apie privalomą saviizoliaciją, rinkti duomenis apie asmenis karantine.
 
-	\section{Reikalavimų srautas - kokybės namas}
-		\subsection{Klientas}
-			\subsubsection{Produkto (sistemos) planavimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Gamybos planavimas}
-		\subsection{Vartotojas}
-			\subsubsection{Produkto (sistemos) planavimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Gamybos planavimas}
-		\subsection{Programuotojas}
-			\subsubsection{Produkto (sistemos) planavimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Gamybos planavimas}
-		\subsection{Operacijų ir palaikymo grupė}
-			\subsubsection{Produkto (sistemos) planavimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Komponentų diegimas}
-			\subsubsection{Gamybos planavimas}
+\subsection{Pritaikymo sritis}
+Ši sistema skirta naudoti sveikatos apsaugos sistemoje: sistema turėtų palengvinti
+epidemiologų darbą ir leisti sekti viruso plitimą populiacijoje, imtis efektyvesnės
+profilaktikos ir tirti naudojamų priemonių efektyvumą.
 
-	\section{Išvada}
+\subsection{Probleminė sritis}
+Sistema siekiama išspręsti šias problemas:
+\begin{itemize}
+	\item Atskirų sveikatos įstaigų renkami susirgimų duomenys nėra apdorojami centralizuotai
+	      arba tai daroma ne sistemingai, todėl epidemiologams sunku identifikuoti tikrąsias viruso
+	      plitimo šalyje tendencijas, greitai identifikuoti potencialius židinius.
+	\item Dėl žmogiškųjų resursų trūkumo dažnai tampa neįmanoma įspėti visų kontaktavusiųjų
+	      su užsikrėtusiuoju asmenų - automatizavus šį procesą būtų galima įgyvendinti efektyvesnę
+	      profilaktiką, užkardyti nevaldomą epidemijos plitimą.
+	\item Šiuo metu nėra centralizuotos sistemos, leidžiančios registruoti potencialiuose
+	      rizikos židiniuose (įvairiuose renginiuose, masinio susibūrimo vietose) besilankančius
+	      asmenis, dabar egzistuojančios pavienės iniciatyvos neleidžia automatiškai atsekti reikšmingo kiekio susirgusiojo kontaktų - tenka pasikliauti pastarojo pateikta informacija.
+	\item Nacionalinio sveikatos centro darbuotojai neturi galimybės automatiškai įspėti
+	      atvykusiųjų iš pavojingų šalių asmenų apie privalomą saviizoliaciją: atlikus reikiamas
+	      integracijas su muitinės sistemomis, ši sistema leistų automatizuoti ir šį procesą.
+	\item Šiuo metu nėra galimybės automatizuoti saviizoliacijos reikalavimų laikymosi sekimo,
+	      tad naujoji sistema leistų bent iš dalies automatizuoti šį procesą: reikalauti asmenis
+	      saviizoliacijoje pateikti savo dabartinę vietą naudojantis išmaniajame telefone esančia
+	      GPS sistema ar atsiųsti saviizoliaciją patvirtinančią nuotrauką.
+\end{itemize}
+
+\subsection{Naudotojai}
+Šios sistemos naudotojų bazę sudaro trijų kategorijų naudotojai:
+\begin{itemize}
+	\item Epidemiologai - tai savo srities ekspertai, turintys aukštąjį išsilavinimą.
+	      Naudotis sistema jiems pakaks mokykloje dėstomo informatikos kurso.
+	\item LR esantys asmenys, dalyvaujantys riziką turinčiuose renginiuose, esantys saviizoliacijoje,
+	      atvykę iš pavojingų šalių ar turėję sąlytį su sergančiaisiais - jiems taip pat pakaks
+	      mokykloje dėstomo informatikos kurso.
+	\item Duomenų analitikai - tam, jog galėtų efektyviai panaudoti sistemoje
+	      esančius duomenis jiems reikalingas bakalauro ar aukštesnis iššsilavinimas
+	      duomenų mokslo ar informatikos srityse.
+\end{itemize}
+
+\section{Reikalavimų validacija and verifikacija}
+
+Šiame skyriuje aprašoma reikalavimų validacija ir verifikacija: siekiama rasti dokumentuotuose programinės įrangos
+reikalavimuose siekiama identifikuoti klaidas, tokias kaip dviprasmiškumas, neužbaigtumas, prieštaringumas ir kt.
+Šiam tikslui įgyvendinti naudojamas perspektyva paremtas skaitymas (angl. \textit{perspective-based reading}). Komandos narių
+pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
+
+\subsection{Klientas}
+
+\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+
+\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+
+\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+
+\subsection{Vartotojas}
+
+\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+
+\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+
+\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+\subsection{Programuotojo perspektyva}
+
+Šiame poskyryje pateikiama programuotojo -- asmens, kursiančio aprašomą sistemą -- perspektyva.
+
+\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas,
+paremtas programuotojo perspektyva.
+
+\begin{center}
+	\setstretch{1.0}
+	\small
+	\begin{longtable}{|L{3cm}|C{5cm}|C{7cm}|}
+		\caption{Programuotojo kontrolinis sąrašas}
+		\label{table:EmployeeSalary}
+		\\ \hline
+		Klausimo identifikatorius &
+		Klausimas                 &
+		Apibūdinimas                \\ \hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+\subsection{Operacijų ir palaikymo grupė}
+\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+
+\section{Reikalavimų nuleidimas žemyn - kokybės namas}
+\subsection{Klientas}
+\subsubsection{Produkto (sistemos) planavimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Gamybos planavimas}
+\subsection{Vartotojas}
+\subsubsection{Produkto (sistemos) planavimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Gamybos planavimas}
+\subsection{Programuotojas}
+\subsubsection{Produkto (sistemos) planavimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Gamybos planavimas}
+\subsection{Operacijų ir palaikymo grupė}
+\subsubsection{Produkto (sistemos) planavimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Komponentų diegimas}
+\subsubsection{Gamybos planavimas}
+
+\section{Išvada}
 
 
 \end{document}
