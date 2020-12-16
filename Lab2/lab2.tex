@@ -13,7 +13,13 @@
 \usepackage{subfig}
 \usepackage{array}
 \usepackage{wrapfig}
-\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{makecell}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -47,6 +53,34 @@
 			\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 		\subsection{Vartotojas}
 			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+			\begin{center}
+				\setstretch{1.0}
+
+				\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+
+					\caption{Vartotojo kontrolinis sąrašas}
+					\label{table:VKS}
+
+ 					\\ \hline
+ 					\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
+  					\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}} & 
+  					\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+ 					\\ \hline
+ 					VKS-01 &
+ 					Klausimas/Teiginys& 
+ 					Apibūdinimas\\ \hline
+ 					VKS-02 &
+ 					Klausimas/Teiginys&
+ 					Apibūdinimas\\ \hline
+ 					VKS-03 &
+ 					Klausimas/Teiginys& 
+					Apibūdinimas\\ \hline  
+ 					VKS-04 &
+ 					Klausimas/Teiginys& 
+ 					Apibūdinimas\\ \hline    
+				\end{longtable}
+			\end{center}			
+			
 			\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
 			\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 		\subsection{Programuotojas}
@@ -65,6 +99,7 @@
 			\subsubsection{Komponentų diegimas}
 			\subsubsection{Gamybos planavimas}
 		\subsection{Vartotojas}
+		
 			\subsubsection{Produkto (sistemos) planavimas}
 			\subsubsection{Komponentų diegimas}
 			\subsubsection{Komponentų diegimas}
