@@ -335,7 +335,7 @@ paremtas programuotojo perspektyva.
 		Reikalavimai (ar bendras reikalavimas) apibūdina, kaip sistemos vartotojo sąsaja reaguoja į vartotojo interakcijas                                                                              \\ \hline
 		VKS-05                                                                                        &
 		Ar galima valdyti asmens saviizoliaciją?                                                      &
-		Reikalavimai, apibrėžiantys, jog galima pačiam vartotojui užfiksuoti jų saviizoliaciją, įspėti vartotoją apie privalomą saviizoliaciją, nustatyti vartotojo saviizoliacijos pradžią ir pabaigą. \\ \hline
+		Reikalavimai, apibrėžiantys, jog galima pačiam vartotojui užfiksuoti jų saviizoliaciją, nustatyti vartotojo saviizoliacijos pradžią ir pabaigą. \\ \hline
 		VKS-06                                                                                        &
 		Ar galima privačiam asmeniui būti įspėtam apie privalomą saviizoliaciją?                      &
 		Reikalavimai, apibrėžiantys, jog vartotojui pranešama apie privalomą saviizoliaciją                                                                                                             \\ \hline
@@ -471,15 +471,17 @@ paremtas operacijų ir palaikymo grupės perspektyva.
 		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
 		\\ \hline
 		\reqCode &
-		Galimybė valdyti užsikėtusių žmogaus duomenis&
-		\textbf{Pradiniai duomenys} - žmogaus asmeniniai duomenys, kontaktiniai duomenys, saviizoliacijos pradžios ir numatomos pabaigos data, sarašas su kuo kontaktavo susirgęs žmogus.
-		\textbf{Gautas rezultatas} - įvesti žmogaus saviizoliacijos duomenis į registrą, galimybė tos duomenis perduoti kitoms posistemėms. \\ \hline
+		Galimybė valdyti užsikrėtusio žmogaus duomenis&
+		{\color{blue} 1.Privatus asmuo užfiksuoja savo saviizoliaciją.} \textbf{Pradiniai duomenys} - žmogaus asmeniniai duomenys, kontaktiniai duomenys, saviizoliacijos pradžios ir numatomos pabaigos data, sarašas su kuo kontaktavo susirgęs žmogus.
+		\textbf{Gautas rezultatas} - įvesti žmogaus saviizoliacijos duomenis į registrą, galimybė tos duomenis perduoti kitoms posistemėms. {\color{blue} 2. Privačiam asmeniui nustatoma saviizoliacijos pradžia ir pabaiga. \textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, sąrašas su kuo kontaktavo susirgęs žmogus. \textbf{Gautas rezultatas} - žinutė, informuojanti asmenį apie privalomą informaciją. Pateikiama saviizoliacijos pradžios ir numatomos pabaigos datos. 3. Užsikrėtęs privatus asmuo gali užfiksuoti asmenis, su kuriais kontaktavo \textbf{Pradiniai duomenys} - kontaktuotų žmonių asmeniniai duomenys, kontaktiniai duomenys. \textbf{Gautas rezultatas} - įvesti kontaktuotų žmonių duomenys į registrą, galimybė tuos duomenis perduoti kitoms posistemėms.}\\ \hline
 		\reqCode &
 		Galimybė valdyti pavojingų šalių registrą&
-		\textbf{Pradiniai duomenys} - nauja informaciją apie pavojingas šalis. \textbf{Gautas rezultatas} - atnaujintas pavojingų šalių sąrašas kurį naudos kitos posistemės.\\ \hline	
+		{\color{blue} 1.Sveikatos apsaugos ministerijos atstovas gali papildyti pavojingų šalių sąrašą }\textbf{Pradiniai duomenys} - nauja informaciją apie pavojingas šalis. \textbf{Gautas rezultatas} - atnaujintas pavojingų šalių sąrašas kurį naudos kitos posistemės.
+		{\color{blue} 2.Sveikatos apsaugos ministerijos atstovas gali pašalinti šalį iš pavojingų šalių sąrašo. \textbf{Pradiniai duomenys} - šalies pavadinimas, esantis pavojingų šalių sąraše. \textbf{Gautas rezultatas} - atnaujintas pavojingų šalių sąrašas, kurį naudos kitos posistemės.}\\ \hline	
 		\reqCode &
 		Galimybė valdyti saviizoliacijos pranešimų sistema&
-		\textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - žmogus informuotas apie jam paskitrą saviizoliacijos laikotarpį SMS žinute. Policija informuojama žmogui pažeidus saviizoliaciją.\\ \hline	
+		{\color{blue} 1. Privatus asmuo gauną pranešimą apie privalomą saviizoliaciją. \textbf{Pradiniai duomenys} - gautas užsikrėtusio asmens kontaktuotų asmenų sąrašas. \textbf{Gautas rezultatas} - žinutėm pranešanti apie asmens privalomą saviizoliaciją, saviizoliacijos pradžios ir numatomos pabaigos datos.}\textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - žmogus informuotas apie jam paskitrą saviizoliacijos laikotarpį SMS žinute. Policija informuojama žmogui pažeidus saviizoliaciją.
+		{\color{blue} 2. E.policia gauna pranešimus apie asmens saviizoliacijos pažeidimą. \textbf{Pradiniai duomenys} - užsikrėtusio asmens asmeniniai duomenys, saviizoliacijos praždios ir pabaigos datos, GPS lokacija. \textbf{Gautas rezultatas} - E.policijai gaunama žinutė, nusakanti, koks asmuo pažeidė saviizoliaciją, jų asmeniniai duomenys ir GPS lokacija}\\ \hline	
 		\reqCode &
 		Galimybė valdyti portalo apie saviizoliacijos informaciją&
 		\textbf{Pradiniai duomenys} - užsikrėtusiųjų registras, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - gauti ir atvaizduojama žmogaus saviizoliacijos būsena.\\ \hline		
@@ -561,7 +563,12 @@ paremtas operacijų ir palaikymo grupės perspektyva.
 		Sistema turi būti atkuriama per 1 žmogaus darbo valandą.\\ \hline	
 		\reqCode &
 		Programų sistemos pakartotino panaudojamumo reikalavimai&
-		Sistema negali būti perpanaudota.\\ \hline																							
+		Sistema negali būti perpanaudota.\\ \hline	
+		\reqCode &
+		\color{blue}Vartotojo sąsajoje esančio teksto kalbos reikalavimas&
+		\color{blue}Vartotojo sąsajoje esantis tekstas bus pateikiamas lietuvių kalba.\\ \hline										\reqCode &
+		\color{blue}Vartotojo sąsajos interaktyvumo reikalavimai&
+		\color{blue} Sistemos vartotojo sąsaja reaguos į vartotojo interakcijas - vartotojui įvykdžius sistemoje veiksmą, sistema atvaizduos atitinkamą atoveiksmį: pranešimo žinutę, naujo turinio pavaizdavimą, mygtuko spalvos pakitimas jį paspaudžius ir kt.\\ \hline																	
 	\end{longtable}
 \end{center}
 		
