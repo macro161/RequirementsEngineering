@@ -14,8 +14,9 @@
 \usepackage{subfig}
 \usepackage{array}
 \usepackage{wrapfig}
-\usepackage[dvipsnames,table]{xcolor}
 
+\usepackage{enumitem}
+\usepackage[dvipsnames,table]{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{multirow}
 \usepackage{longtable}
@@ -293,37 +294,37 @@ paremtas operacijų ir palaikymo grupės perspektyva.
 		\caption{Operacijų ir palaikymo grupės kontrolinis sąrašas}
 		\label{table:EmployeeSalary}
 		\\ \hline
-		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                                 &
-		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                     &
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                                                         &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                                             &
 		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
 		\\ \hline
-		OPKS-01                                                                         &
-		Ar sistema gali būti atstatyta kritinio incidento atveju?                       &
-		test                                                                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
-		OPKS-02                                                                         &
-		Ar sistema gali būti atnaujinta be veikimo sutrikimų (angl. \textit{downtime})? &
-		Reikalavimas vadinamas atominiu, jei jis nebegali būti išskaidytas į smulkesnius. Reikalavimas turėtų būti sudarytas iš vieno atsekamo (angl \textit{traceable}) elemento.                                                                                                                                                                                                                                                                    \\ \hline
-		PKS-03                                                                          &
-		Ar reikalavimas nėra perteklinis?                                               &
-		Reikalavimas vadinamas pertekliniu (angl. \textit{redundant}), jei jame kartojama informacija, pateikiama kituose reikalavimuose arba jei neįmanoma įvardinti, kokie veslo reikalavimai bus pasiekti įgyvendinus šį reikalavimą.                                                                                                                                                                                                              \\ \hline
-		PKS-04                                                                          &
-		Ar reikalavimas nėra dviprasmiškas?                                             &
-		Reikalavimas turėtų būti interpretuojamas \textbf{vienareikšmiškai}. Tiesa, tai nereiškia, kad jis gali būti realizuojamas tik vienu būdu.                                                                                                                                                                                                                                                                                                    \\ \hline
-		PKS-05                                                                          &
-		Ar reikalavimas gali būti ištestuotas?                                          &
-		Testuotojams turi būti įmanoma įvertinti, ar reikalavimas įgyvendintas teisingai: testo atsakymas turi būti arba teigiamas, arba neigiamas. Tam, jog galėtų būti ištestuojamas, reikalavimai turi būti aiškūs, tikslūs ir nedviprasmiški, o verifikacijos metodas -- realistiškas, t. y., jis turėtų nebūti per brangus, užimti per daug laiko ar reikalauti specifinių tikrintojo žinių ar specialios kompiuterinės bei programinės įrangos. \\ \hline
-		PKS-06                                                                          &
-		Ar reikalavimas pilnas?                                                         &
-		Reikalavimas yra pilnas (angl. \textit{complete}), jei jame apibrėžiama viskas, kas turi būti apibrėžta ir jį perskaičius neišryškėja trūkumų (angl. \textit{issues}). Reikalavimas turi būti pilnas vertinant ne tik visumą, bet ir reikalavimą atskirai. Reikalavimas turi apimti visas įmanomas sąlygas.                                                                                                                                   \\ \hline
-		PKS-07                                                                          &
-		Ar reikalavimas tikslus?                                                        &
-		Reikalavimas laikomas tiksliu, jei visi jame naudojami terminai yra apibrėžti ir nėra vartojama netikslių terminų (pavyzdžiui, beveik, apytiksliai, patogu, naudojama mažai atminties ir pan.).                                                                                                                                                                                                                                               \\ \hline
-		PKS-08                                                                          &
-		Ar reikalavimas aiškus, neperkrautas?                                           &
-		Reikalavimas vadinamas neperkrautu, jei jame nėra argumentacijos, apibrėžimų ar kitos nereikalingos informacijos.                                                                                                                                                                                                                                                                                                                             \\ \hline
-		PKS-09                                                                          &
-		Ar reikalavimas parašytas visiems suinteresuotiems asmenims suprantama kalba?   &
-		Reikalavimas laikomas suprantamu, jei jame nėra specifinių terminų, neapibrėžtų terminų žodyne ir jame aiškiai apibrėžta, kokių funkcinių ar nefunkcinių charakteristikų sistema privalo turėti. Reikalavimai turi būti teisingi gramatiškai ir parašyti laikantis vieningo stiliaus. Turi būti paisoma standartinių konvencijų.                                                                                                              \\ \hline
+		OPKS-01                                                                                                 &
+		Ar sistema gali būti atstatyta kritinio incidento atveju?                                               &
+		Egzistuoja reikalavimai, apibūdinantys atsarginių kopijų darymą, bazinės linijos (angl. \textit{baseline}) konfigūracijos sudarymą ir priežiūrą, sistemos artefaktų saugojimą ir versijavimą. \\ \hline
+		OPKS-02                                                                                                 &
+		Ar sistema gali būti atnaujinta be veikimo sutrikimų (angl. \textit{downtime})?                         &
+		Egzistuoja reikalavimai, apibrėžiantys sistemos pasiekiamumą (angl. \textit{availability}) bei reikalavimai, apibrėžiantys atnaujinimo procedūrą.                                             \\ \hline
+		OPKS-03                                                                                                 &
+		Ar sistemos žurnalai gali būti peržiūrėti?                                                              &
+		Egzistuoja reikalavimai, apibrėžiantys sistemos įvykių bei klaidų žurnalizavimą bei būdus, kaip tuos žurnalus peržiūrėti                                                                      \\ \hline
+		OPKS-04                                                                                                 &
+		Ar sistemos veikimas gali būti stebimas?                                                                &
+		Ar egzistuoja reikalavimai, apibrėžiantys sistemos naudojamų resursų bei apkrovos stebėjimą realiu laiku.                                                                                     \\ \hline
+		OPKS-05                                                                                                 &
+		Ar sistema pajėgi aptarnauti iki 1 milijono vartotojų (iš viso) ir 100 tūkstančių vartotojų vienu metu? &
+		Ar sistema automatiškai plečiama išaugus užklausų skaičiui, ar numatytas didžiausias palaikomas bendras ir vienu metu sistema besinaudojančių vartotojų skaičius.                             \\ \hline
+		OPKS-06                                                                                                 &
+		Ar sistema atspari dažniausioms kibernetinėms atakoms?                                                  &
+		Ar egzistuoja reikalavimai, apibrėžiantys sistemos atsparumą DDoS, SQL injekcijos ar kitoms OWASP top 10 sąraše apibūdinamoms atakoms.                                                        \\ \hline
+		OPKS-07                                                                                                 &
+		Ar pateikiama sistemos techninė specifikacija?                                                          &
+		Ar apibrėžtas reikalavimas sistemos techninės specifikacijos sudarymui                                                                                                                        \\ \hline
+		OPKS-08                                                                                                 &
+		Ar egzistuoja galimybė įjungti ir išjungti tam tikras sistemos funkcijas?                               &
+		Ar yra reikalavimas, apibrėžiantis tam tikrų sistemos funkcijų įjungimą/išjungimą atsiradus poreikiui (angl. \textit{feature flags})?                                                         \\ \hline
+		OPKS-09                                                                                                 &
+		Ar sudarytos galimybės spręsti paprastas vartotojų užklausas                                            &
+		Ar yra galimybė inicijuoti vartotojo slaptažodžio keitimą, duomenų keitimą, profilio ištrynimą, peržiūrėti veiklą                                                                             \\ \hline
 	\end{longtable}
 \end{center}
 
