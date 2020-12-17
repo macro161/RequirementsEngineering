@@ -20,6 +20,8 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{makecell}
+\usepackage{diagbox}
+
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -51,7 +53,7 @@
 Šiame dokumente pateikiamas „Epidemiologinės šalies situacijos sekimo sistemos“ reikalavimų specifikacijos validavimas ir verifikavimas, atliktas
 perspektyva paremtu skaitymu bei reikalavimų nuleidimas žemyn -- kokybės namai. Komandą sudarė (pateikiamos pasirinktos perspektyvos):
 \begin{itemize}
-	\item Šarūnas Kazimieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- .
+	\item Šarūnas Kazimieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- vartotojo perspektyva.
 	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- .
 	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- .
 	\item Rokas Ulickas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- .
@@ -60,6 +62,7 @@ perspektyva paremtu skaitymu bei reikalavimų nuleidimas žemyn -- kokybės nama
 \newpage
 
 \tableofcontents
+
 
 \section{Įžanga}
 Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistemos”, toliau - „epidemiologinė sistemos” arba „sistemos”
@@ -124,39 +127,96 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 
 \subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 
-\subsection{Vartotojas}
+		\subsection{Vartotojas}
+			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+			\begin{center}
+				\setstretch{1.0}
 
-\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
-\begin{center}
-	\setstretch{1.0}
+				\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
 
-	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+					\caption{Vartotojo kontrolinis sąrašas}
+					\label{table:VKS}
 
-		\caption{Vartotojo kontrolinis sąrašas}
-		\label{table:VKS}
-
-		\\ \hline
-		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}             &
-		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}} &
-		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
-		\\ \hline
-		VKS-01                                                      &
-		Klausimas/Teiginys                                          &
-		Apibūdinimas                                                  \\ \hline
-		VKS-02                                                      &
-		Klausimas/Teiginys                                          &
-		Apibūdinimas                                                  \\ \hline
-		VKS-03                                                      &
-		Klausimas/Teiginys                                          &
-		Apibūdinimas                                                  \\ \hline
-		VKS-04                                                      &
-		Klausimas/Teiginys                                          &
-		Apibūdinimas                                                  \\ \hline
-	\end{longtable}
-\end{center}
+ 					\\ \hline
+ 					\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
+  					\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}} & 
+  					\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+ 					\\ \hline
+ 					VKS-01 &
+ 					Reikalavimas parašytas vartotojui suprantama kalba - lietuvių kalba& 
+ 					Reikalavimas parašytas lietuvių kalba. Kadangi sistema skirta Lietuvos Respublikos gyventojams. Tikėtina, kad vartotojui suprantama kalba yra lietuvių kalba\\ \hline
+ 					VKS-02 &
+ 					Reikalavimai apibūdina, jog vartotojo sąsaja bus vartotojui suprantama kalba - lietuvių kalba&
+ 					Reikalavimai (ar bendras reikalavimas), nurodantis, jog vartotojo sąsajoje esantis tekstas bus pateiktas lietuvių kalba.\\ \hline
+ 					VKS-03 &
+ 					Ar reikalavimas apibūdina sistemos išorinį elgesį? & 
+					Reikalavimai (ar bendras reikalavimas) apibūdina sistemos elgesį iš vartotojo perspektyvos - vartotojas paduoda specifines įvestis ir sistema gražina konkrečias išvestis.\\ \hline  
+ 					VKS-04 &
+ 					Ar reikalavimas apibrėžia, kaip sistemos vartotojo sąsaja reaguos į vartotojo interakcijas?& 
+ 					Reikalavimai (ar bendras reikalavimas) apibūdina, kaip sistemos vartotojo sąsaja reaguoja į vartotojo interakcijas\\ \hline    
+ 					VKS-05 &
+ 					Ar galima valdyti asmens saviizoliaciją?& 
+ 					Reikalavimai, apibrėžiantys, jog galima pačiam vartotojui užfiksuoti jų saviizoliaciją, įspėti vartotoją apie privalomą saviizoliaciją, nustatyti vartotojo saviizoliacijos pradžią ir pabaigą.\\ \hline  
+ 					VKS-06 &
+ 					Ar galima privačiam asmeniui būti įspėtam apie privalomą saviizoliaciją?& 
+ 					Reikalavimai, apibrėžiantys, jog vartotojui pranešama apie privalomą saviizoliaciją\\ \hline   					
+ 					VKS-07 &
+ 					Ar galima privačiam asmeniui užfiksuoti kontaktuotus žmones?& 
+ 					Reikalavimai, apibrėžiantys, jog vartotojas gali užfiksuoti asmenis, kurie kontaktavo su užsikrėtusiuoju\\ \hline  
+ 					VKS-08 &
+ 					Ar galima sveikatos apsaugos ministerijos atstovui valdyti pavojingų šalių sąrašą?& 
+ 					Reikalavimai, apibrėžiantys, jog sveikatos apsaugos ministerijos atstovas gali modifikuoti pavojingų šalių sąrašą\\ \hline  
+ 					VKS-09 &
+ 					Ar gali E. policija sužinoti apie saviizoliacijos pažeidimus?& 
+ 					Reikalavimai, apibrėžiantys, jog E. policijai pranešama apie asmens saviizoliacijos pažeidimą\\ \hline			
+				\end{longtable}
+			\end{center}			
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+			\textbf{TODO: konkretizuoti, kokie reikalavimai pažeidžiami.}
+			\begin{center}
+				\setstretch{1.0}
 
+\begin{longtable}{|C{2cm}|L{2.5cm}|L{10cm}|}
+
+					\caption{Vartotojo kontrolinis sąrašas}
+					\label{table:VKS}
+
+ 					\\ \hline
+ 					\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
+  					\multicolumn{1}{c|}{\makecell{Ar\\tenkina\\reikalavimus?}} & 
+  					\multicolumn{1}{c|}{\makecell{\textbf{Reikalavimų pažeidimas}}}
+ 					\\ \hline
+ 					VKS-01 &
+ 					Taip& 
+ 					--\\ \hline
+ 					VKS-02 &
+ 					Ne&
+ 					Nėra apibrėžtų reikalavimų ar bendro reikalavimo, nurodančio, jog vartotojo sąsajoje esantis tekstas bus lietuvių kalba\\ \hline
+ 					VKS-03 &
+ 					Taip & 
+					--\\ \hline  
+ 					VKS-04 &
+ 					Ne& 
+ 					Reikalavimai per daug abstraktūs.\\ \hline    
+ 					VKS-05 &
+ 					Ne& 
+ 					Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė\\ \hline  
+ 					VKS-06 &
+ 					Ne&
+ 					Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė\\ \hline   					
+ 					VKS-07 &
+ 					Ne&
+ 					Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikšinai išskirta privačių asmenų vartotojų grupė\\ \hline  
+ 					VKS-08 &
+ 					Ne&
+ 					Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikštinai išskirta sveikatos apsgaugos ministerijos vartotojų grupė\\ \hline  
+ 					VKS-09 &
+ 					Ne&
+ 					Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikšinai išskirta e. policijos vartotojų grupė\\ \hline			
+				\end{longtable}
+			\end{center}		
+			
 \subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 \subsection{Programuotojo perspektyva}
 
@@ -238,7 +298,6 @@ paremtas programuotojo perspektyva.
 \subsubsection{Gamybos planavimas}
 
 \section{Išvada}
-
 
 \end{document}
 
