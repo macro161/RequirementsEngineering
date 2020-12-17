@@ -20,7 +20,6 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{makecell}
-\usepackage{diagbox}
 
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -125,8 +124,16 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
 
+\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+
 \subsection{Vartotojas}
+
+Šiame poskyryje pateikiama vartotojo -- asmens, naudojančio aprašomą sistemą -- perspektyva.
+
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas, paremtas pagal vartotojo perspektyvą.
+
 \begin{center}
 	\setstretch{1.0}
 
@@ -171,49 +178,51 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 \end{center}
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-\textbf{TODO: konkretizuoti, kokie reikalavimai pažeidžiami.}
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą.
 \begin{center}
 	\setstretch{1.0}
 
 	\begin{longtable}{|C{2cm}|L{2.5cm}|L{10cm}|}
 
-		\caption{Vartotojo kontrolinis sąrašas}
+		\caption{Reikalavimų specifikacijos įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą}
 		\label{table:VKS}
 
 		\\ \hline
 		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
-		\multicolumn{1}{c|}{\makecell{Ar                                                                                                \\tenkina\\reikalavimus?}} &
+		\multicolumn{1}{c|}{\makecell{Ar                                                                                                                                                                                                                                              \\tenkina\\reikalavimus?}} &
 		\multicolumn{1}{c|}{\makecell{\textbf{Reikalavimų pažeidimas}}}
 		\\ \hline
 		VKS-01                                          &
 		Taip                                            &
-		--                                                                                                                              \\ \hline
+		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                                      \\ \hline
 		VKS-02                                          &
 		Ne                                              &
-		Nėra apibrėžtų reikalavimų ar bendro reikalavimo, nurodančio, jog vartotojo sąsajoje esantis tekstas bus lietuvių kalba         \\ \hline
+		Nėra apibrėžtų reikalavimų ar bendro reikalavimo, nurodančio, jog vartotojo sąsajoje esantis tekstas bus lietuvių kalba                                                                                                                                                       \\ \hline
 		VKS-03                                          &
 		Taip                                            &
-		--                                                                                                                              \\ \hline
+		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                                      \\ \hline
 		VKS-04                                          &
 		Ne                                              &
-		Reikalavimai per daug abstraktūs.                                                                                               \\ \hline
+		Reikalavimas \textbf{"Sistema atitinka žmogaus ir kompiuterio sąveikos euristikas"} per daug abstraktus. Išreikštinai nepasakyta, ar sistemos vartotojo sąsaja reaguos į vartotojo interakcijas                                                                               \\ \hline
 		VKS-05                                          &
 		Ne                                              &
-		Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                  \\ \hline
+		Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima valdyti asmens saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                                               \\ \hline
 		VKS-06                                          &
 		Ne                                              &
-		Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                  \\ \hline
+		Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima įspėti privatų asmenį apie saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                               \\ \hline
 		VKS-07                                          &
 		Ne                                              &
-		Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikšinai išskirta privačių asmenų vartotojų grupė                   \\ \hline
+		Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė             \\ \hline
 		VKS-08                                          &
 		Ne                                              &
-		Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikštinai išskirta sveikatos apsgaugos ministerijos vartotojų grupė \\ \hline
+		Reikalavimas \textbf{"Galimybė valdyti pavojingų šalių registrą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta sveikatos apsgaugos ministerijos vartotojų grupė \\ \hline
 		VKS-09                                          &
 		Ne                                              &
-		Reikalavimai per daug abstraktūs. PS reikalavimuose nėra išreikšinai išskirta e. policijos vartotojų grupė                      \\ \hline
+		Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikšinai išskirta e. policijos vartotojų grupė             \\ \hline
 	\end{longtable}
 \end{center}
+
+\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 
 \subsection{Programuotojo perspektyva}
 
@@ -269,7 +278,7 @@ paremtas programuotojo perspektyva.
 
 \subsection{Operacijų ir palaikymo grupės perspektyva}
 
-Šiame poskyryje pateikiama operacij7 ir palaikymo grupės -- asmenų, atsakingų už veikiančios 
+Šiame poskyryje pateikiama operacij7 ir palaikymo grupės -- asmenų, atsakingų už veikiančios
 sistemos palaikymą: atnaujinimus ir kitas stabiliam sistemos veikimui reikalingas veiklas -- perspektyva.
 
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
@@ -284,36 +293,36 @@ paremtas operacijų ir palaikymo grupės perspektyva.
 		\caption{Operacijų ir palaikymo grupės kontrolinis sąrašas}
 		\label{table:EmployeeSalary}
 		\\ \hline
-		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                               &
-		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                   &
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                                 &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                     &
 		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
 		\\ \hline
-		OPKS-01                                                                        &
-		Ar sistema gali būti atstatyta kritinio incidento atveju?                                                   &
-		test \\ \hline
-		OPKS-02                                                                        &
-		Ar sistema gali būti atnaujinta be veikimo sutrikimų (angl. \textit{downtime})?                                                     &
+		OPKS-01                                                                         &
+		Ar sistema gali būti atstatyta kritinio incidento atveju?                       &
+		test                                                                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
+		OPKS-02                                                                         &
+		Ar sistema gali būti atnaujinta be veikimo sutrikimų (angl. \textit{downtime})? &
 		Reikalavimas vadinamas atominiu, jei jis nebegali būti išskaidytas į smulkesnius. Reikalavimas turėtų būti sudarytas iš vieno atsekamo (angl \textit{traceable}) elemento.                                                                                                                                                                                                                                                                    \\ \hline
-		PKS-03                                                                        &
-		Ar reikalavimas nėra perteklinis?                                             &
+		PKS-03                                                                          &
+		Ar reikalavimas nėra perteklinis?                                               &
 		Reikalavimas vadinamas pertekliniu (angl. \textit{redundant}), jei jame kartojama informacija, pateikiama kituose reikalavimuose arba jei neįmanoma įvardinti, kokie veslo reikalavimai bus pasiekti įgyvendinus šį reikalavimą.                                                                                                                                                                                                              \\ \hline
-		PKS-04                                                                        &
-		Ar reikalavimas nėra dviprasmiškas?                                           &
+		PKS-04                                                                          &
+		Ar reikalavimas nėra dviprasmiškas?                                             &
 		Reikalavimas turėtų būti interpretuojamas \textbf{vienareikšmiškai}. Tiesa, tai nereiškia, kad jis gali būti realizuojamas tik vienu būdu.                                                                                                                                                                                                                                                                                                    \\ \hline
-		PKS-05                                                                        &
-		Ar reikalavimas gali būti ištestuotas?                                        &
+		PKS-05                                                                          &
+		Ar reikalavimas gali būti ištestuotas?                                          &
 		Testuotojams turi būti įmanoma įvertinti, ar reikalavimas įgyvendintas teisingai: testo atsakymas turi būti arba teigiamas, arba neigiamas. Tam, jog galėtų būti ištestuojamas, reikalavimai turi būti aiškūs, tikslūs ir nedviprasmiški, o verifikacijos metodas -- realistiškas, t. y., jis turėtų nebūti per brangus, užimti per daug laiko ar reikalauti specifinių tikrintojo žinių ar specialios kompiuterinės bei programinės įrangos. \\ \hline
-		PKS-06                                                                        &
-		Ar reikalavimas pilnas?                                                       &
+		PKS-06                                                                          &
+		Ar reikalavimas pilnas?                                                         &
 		Reikalavimas yra pilnas (angl. \textit{complete}), jei jame apibrėžiama viskas, kas turi būti apibrėžta ir jį perskaičius neišryškėja trūkumų (angl. \textit{issues}). Reikalavimas turi būti pilnas vertinant ne tik visumą, bet ir reikalavimą atskirai. Reikalavimas turi apimti visas įmanomas sąlygas.                                                                                                                                   \\ \hline
-		PKS-07                                                                        &
-		Ar reikalavimas tikslus?                                                      &
+		PKS-07                                                                          &
+		Ar reikalavimas tikslus?                                                        &
 		Reikalavimas laikomas tiksliu, jei visi jame naudojami terminai yra apibrėžti ir nėra vartojama netikslių terminų (pavyzdžiui, beveik, apytiksliai, patogu, naudojama mažai atminties ir pan.).                                                                                                                                                                                                                                               \\ \hline
-		PKS-08                                                                        &
-		Ar reikalavimas aiškus, neperkrautas?                                         &
+		PKS-08                                                                          &
+		Ar reikalavimas aiškus, neperkrautas?                                           &
 		Reikalavimas vadinamas neperkrautu, jei jame nėra argumentacijos, apibrėžimų ar kitos nereikalingos informacijos.                                                                                                                                                                                                                                                                                                                             \\ \hline
-		PKS-09                                                                        &
-		Ar reikalavimas parašytas visiems suinteresuotiems asmenims suprantama kalba? &
+		PKS-09                                                                          &
+		Ar reikalavimas parašytas visiems suinteresuotiems asmenims suprantama kalba?   &
 		Reikalavimas laikomas suprantamu, jei jame nėra specifinių terminų, neapibrėžtų terminų žodyne ir jame aiškiai apibrėžta, kokių funkcinių ar nefunkcinių charakteristikų sistema privalo turėti. Reikalavimai turi būti teisingi gramatiškai ir parašyti laikantis vieningo stiliaus. Turi būti paisoma standartinių konvencijų.                                                                                                              \\ \hline
 	\end{longtable}
 \end{center}
