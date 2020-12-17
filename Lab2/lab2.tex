@@ -14,6 +14,7 @@
 \usepackage{subfig}
 \usepackage{array}
 \usepackage{wrapfig}
+\usepackage[dvipsnames,table]{xcolor}
 
 \usepackage[hidelinks]{hyperref}
 \usepackage{multirow}
@@ -36,12 +37,9 @@
 \secondauthor{Matas Savickis}
 \thirdauthor{Rokas Ulickas}
 \fourthauthor{Vytautas Krivickas}
-% \secondauthor{Vardonis Pavardonis} % Pridėti antrą autorių
 \supervisor{dr. Audronė Lupeikienė}
 \date{Vilnius – \the\year}
 
-% Nustatymai
-% \setmainfont{Palemonas} % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
 \bibliography{bibliografija}
 
 \begin{document}
@@ -172,13 +170,41 @@ paremtas programuotojo perspektyva.
 \begin{center}
 	\setstretch{1.0}
 	\small
-	\begin{longtable}{|L{3cm}|C{5cm}|C{7cm}|}
+	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
 		\caption{Programuotojo kontrolinis sąrašas}
 		\label{table:EmployeeSalary}
 		\\ \hline
-		Klausimo identifikatorius &
-		Klausimas                 &
-		Apibūdinimas                \\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}             &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}} &
+		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+		\\ \hline
+		PKS-01                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-02                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-03                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-04                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-05                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-06                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-07                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-08                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline
+		PKS-09                                                      &
+		Klausimas/Teiginys                                          &
+		Apibūdinimas                                                  \\ \hline                                             \\ \hline
 	\end{longtable}
 \end{center}
 
