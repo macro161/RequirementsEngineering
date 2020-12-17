@@ -54,7 +54,7 @@
 perspektyva paremtu skaitymu bei reikalavimų nuleidimas žemyn -- kokybės namai. Komandą sudarė (pateikiamos pasirinktos perspektyvos):
 \begin{itemize}
 	\item Šarūnas Kazimieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- vartotojo perspektyva.
-	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- .
+	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- programuotojo perspektyva.
 	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- .
 	\item Rokas Ulickas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- .
 \end{itemize}
@@ -124,8 +124,6 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-
-\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 
 \subsection{Vartotojas}
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
@@ -217,7 +215,6 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 	\end{longtable}
 \end{center}
 
-\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 \subsection{Programuotojo perspektyva}
 
 Šiame poskyryje pateikiama programuotojo -- asmens, kursiančio aprašomą sistemą -- perspektyva.
@@ -269,11 +266,61 @@ paremtas programuotojo perspektyva.
 \end{center}
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
-\subsection{Operacijų ir palaikymo grupė}
+
+\subsection{Operacijų ir palaikymo grupės perspektyva}
+
+Šiame poskyryje pateikiama operacij7 ir palaikymo grupės -- asmenų, atsakingų už veikiančios 
+sistemos palaikymą: atnaujinimus ir kitas stabiliam sistemos veikimui reikalingas veiklas -- perspektyva.
+
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas,
+paremtas operacijų ir palaikymo grupės perspektyva.
+
+\begin{center}
+	\setstretch{1.0}
+	\small
+	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+		\caption{Operacijų ir palaikymo grupės kontrolinis sąrašas}
+		\label{table:EmployeeSalary}
+		\\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                               &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                   &
+		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+		\\ \hline
+		OPKS-01                                                                        &
+		Ar sistema gali būti atstatyta kritinio incidento atveju?                                                   &
+		test \\ \hline
+		OPKS-02                                                                        &
+		Ar sistema gali būti atnaujinta be veikimo sutrikimų (angl. \textit{downtime})?                                                     &
+		Reikalavimas vadinamas atominiu, jei jis nebegali būti išskaidytas į smulkesnius. Reikalavimas turėtų būti sudarytas iš vieno atsekamo (angl \textit{traceable}) elemento.                                                                                                                                                                                                                                                                    \\ \hline
+		PKS-03                                                                        &
+		Ar reikalavimas nėra perteklinis?                                             &
+		Reikalavimas vadinamas pertekliniu (angl. \textit{redundant}), jei jame kartojama informacija, pateikiama kituose reikalavimuose arba jei neįmanoma įvardinti, kokie veslo reikalavimai bus pasiekti įgyvendinus šį reikalavimą.                                                                                                                                                                                                              \\ \hline
+		PKS-04                                                                        &
+		Ar reikalavimas nėra dviprasmiškas?                                           &
+		Reikalavimas turėtų būti interpretuojamas \textbf{vienareikšmiškai}. Tiesa, tai nereiškia, kad jis gali būti realizuojamas tik vienu būdu.                                                                                                                                                                                                                                                                                                    \\ \hline
+		PKS-05                                                                        &
+		Ar reikalavimas gali būti ištestuotas?                                        &
+		Testuotojams turi būti įmanoma įvertinti, ar reikalavimas įgyvendintas teisingai: testo atsakymas turi būti arba teigiamas, arba neigiamas. Tam, jog galėtų būti ištestuojamas, reikalavimai turi būti aiškūs, tikslūs ir nedviprasmiški, o verifikacijos metodas -- realistiškas, t. y., jis turėtų nebūti per brangus, užimti per daug laiko ar reikalauti specifinių tikrintojo žinių ar specialios kompiuterinės bei programinės įrangos. \\ \hline
+		PKS-06                                                                        &
+		Ar reikalavimas pilnas?                                                       &
+		Reikalavimas yra pilnas (angl. \textit{complete}), jei jame apibrėžiama viskas, kas turi būti apibrėžta ir jį perskaičius neišryškėja trūkumų (angl. \textit{issues}). Reikalavimas turi būti pilnas vertinant ne tik visumą, bet ir reikalavimą atskirai. Reikalavimas turi apimti visas įmanomas sąlygas.                                                                                                                                   \\ \hline
+		PKS-07                                                                        &
+		Ar reikalavimas tikslus?                                                      &
+		Reikalavimas laikomas tiksliu, jei visi jame naudojami terminai yra apibrėžti ir nėra vartojama netikslių terminų (pavyzdžiui, beveik, apytiksliai, patogu, naudojama mažai atminties ir pan.).                                                                                                                                                                                                                                               \\ \hline
+		PKS-08                                                                        &
+		Ar reikalavimas aiškus, neperkrautas?                                         &
+		Reikalavimas vadinamas neperkrautu, jei jame nėra argumentacijos, apibrėžimų ar kitos nereikalingos informacijos.                                                                                                                                                                                                                                                                                                                             \\ \hline
+		PKS-09                                                                        &
+		Ar reikalavimas parašytas visiems suinteresuotiems asmenims suprantama kalba? &
+		Reikalavimas laikomas suprantamu, jei jame nėra specifinių terminų, neapibrėžtų terminų žodyne ir jame aiškiai apibrėžta, kokių funkcinių ar nefunkcinių charakteristikų sistema privalo turėti. Reikalavimai turi būti teisingi gramatiškai ir parašyti laikantis vieningo stiliaus. Turi būti paisoma standartinių konvencijų.                                                                                                              \\ \hline
+	\end{longtable}
+\end{center}
+
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+
+\subsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 
 \section{Reikalavimų nuleidimas žemyn - kokybės namas}
 \subsection{Klientas}
