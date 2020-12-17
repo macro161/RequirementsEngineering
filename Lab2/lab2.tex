@@ -27,6 +27,11 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
+\newcounter{counter}
+\newcommand{\reqCode}{%
+	 \stepcounter{counter}%
+	\color{blue} REQ-\thecounter}
+
 % Titulinio aprašas
 \university{Vilniaus universitetas}
 \faculty{Matematikos ir informatikos fakultetas}
@@ -56,7 +61,7 @@ perspektyva paremtu skaitymu bei reikalavimų nuleidimas žemyn -- kokybės nama
 	\item Šarūnas Kazimieras Buteikis (el. paštas \href{mailto:sarunas.buteikis@mif.stud.vu.lt}{sarunas.buteikis@mif.stud.vu.lt}) -- vartotojo perspektyva.
 	\item Vytautas Krivickas (el. paštas \href{mailto:vytautas.krivickas@mif.stud.vu.lt}{vytautas.krivickas@mif.stud.vu.lt}) -- programuotojo perspektyva.
 	\item Matas Savickis (el. paštas \href{mailto:matas.savickis@mif.stud.vu.lt}{matas.savickis@mif.stud.vu.lt}) -- .
-	\item Rokas Ulickas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- .
+	\item Rokas Ulickas (el. paštas \href{mailto:rokas.ulickas@mif.stud.vu.lt}{rokas.ulickas@mif.stud.vu.lt}) -- kliento perspektyva.
 \end{itemize}
 
 \newpage
@@ -65,7 +70,8 @@ perspektyva paremtu skaitymu bei reikalavimų nuleidimas žemyn -- kokybės nama
 
 
 \section{Įžanga}
-Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistemos”, toliau - „epidemiologinė sistemos” arba „sistemos”
+
+Šiame dokumente aprašoma „Epidemiologinės šalies situacijos sekimo sistemos”, toliau - „epidemiologinės sistemos” arba „sistemos”
 reikalavimų validacija ir verifikacija bei reikalavimų nuleidimas žemyn.
 Ši sistema skirta sekti epidemiologinei padėčiai šalyje: įvertinti viruso plitimo šalyje tendencijas,
 efektyviai identifikuoti naujus viruso židinius, leisti specialistams atsekti susirgusiųjų
@@ -112,6 +118,10 @@ Sistema siekiama išspręsti šias problemas:
 	      duomenų mokslo ar informatikos srityse.
 \end{itemize}
 
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 \section{Reikalavimų validacija and verifikacija}
 
 Šiame skyriuje aprašoma reikalavimų validacija ir verifikacija: siekiama rasti dokumentuotuose programinės įrangos
@@ -119,11 +129,117 @@ reikalavimuose siekiama identifikuoti klaidas, tokias kaip dviprasmiškumas, neu
 Šiam tikslui įgyvendinti naudojamas perspektyva paremtas skaitymas (angl. \textit{perspective-based reading}). Komandos narių
 pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 \subsection{Kliento perspektyva}
+
+Šiame poskyryje pateikiama kliento -- asmens, perkančio kuriamą sistemą -- perspektyva.
 
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
 
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas, paremtas pagal kliento perspektyvą.
+
+\begin{center}
+	\setstretch{1.0}
+
+	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+
+		\caption{Kliento kontrolinis sąrašas}
+		\label{table:KKS}
+
+		\\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                                               &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                                   &
+		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+		\\ \hline
+		KKS-01                                                                                        &
+		Ar neprieštarauja galiojantiems teisės aktams?                          					  &
+		Reikalavimas atitinka teisės aktus: Lietuvos Respublikos, Europos Sąjungos bei kitus.                                     
+		\\ \hline
+		KKS-02                                                                                        &
+		Ar reikalavimas yra tikslingas šiam projektui? 												  &
+		Reikalavimas būti apibrėžtas ir tikslingas šiam projektui ir reikalavimams, kurie turi būti įgyvendinti šio ir tik šio projekto metu.                                                                      
+		\\ \hline
+		KKS-03                                                                                        &
+		Ar reikalavimas atsižvelgia į visas vartotojų/naudotojų grupes?                               &
+		Sistema turi būti patogu naudotis ir jaunam, ir senam, ir nepatyrusiam ir patyrusiam kompiuterio naudotojui.
+		\\ \hline
+		KKS-04                                                                                        &
+		Ar reikalavimas naudingas arba neša apčiuopiamą naudą?  									  &
+		Kiekvienas reikalavimas turi būti naudingas būsimai sistemai ir turi turėti prasmę/naudą/tęstinumą. 
+		\\ \hline 
+		KKS-05                                                                                        &
+		Ar reikalavimo įvykdymo kriterijai yra apibrėžti?                                             &
+		Ar reikalavimas turi suformuluotus priėmimo/įvykdymo kriterijus? 
+		\\ \hline
+		KKS-06                                                                                        &
+		Ar reikalavimas neapribotas tik vienai infekcinei ligai valdyti/sekti?                        &
+		Sistema turi veikti ir turi būti galima sekti kelias infekcines ligas vienu metu, pvz.: COVID-19 ir gripą, ir tuberkuliozę.
+		\\ \hline
+		KKS-07                                                                                        &
+		Ar reikalavimas atkreipia dėmesį į skirtingą informacijos prieigos lygį, skirtingoms rolėms?  &
+		Turi būti apibrėžta, kur, kam ir kokie duomenys bus matomi sistemoje                                                                                   
+		\\ \hline
+		KKS-08                                                                                        &
+		Ar reikalavimas pasiekiamas?            &
+		Vadovaujantis sveiku protu, ar reikalavimas yra pasiekiamas?                                                                              
+		\\ \hline                                                                              
+	\end{longtable}
+\end{center}
+
+
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
+
+
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų įvertinimas pagal kliento perspektyvos kontrolinį sąrašą.
+\begin{center}
+	\setstretch{1.0}
+
+	\begin{longtable}{|C{2cm}|L{2.5cm}|L{10cm}|}
+
+		\caption{Reikalavimų specifikacijos įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą}
+		\label{table:VKS}
+
+		\\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
+		\multicolumn{1}{c|}{\makecell{Ar                                                                                                                                                                                                                                              \\tenkina\\reikalavimus?}} &
+		\multicolumn{1}{c|}{\makecell{\textbf{Reikalavimų pažeidimas}}}
+		\\ \hline
+		KKS-01                                          &
+		Taip                                            &
+		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                                      \\ \hline
+		KKS-02                                          &
+		Ne                                              &
+		Nėra apibrėžtų reikalavimų ar bendro reikalavimo, nurodančio, jog vartotojo sąsajoje esantis tekstas bus lietuvių kalba                                                                                                                                                       \\ \hline
+		KKS-03                                          &
+		Taip                                            &
+		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                                      \\ \hline
+		KKS-04                                          &
+		Ne                                              &
+		Reikalavimas \textbf{"Sistema atitinka žmogaus ir kompiuterio sąveikos euristikas"} per daug abstraktus. Išreikštinai nepasakyta, ar sistemos vartotojo sąsaja reaguos į vartotojo interakcijas                                                                               \\ \hline
+		KKS-05                                          &
+		Ne                                              &
+		Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima valdyti asmens saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                                               \\ \hline
+		KKS-06                                          &
+		Ne                                              &
+		Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima įspėti privatų asmenį apie saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                               \\ \hline
+		KKS-07                                          &
+		Ne                                              &
+		Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė             \\ \hline
+		KKS-08                                          &
+		Ne                                              &
+		Reikalavimas \textbf{"Galimybė valdyti pavojingų šalių registrą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta sveikatos apsgaugos ministerijos vartotojų grupė \\ \hline
+		KKS-09                                          &
+		Ne                                              &
+		Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikšinai išskirta e. policijos vartotojų grupė             \\ \hline
+	\end{longtable}
+\end{center}
+
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
 
@@ -132,6 +248,52 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 Šiame poskyryje pateikiama vartotojo -- asmens, naudojančio aprašomą sistemą -- perspektyva.
 
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas,
+paremtas programuotojo perspektyva.
+
+\begin{center}
+	\setstretch{1.0}
+	\small
+	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+		\caption{Programuotojo kontrolinis sąrašas}
+		\label{table:EmployeeSalary}
+		\\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                               &
+		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                   &
+		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+		\\ \hline
+		PKS-01                                                                        &
+		Ar reikalavimas abstraktus?                                                   &
+		Reikalavimas vadinamas abstrak2iu, jei jis suformuluotas remiantis juodos dėžės (angl. \textit{black box}) principu, t. y. apibrėžiama tik išoriškai matoma funkcinė ar nefunkcinė sistemos savybė ir nėrapateikiama jokių tos savybės realizavimo detalių.                                                                                                                                                                                   \\ \hline
+		PKS-02                                                                        &
+		Ar reikalavimas atominis?                                                     &
+		Reikalavimas vadinamas atominiu, jei jis nebegali būti išskaidytas į smulkesnius. Reikalavimas turėtų būti sudarytas iš vieno atsekamo (angl \textit{traceable}) elemento.                                                                                                                                                                                                                                                                    \\ \hline
+		PKS-03                                                                        &
+		Ar reikalavimas nėra perteklinis?                                             &
+		Reikalavimas vadinamas pertekliniu (angl. \textit{redundant}), jei jame kartojama informacija, pateikiama kituose reikalavimuose arba jei neįmanoma įvardinti, kokie veslo reikalavimai bus pasiekti įgyvendinus šį reikalavimą.                                                                                                                                                                                                              \\ \hline
+		PKS-04                                                                        &
+		Ar reikalavimas nėra dviprasmiškas?                                           &
+		Reikalavimas turėtų būti interpretuojamas \textbf{vienareikšmiškai}. Tiesa, tai nereiškia, kad jis gali būti realizuojamas tik vienu būdu.                                                                                                                                                                                                                                                                                                    \\ \hline
+		PKS-05                                                                        &
+		Ar reikalavimas gali būti ištestuotas?                                        &
+		Testuotojams turi būti įmanoma įvertinti, ar reikalavimas įgyvendintas teisingai: testo atsakymas turi būti arba teigiamas, arba neigiamas. Tam, jog galėtų būti ištestuojamas, reikalavimai turi būti aiškūs, tikslūs ir nedviprasmiški, o verifikacijos metodas -- realistiškas, t. y., jis turėtų nebūti per brangus, užimti per daug laiko ar reikalauti specifinių tikrintojo žinių ar specialios kompiuterinės bei programinės įrangos. \\ \hline
+		PKS-06                                                                        &
+		Ar reikalavimas pilnas?                                                       &
+		Reikalavimas yra pilnas (angl. \textit{complete}), jei jame apibrėžiama viskas, kas turi būti apibrėžta ir jį perskaičius neišryškėja trūkumų (angl. \textit{issues}). Reikalavimas turi būti pilnas vertinant ne tik visumą, bet ir reikalavimą atskirai. Reikalavimas turi apimti visas įmanomas sąlygas.                                                                                                                                   \\ \hline
+		PKS-07                                                                        &
+		Ar reikalavimas tikslus?                                                      &
+		Reikalavimas laikomas tiksliu, jei visi jame naudojami terminai yra apibrėžti ir nėra vartojama netikslių terminų (pavyzdžiui, beveik, apytiksliai, patogu, naudojama mažai atminties ir pan.).                                                                                                                                                                                                                                               \\ \hline
+		PKS-08                                                                        &
+		Ar reikalavimas aiškus, neperkrautas?                                         &
+		Reikalavimas vadinamas neperkrautu, jei jame nėra argumentacijos, apibrėžimų ar kitos nereikalingos informacijos.                                                                                                                                                                                                                                                                                                                             \\ \hline
+		PKS-09                                                                        &
+		Ar reikalavimas parašytas visiems suinteresuotiems asmenims suprantama kalba? &
+		Reikalavimas laikomas suprantamu, jei jame nėra specifinių terminų, neapibrėžtų terminų žodyne ir jame aiškiai apibrėžta, kokių funkcinių ar nefunkcinių charakteristikų sistema privalo turėti. Reikalavimai turi būti teisingi gramatiškai ir parašyti laikantis vieningo stiliaus. Turi būti paisoma standartinių konvencijų.                                                                                                              \\ \hline
+	\end{longtable}
+\end{center}
+
+\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
 
 Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas, paremtas pagal vartotojo perspektyvą.
 
@@ -175,51 +337,6 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 		VKS-09                                                                                        &
 		Ar gali E. policija sužinoti apie saviizoliacijos pažeidimus?                                 &
 		Reikalavimai, apibrėžiantys, jog E. policijai pranešama apie asmens saviizoliacijos pažeidimą                                                                                                   \\ \hline
-	\end{longtable}
-\end{center}
-
-\subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
-Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą.
-\begin{center}
-	\setstretch{1.0}
-
-	\begin{longtable}{|C{2cm}|L{2.5cm}|L{10cm}|}
-
-		\caption{Reikalavimų specifikacijos įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą}
-		\label{table:VKS}
-
-		\\ \hline
-		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
-		\multicolumn{1}{c|}{\makecell{Ar                                                                                                                                                                                                                                              \\tenkina\\reikalavimus?}} &
-		\multicolumn{1}{c|}{\makecell{\textbf{Reikalavimų pažeidimas}}}
-		\\ \hline
-		VKS-01                                          &
-		Taip                                            &
-		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                                      \\ \hline
-		VKS-02                                          &
-		Ne                                              &
-		Nėra apibrėžtų reikalavimų ar bendro reikalavimo, nurodančio, jog vartotojo sąsajoje esantis tekstas bus lietuvių kalba                                                                                                                                                       \\ \hline
-		VKS-03                                          &
-		Taip                                            &
-		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                                      \\ \hline
-		VKS-04                                          &
-		Ne                                              &
-		Reikalavimas \textbf{"Sistema atitinka žmogaus ir kompiuterio sąveikos euristikas"} per daug abstraktus. Išreikštinai nepasakyta, ar sistemos vartotojo sąsaja reaguos į vartotojo interakcijas                                                                               \\ \hline
-		VKS-05                                          &
-		Ne                                              &
-		Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima valdyti asmens saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                                               \\ \hline
-		VKS-06                                          &
-		Ne                                              &
-		Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima įspėti privatų asmenį apie saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė                               \\ \hline
-		VKS-07                                          &
-		Ne                                              &
-		Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė             \\ \hline
-		VKS-08                                          &
-		Ne                                              &
-		Reikalavimas \textbf{"Galimybė valdyti pavojingų šalių registrą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta sveikatos apsgaugos ministerijos vartotojų grupė \\ \hline
-		VKS-09                                          &
-		Ne                                              &
-		Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikšinai išskirta e. policijos vartotojų grupė             \\ \hline
 	\end{longtable}
 \end{center}
 
@@ -331,7 +448,112 @@ paremtas operacijų ir palaikymo grupės perspektyva.
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
 
 \subsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
-
+\begin{center}
+	\setstretch{1.0}
+	\small
+	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+		\caption{Operacijų ir palaikymo grupės kontrolinis sąrašas}
+		\label{table:EmployeeSalary}
+		\\ \hline
+		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                                 &
+		\multicolumn{1}{c|}{\makecell{\textbf{Reikalavimas}}}                     &
+		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+		\\ \hline
+		\reqCode &
+		Galimybė valdyti užsikėtusių žmogaus duomenis&
+		\textbf{Pradiniai duomenys} - žmogaus asmeniniai duomenys, kontaktiniai duomenys, saviizoliacijos pradžios ir numatomos pabaigos data, sarašas su kuo kontaktavo susirgęs žmogus.
+		\textbf{Gautas rezultatas} - įvesti žmogaus saviizoliacijos duomenis į registrą, galimybė tos duomenis perduoti kitoms posistemėms. \\ \hline
+		\reqCode &
+		Galimybė valdyti pavojingų šalių registrą&
+		\textbf{Pradiniai duomenys} - nauja informaciją apie pavojingas šalis. \textbf{Gautas rezultatas} - atnaujintas pavojingų šalių sąrašas kurį naudos kitos posistemės.\\ \hline	
+		\reqCode &
+		Galimybė valdyti saviizoliacijos pranešimų sistema&
+		\textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - žmogus informuotas apie jam paskitrą saviizoliacijos laikotarpį SMS žinute. Policija informuojama žmogui pažeidus saviizoliaciją.\\ \hline	
+		\reqCode &
+		Galimybė valdyti portalo apie saviizoliacijos informaciją&
+		\textbf{Pradiniai duomenys} - užsikrėtusiųjų registras, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - gauti ir atvaizduojama žmogaus saviizoliacijos būsena.\\ \hline		
+		\reqCode &
+		Galimybė valdyti mobilioji aplikaciją saviizoliacijai sekti&
+		\textbf{Pradiniai duomenys} - žmogaus GPS lokacija, užsikėtusiųjų registras. \textbf{Gautas rezultatas} - įsitikint, kad žmogus nepažeidžia saviizoliacijos reikalavimų.\\ \hline								\reqCode &
+		Programų sistemos sąveikos su kitomis sistemomis&
+		Sistema sąveikaus su: e. policijos sistema, NVSC sistema, sveikatos ministerijos sistema, muitinės sistema, e. sveikatos sistema, karštosios linijos sistema, renginų organizatorių sistema.\\ \hline		
+		\reqCode &
+		Programų sistemos atitikimas galiojantiems teisės aktams&
+		Sistema atitinka Lietuvos ir Europos teisės aktams. 
+		Sistema taip pat laikosi BDAR reglamento.\\ \hline	
+		\reqCode &
+		Programų sistemos trasuojamumo reikalavimai&
+		Sistemos atrasuojamumas bus įgyvendinatas pasinaudojant Jira Atlassian sistema kuri užtikrina programos trsuojamumą\\ \hline	
+		\reqCode &
+		Programų sistemos patikimumo reikalavimai&
+		Sistema turi išlikti pasiekiama 99 procentus laiko.
+		Įvykus sistemos tiktims sistema turi sugebėti automatiškai pasileisti išnaujo neprarasdama duomenų.\\ \hline
+		\reqCode &
+		Programų sistemos išbaigtumas&
+		Užsakovui priimtimas vienas tikdis per dieną.
+		Trumpiausias laikas tarp dviejų trikdžių yra 24 valandos.
+		Sistemoje neturi būti palikta esminių klaidų.\\ \hline	
+		\reqCode &
+		Programų sistemos atsparumo triktims reikalavimai&
+		Dėl trikdžiū sistema gali neveikti 1 valandą per diena.
+		Sistemoje gali būti vienas įsilaužimas per mėsenį.\\ \hline	
+		\reqCode &
+		Programų sistemos atkuriamumo reikalavimai&
+		Sistema turi galėti atsikurti per valandą po sutrikimo.
+		Per valandą turi būti atkūriami prarasti duomenys ir funkcionalumas.
+		Trikdis turi būti rastas ir pašalintas per savaitę.		\\ \hline	
+		\reqCode &
+		Programų sistemos prieinamumo reikalavimai&
+		Per dieną sistema turi išlikti funkcionali 23 valandas. 		\\ \hline	
+		\reqCode &
+		Programų sistemos pažeidžiamumo reikalavimai&
+		Esminis sistemos funkcionalumas turi būti atkurtas per valandą.\\ \hline	
+		\reqCode &
+		Programų sistemos aptarnavimo reikalavimai&
+		Sistema turi būti galima atstatyi per valandą.
+		Surastas trigdis programiniam kode turi būti pašalintas per savaitę.		\\ \hline	
+		\reqCode &
+		Programų sistemos diegimo reikalavimai&
+		Sistema yra paleidžiama debesų kompiuterijos srveriuose, todėl sistemos diegimo kaštai yra minimlūs.
+		Sistemai perkelti iš vieno debesijos serverio į kitą turi pakakti 24 valandų darbo.
+		Sistema perkeliama perkelus sukompiliuotus binarinius failus.		\\ \hline	
+		\reqCode &
+		Programų sistemos adaptuojamumo reikalavimai&
+		Perkelti sistema ant naujos platformos kainuotų 10000 žmogaus darbo valandų.
+		Perkelti sistemą į kitą kompiuterinę platformą 20 žmogaus darbo valandų
+		Perkelti sistemą į naujasnę operacinės sistemos versiją kainuotų 100 žmogaus darbo valandų
+		Perkelti sistemos duomenis į nauja DBVS kainuotų 200 žmogaus darbo valandų.\\ \hline	
+		\reqCode &
+		Programų sistemos instaliuojamumo reikalavimai&
+		Programai instaliuoti turi pakakti 40 žmogaus darbo valandų. 
+		Maksimalus procentas kodo kurį reiktų pakeisti instaliuojant sistemą yra 0,01\%.
+		Maksimalus procentas failų kuriuos reiktų pakeisti instaliuojant sistemą yra 0,01\%.\\ \hline		
+		\reqCode &
+		Programų sistemos atitikimo keliamumo standartams reikalavimai&
+		Keliamumo reikalavimai atitinką apibrėžtą vidinį standartą pagal ISO.\\ \hline	
+		\reqCode &
+		Programų sistemos pakeičiamumo reikalavimai&
+		Sistema nauja, todėl nėra senos sistemos kurią būtų galima pakeisti.\\ \hline									\reqCode &
+		Programų sistemos analizuojamumo reikalavimai&
+		Trigdžio priežastis sistemoje turi būti išsiaiškinta per 20 žmogaus darbo valandų\\ \hline	
+		\reqCode &
+		Programų sistemos keičiamumo reikalavimai&
+		Trigžio priežastis sistemoje turi būti pašalinta per 20 žmogaus darbo valandų.\\ \hline		
+		\reqCode &
+		Programų sistemos stabilumo reikalavimai&
+		Mažiausias vidutinis laikas kurį sistema bus įtakota dėl atsitiktinio neteisingo pakeitimo yra 4 valandos.\\ \hline		
+		\reqCode &
+		Programų sistemos testuojamumo reikalavimai&
+		Testai sistemoje nevykdomi.\\ \hline	
+		\reqCode &
+		Programų sistemos tvarkomumo reikalavimai&
+		Sistema turi būti atkuriama per 1 žmogaus darbo valandą.\\ \hline	
+		\reqCode &
+		Programų sistemos pakartotino panaudojamumo reikalavimai&
+		Sistema negali būti perpanaudota.\\ \hline																							
+	\end{longtable}
+\end{center}
+		
 \section{Reikalavimų nuleidimas žemyn - kokybės namas}
 \subsection{Klientas}
 \subsubsection{Produkto (sistemos) planavimas}
