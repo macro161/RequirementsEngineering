@@ -263,98 +263,98 @@ pasirinktos perspektyvos -- rolės -- pateikiamos santraukoje.
 
 \subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
 
-Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas,
-paremtas programuotojo perspektyva.
+	Šiame poskyryje pateikiama vartotojo -- asmens, naudojančio aprašomą sistemą -- perspektyva.
+			\subsubsection{Programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas}
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas, paremtas pagal vartotojo perspektyvą.
+			\begin{center}
+				\setstretch{1.0}
 
-\begin{center}
-	\setstretch{1.0}
-	\small
-	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
-		\caption{Programuotojo kontrolinis sąrašas}
-		\label{table:EmployeeSalary}
-		\\ \hline
-		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                               &
-		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                   &
-		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
-		\\ \hline
-		PKS-01                                                                        &
-		Ar reikalavimas abstraktus?                                                   &
-		Reikalavimas vadinamas abstrak2iu, jei jis suformuluotas remiantis juodos dėžės (angl. \textit{black box}) principu, t. y. apibrėžiama tik išoriškai matoma funkcinė ar nefunkcinė sistemos savybė ir nėrapateikiama jokių tos savybės realizavimo detalių.                                                                                                                                                                                   \\ \hline
-		PKS-02                                                                        &
-		Ar reikalavimas atominis?                                                     &
-		Reikalavimas vadinamas atominiu, jei jis nebegali būti išskaidytas į smulkesnius. Reikalavimas turėtų būti sudarytas iš vieno atsekamo (angl \textit{traceable}) elemento.                                                                                                                                                                                                                                                                    \\ \hline
-		PKS-03                                                                        &
-		Ar reikalavimas nėra perteklinis?                                             &
-		Reikalavimas vadinamas pertekliniu (angl. \textit{redundant}), jei jame kartojama informacija, pateikiama kituose reikalavimuose arba jei neįmanoma įvardinti, kokie veslo reikalavimai bus pasiekti įgyvendinus šį reikalavimą.                                                                                                                                                                                                              \\ \hline
-		PKS-04                                                                        &
-		Ar reikalavimas nėra dviprasmiškas?                                           &
-		Reikalavimas turėtų būti interpretuojamas \textbf{vienareikšmiškai}. Tiesa, tai nereiškia, kad jis gali būti realizuojamas tik vienu būdu.                                                                                                                                                                                                                                                                                                    \\ \hline
-		PKS-05                                                                        &
-		Ar reikalavimas gali būti ištestuotas?                                        &
-		Testuotojams turi būti įmanoma įvertinti, ar reikalavimas įgyvendintas teisingai: testo atsakymas turi būti arba teigiamas, arba neigiamas. Tam, jog galėtų būti ištestuojamas, reikalavimai turi būti aiškūs, tikslūs ir nedviprasmiški, o verifikacijos metodas -- realistiškas, t. y., jis turėtų nebūti per brangus, užimti per daug laiko ar reikalauti specifinių tikrintojo žinių ar specialios kompiuterinės bei programinės įrangos. \\ \hline
-		PKS-06                                                                        &
-		Ar reikalavimas pilnas?                                                       &
-		Reikalavimas yra pilnas (angl. \textit{complete}), jei jame apibrėžiama viskas, kas turi būti apibrėžta ir jį perskaičius neišryškėja trūkumų (angl. \textit{issues}). Reikalavimas turi būti pilnas vertinant ne tik visumą, bet ir reikalavimą atskirai. Reikalavimas turi apimti visas įmanomas sąlygas.                                                                                                                                   \\ \hline
-		PKS-07                                                                        &
-		Ar reikalavimas tikslus?                                                      &
-		Reikalavimas laikomas tiksliu, jei visi jame naudojami terminai yra apibrėžti ir nėra vartojama netikslių terminų (pavyzdžiui, beveik, apytiksliai, patogu, naudojama mažai atminties ir pan.).                                                                                                                                                                                                                                               \\ \hline
-		PKS-08                                                                        &
-		Ar reikalavimas aiškus, neperkrautas?                                         &
-		Reikalavimas vadinamas neperkrautu, jei jame nėra argumentacijos, apibrėžimų ar kitos nereikalingos informacijos.                                                                                                                                                                                                                                                                                                                             \\ \hline
-		PKS-09                                                                        &
-		Ar reikalavimas parašytas visiems suinteresuotiems asmenims suprantama kalba? &
-		Reikalavimas laikomas suprantamu, jei jame nėra specifinių terminų, neapibrėžtų terminų žodyne ir jame aiškiai apibrėžta, kokių funkcinių ar nefunkcinių charakteristikų sistema privalo turėti. Reikalavimai turi būti teisingi gramatiškai ir parašyti laikantis vieningo stiliaus. Turi būti paisoma standartinių konvencijų.                                                                                                              \\ \hline
-	\end{longtable}
-\end{center}
+				\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+
+					\caption{Vartotojo kontrolinis sąrašas}
+					\label{table:VKS}
+
+ 					\\ \hline
+ 					\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
+  					\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}} & 
+  					\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
+ 					\\ \hline
+ 					VKS-01 &
+ 					Reikalavimas parašytas vartotojui suprantama kalba - lietuvių kalba& 
+ 					Reikalavimas parašytas lietuvių kalba. Kadangi sistema skirta Lietuvos Respublikos gyventojams. Tikėtina, kad vartotojui suprantama kalba yra lietuvių kalba\\ \hline
+ 					VKS-02 &
+ 					Reikalavimai apibūdina, jog vartotojo sąsaja bus vartotojui suprantama kalba - lietuvių kalba&
+ 					Reikalavimai (ar bendras reikalavimas), nurodantis, jog vartotojo sąsajoje esantis tekstas bus pateiktas lietuvių kalba.\\ \hline
+ 					VKS-03 &
+ 					Ar reikalavimas apibūdina sistemos išorinį elgesį? & 
+					Reikalavimai (ar bendras reikalavimas) apibūdina sistemos elgesį iš vartotojo perspektyvos - vartotojas paduoda specifines įvestis ir sistema gražina konkrečias išvestis.\\ \hline  
+ 					VKS-04 &
+ 					Ar reikalavimas apibrėžia, kaip sistemos vartotojo sąsaja reaguos į vartotojo interakcijas?& 
+ 					Reikalavimai (ar bendras reikalavimas) apibūdina, kaip sistemos vartotojo sąsaja reaguoja į vartotojo interakcijas\\ \hline    
+ 					VKS-05 &
+ 					Ar galima valdyti asmens saviizoliaciją?& 
+ 					Reikalavimai, apibrėžiantys, jog galima pačiam vartotojui užfiksuoti jų saviizoliaciją, įspėti vartotoją apie privalomą saviizoliaciją, nustatyti vartotojo saviizoliacijos pradžią ir pabaigą.\\ \hline  
+ 					VKS-06 &
+ 					Ar galima privačiam asmeniui būti įspėtam apie privalomą saviizoliaciją?& 
+ 					Reikalavimai, apibrėžiantys, jog vartotojui pranešama apie privalomą saviizoliaciją\\ \hline   					
+ 					VKS-07 &
+ 					Ar galima privačiam asmeniui užfiksuoti kontaktuotus žmones?& 
+ 					Reikalavimai, apibrėžiantys, jog vartotojas gali užfiksuoti asmenis, kurie kontaktavo su užsikrėtusiuoju\\ \hline  
+ 					VKS-08 &
+ 					Ar galima sveikatos apsaugos ministerijos atstovui valdyti pavojingų šalių sąrašą?& 
+ 					Reikalavimai, apibrėžiantys, jog sveikatos apsaugos ministerijos atstovas gali modifikuoti pavojingų šalių sąrašą\\ \hline  
+ 					VKS-09 &
+ 					Ar gali E. policija sužinoti apie saviizoliacijos pažeidimus?& 
+ 					Reikalavimai, apibrėžiantys, jog E. policijai pranešama apie asmens saviizoliacijos pažeidimą\\ \hline			
+				\end{longtable}
+			\end{center}	
+
 
 \subsubsection{Programinės įrangos sistemos reikalavimų specifikacijos įvertinimas}
 
-Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų vertinimo kontrolinis sąrašas, paremtas pagal vartotojo perspektyvą.
+Šiame skirsnyje pateikiamas programinės įrangos reikalavimų specifikacijų įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą.
+			\begin{center}
+				\setstretch{1.0}
 
-\begin{center}
-	\setstretch{1.0}
+\begin{longtable}{|C{2cm}|L{2.5cm}|L{10cm}|}
 
-	\begin{longtable}{|C{2cm}|L{5cm}|L{8cm}|}
+					\caption{Reikalavimų specifikacijos įvertinimas pagal vartotojo perspektyvos kontrolinį sąrašą}
+					\label{table:VKS}
 
-		\caption{Vartotojo kontrolinis sąrašas}
-		\label{table:VKS}
-
-		\\ \hline
-		\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}}                                               &
-		\multicolumn{1}{c|}{\makecell{\textbf{Klausimas/Teiginys}}}                                   &
-		\multicolumn{1}{c|}{\makecell{\textbf{Apibūdinimas}}}
-		\\ \hline
-		VKS-01                                                                                        &
-		Reikalavimas parašytas vartotojui suprantama kalba - lietuvių kalba                           &
-		Reikalavimas parašytas lietuvių kalba. Kadangi sistema skirta Lietuvos Respublikos gyventojams. Tikėtina, kad vartotojui suprantama kalba yra lietuvių kalba               \\ \hline
-		VKS-02                                                                                        &
-		Reikalavimai apibūdina, jog vartotojo sąsaja bus vartotojui suprantama kalba - lietuvių kalba &
-		Reikalavimai (ar bendras reikalavimas), nurodantis, jog vartotojo sąsajoje esantis tekstas bus pateiktas lietuvių kalba.                                                   \\ \hline
-		VKS-03                                                                                        &
-		Ar reikalavimas apibūdina sistemos išorinį elgesį?                                            &
-		Reikalavimai (ar bendras reikalavimas) apibūdina sistemos elgesį iš vartotojo perspektyvos - vartotojas paduoda specifines įvestis ir sistema gražina konkrečias išvestis. \\ \hline
-		VKS-04                                                                                        &
-		Ar reikalavimas apibrėžia, kaip sistemos vartotojo sąsaja reaguos į vartotojo interakcijas?   &
-		Reikalavimai (ar bendras reikalavimas) apibūdina, kaip sistemos vartotojo sąsaja reaguoja į vartotojo interakcijas                                                         \\ \hline
-		VKS-05                                                                                        &
-		Ar galima valdyti asmens saviizoliaciją?                                                      &
-		Reikalavimai, apibrėžiantys, jog galima pačiam vartotojui užfiksuoti jų saviizoliaciją, nustatyti vartotojo saviizoliacijos pradžią ir pabaigą.                            \\ \hline
-		VKS-06                                                                                        &
-		Ar galima privačiam asmeniui būti įspėtam apie privalomą saviizoliaciją?                      &
-		Reikalavimai, apibrėžiantys, jog vartotojui pranešama apie privalomą saviizoliaciją                                                                                        \\ \hline
-		VKS-07                                                                                        &
-		Ar galima privačiam asmeniui užfiksuoti kontaktuotus žmones?                                  &
-		Reikalavimai, apibrėžiantys, jog vartotojas gali užfiksuoti asmenis, kurie kontaktavo su užsikrėtusiuoju                                                                   \\ \hline
-		VKS-08                                                                                        &
-		Ar galima sveikatos apsaugos ministerijos atstovui valdyti pavojingų šalių sąrašą?            &
-		Reikalavimai, apibrėžiantys, jog sveikatos apsaugos ministerijos atstovas gali modifikuoti pavojingų šalių sąrašą                                                          \\ \hline
-		VKS-09                                                                                        &
-		Ar gali E. policija sužinoti apie saviizoliacijos pažeidimus?                                 &
-		Reikalavimai, apibrėžiantys, jog E. policijai pranešama apie asmens saviizoliacijos pažeidimą                                                                              \\ \hline
-	\end{longtable}
-\end{center}
-
-\subsubsection{Pataisyta programinės įrangos reikalavimų specifikacijos versija}
+ 					\\ \hline
+ 					\multicolumn{1}{|c|}{\makecell{\textbf{Kodas}}} &
+  					\multicolumn{1}{c|}{\makecell{Ar\\tenkina\\reikalavimus?}} & 
+  					\multicolumn{1}{c|}{\makecell{\textbf{Reikalavimų pažeidimas}}}
+ 					\\ \hline
+ 					VKS-01 &
+ 					Taip& 
+ 					\multicolumn{1}{|c|}{--}\\ \hline
+ 					VKS-02 &
+ 					Ne&
+ 					Nėra apibrėžtų reikalavimų ar bendro reikalavimo, nurodančio, jog vartotojo sąsajoje esantis tekstas bus lietuvių kalba\\ \hline
+ 					VKS-03 &
+ 					Taip & 
+					\multicolumn{1}{|c|}{--}\\ \hline  
+ 					VKS-04 &
+ 					Ne& 
+ 					Reikalavimas \textbf{"Sistema atitinka žmogaus ir kompiuterio sąveikos euristikas"} per daug abstraktus. Išreikštinai nepasakyta, ar sistemos vartotojo sąsaja reaguos į vartotojo interakcijas \\ \hline    
+ 					VKS-05 &
+ 					Ne& 
+ 					Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima valdyti asmens saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė\\ \hline  
+ 					VKS-06 &
+ 					Ne&
+ 					Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima įspėti privatų asmenį apie saviizoliaciją. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė\\ \hline   					
+ 					VKS-07 &
+ 					Ne&
+ 					Reikalavimas \textbf{"Galimybė valdyti užsikrėtusio žmogaus duomenis"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta privačių asmenų vartotojų grupė\\ \hline  
+ 					VKS-08 &
+ 					Ne&
+ 					Reikalavimas \textbf{"Galimybė valdyti pavojingų šalių registrą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikštinai išskirta sveikatos apsgaugos ministerijos vartotojų grupė\\ \hline  
+ 					VKS-09 &
+ 					Ne&
+ 					Reikalavimas \textbf{"Galimybė valdyti saviizoliacijos pranešimų sistemą"} per daug abstraktus ir nepasako, kaip galima užsikrėtusiam privačiam asmeniui užfiksuoti kontaktuotus žmones. PS reikalavimuose nėra išreikšinai išskirta e. policijos vartotojų grupė\\ \hline			
+				\end{longtable}
+			\end{center}		
 
 \subsection{Programuotojo perspektyva}
 
