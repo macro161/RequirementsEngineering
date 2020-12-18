@@ -430,7 +430,7 @@ paremtas programuotojo perspektyva.
 		Neatominiai (skaidytini) reikalavimai: \textbf{Galimybė valdyti portalo apiesaviizoliacijos informaciją}                                                                                                                                                                                                                            \\ \hline                                                                                                                                                                                                                                           \\ \hline
 		PKS-03                                          &
 		Ne                                              &
-		Nėra apibrėžti sistemos įvykių bei klaidų žurnalizavimo reikalavimai. Nėra apibrėžtų reikalavimų būdams, kaip tuos žurnalus peržiūrėti.                                                                                                                            \\ \hline
+		\textbf{Galimybė valdyti mobiliąją aplikaciją saviizoliacijai sekti} -- perteklinis, reikalavimas jau suformuluotas (Galimybė fiksuoti saviizoliacijos informaciją).                                                                                                                  \\ \hline
 		PKS-04                                          &
 		Taip                                            &
 		\multicolumn{1}{|c|}{--}                                                                                                                                                                                                                                           \\ \hline
@@ -442,7 +442,7 @@ paremtas programuotojo perspektyva.
 		Nėra apibrėžti reikalavimai, nusakantys sistemos atsparumą DDoS, SQL injekcijos ar kitoms OWASP top 10 sąraše apibūdinamoms atakoms. Apibrėžtas tik maksimalus saugumo incidentų per mėnesį skaičius - \textbf{Programų sistemos atsparumo trikiams reikalavimai}. \\ \hline
 		PKS-07                                          &
 		Ne                                              &
-		Neapibrėžtas reikalavimas sistemos techninės specifikacijos sudarymui.                                                                                                                                                                                             \\ \hline
+		Neaiškus reikalavimo \textbf{Galimybė valdyti portalo apie saviizoliacijos informaciją} pavadinimas.                                                                                                                                                                                             \\ \hline
 		PKS-08                                          &
 		Ne                                              &
 		\textbf{}.                                                                                                                                                                                \\ \hline
@@ -566,25 +566,23 @@ paremtas operacijų ir palaikymo grupės perspektyva.
 		\\ \hline
 		\reqCode                                                          &
 		Galimybė valdyti užsikrėtusio žmogaus duomenis                    &
-		{\color{blue} 1.Epidemiologas užfiksuoja susirgimą.} \textbf{Pradiniai duomenys} - žmogaus asmeniniai duomenys, kontaktiniai duomenys, saviizoliacijos pradžios ir numatomos pabaigos data, sarašas su kuo kontaktavo susirgęs žmogus.
-		\textbf{Gautas rezultatas} - įvesti žmogaus saviizoliacijos duomenis į registrą, galimybė tos duomenis perduoti kitoms posistemėms. {\color{blue} 2. Privačiam asmeniui nustatoma saviizoliacijos pradžia ir pabaiga. \textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, sąrašas su kuo kontaktavo susirgęs žmogus. \textbf{Gautas rezultatas} - žinutė, informuojanti asmenį apie privalomą informaciją. Pateikiama saviizoliacijos pradžios ir numatomos pabaigos datos. 3. Užsikrėtęs privatus asmuo gali užfiksuoti asmenis, su kuriais kontaktavo \textbf{Pradiniai duomenys} - kontaktuotų žmonių asmeniniai duomenys, kontaktiniai duomenys. \textbf{Gautas rezultatas} - įvesti kontaktuotų žmonių duomenys į registrą, galimybė tuos duomenis perduoti kitoms posistemėms.} \\ \hline
+		{\color{blue} 1.Epidemiologas gali užfiksuoti susirgimą.} \textbf{Pradiniai duomenys} - žmogaus asmeniniai duomenys, kontaktiniai duomenys, saviizoliacijos pradžios ir numatomos pabaigos data, sarašas su kuo kontaktavo susirgęs žmogus.
+		\textbf{Gautas rezultatas} - įvesti žmogaus saviizoliacijos duomenis į registrą, galimybė tos duomenis perduoti kitoms posistemėms.
+		{\color{blue} 2. Privačiam asmeniui automatiškai nustatoma saviizoliacijos pradžia ir pabaiga. \textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, sąrašas su kuo kontaktavo susirgęs žmogus. \textbf{Gautas rezultatas} - žinutė, informuojanti asmenį apie privalomą informaciją. Pateikiama saviizoliacijos pradžios ir numatomos pabaigos datos. 3. Užsikrėtęs privatus asmuo gali užfiksuoti asmenis, su kuriais kontaktavo \textbf{Pradiniai duomenys} - kontaktuotų žmonių asmeniniai duomenys, kontaktiniai duomenys. \textbf{Gautas rezultatas} - įvesti kontaktuotų žmonių duomenys į registrą, galimybė tuos duomenis perduoti kitoms posistemėms.} \\ \hline
 		\reqCode                                                          &
 		Galimybė valdyti pavojingų šalių registrą                         &
 		{\color{blue} 1.Sveikatos apsaugos ministerijos atstovas gali papildyti pavojingų šalių sąrašą }\textbf{Pradiniai duomenys} - nauja informaciją apie pavojingas šalis. \textbf{Gautas rezultatas} - atnaujintas pavojingų šalių sąrašas kurį naudos kitos posistemės.
 		{\color{blue} 2.Sveikatos apsaugos ministerijos atstovas gali pašalinti šalį iš pavojingų šalių sąrašo. \textbf{Pradiniai duomenys} - šalies pavadinimas, esantis pavojingų šalių sąraše. \textbf{Gautas rezultatas} - atnaujintas pavojingų šalių sąrašas, kurį naudos kitos posistemės.}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\ \hline
 		\reqCode                                                          &
-		Galimybė valdyti saviizoliacijos pranešimų sistema                &
+		Galimybė valdyti saviizoliacijos pranešimų sistemą               &
 		{\color{blue} 1. Privatus asmuo gauną pranešimą apie privalomą saviizoliaciją. \textbf{Pradiniai duomenys} - gautas užsikrėtusio asmens kontaktuotų asmenų sąrašas. \textbf{Gautas rezultatas} - žinutėm pranešanti apie asmens privalomą saviizoliaciją, saviizoliacijos pradžios ir numatomos pabaigos datos.}\textbf{Pradiniai duomenys} - užsikrėtusių žmonių registro duomenys, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - žmogus informuotas apie jam paskitrą saviizoliacijos laikotarpį SMS žinute. Policija informuojama žmogui pažeidus saviizoliaciją.
 		{\color{blue} 2. E.policia gauna pranešimus apie asmens saviizoliacijos pažeidimą. \textbf{Pradiniai duomenys} - užsikrėtusio asmens asmeniniai duomenys, saviizoliacijos praždios ir pabaigos datos, GPS lokacija. \textbf{Gautas rezultatas} - E.policijai gaunama žinutė, nusakanti, koks asmuo pažeidė saviizoliaciją, jų asmeniniai duomenys ir GPS lokacija}                                                                                                                                                                                                                                                                                                                                                                                                                                     \\ \hline
 		\reqCode                                                          &
-		Galimybė valdyti portalo apie saviizoliacijos informaciją         &
-		\textbf{Pradiniai duomenys} - užsikrėtusiųjų registras, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - gauti ir atvaizduojama žmogaus saviizoliacijos būsena.
+		Galimybė fiksuoti saviizoliacijos informaciją         &
+		{\color{blue} 1. Privatus asmuo gali gauti įspėjimą apie saviizoliaciją. \textbf{Pradiniai duomenys} - nustatyta privaloma saviizoliacija. \textbf{Gautas rezultatas} -- pranešimas apie saviizoliaciją.}
+		{\color{blue} 2. Privatus asmuo gali patvirtinti saviizoliaciją pagal savo lokaciją}. \textbf{Pradiniai duomenys} - užsikrėtusiųjų registras, žmogaus lokacijos duomenys. \textbf{Gautas rezultatas} - {\color{blue} patvirtina} žmogaus saviizoliacija.
+		{\color{blue} 3. Privatus asmuo gali patvirtinti saviizoliaciją pagal nuotrauką \textbf{Pradiniai duomenys} - užsikrėtusiųjų registras, nuotrauka, patvirtinanti buvimo vietą. \textbf{Gautas rezultatas} - patvirtinta žmogaus saviizoliacija}.
 		Epidemiologai gali valdyti visą informaciją apie saviizoliuotus žmones. Saviizoliavę žmonęs gali valdyti informaciją tik apie save.
-		\\ \hline
-		\reqCode                                                          &
-		Galimybė valdyti mobilioji aplikaciją saviizoliacijai sekti       &
-		\textbf{Pradiniai duomenys} - žmogaus GPS lokacija, užsikėtusiųjų registras. \textbf{Gautas rezultatas} - įsitikint, kad žmogus nepažeidžia saviizoliacijos reikalavimų.
-		Epidemiologai gali sekti žmonių lokaciją.
 		\\ \hline
 		\reqCode                                                          &
 		Programų sistemos sąveikos su kitomis sistemomis                  &
